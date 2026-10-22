@@ -1,0 +1,24 @@
+# Python environment
+.venv/
+venv/
+
+# Python temporary files
+__pycache__/
+*.pyc
+
+# Editors and notebooks
+.vscode/
+.ipynb_checkpoints/
+
+# Secrets
+.env
+*.key
+
+# Large datasets and generated files
+data/raw/
+data/crops/
+outputs/
+models/
+*.pt
+*.pth
+*.onnx
