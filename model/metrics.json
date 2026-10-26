@@ -1,0 +1,247 @@
+{
+ "best_macro_f1": 0.9085,
+ "best_epoch": 13,
+ "epochs_done": 15,
+ "classes": [
+  "pass",
+  "missing_cap",
+  "crooked_cap",
+  "damaged_vial",
+  "no_vial"
+ ],
+ "metrics": {
+  "all": {
+   "accuracy": 0.9851,
+   "macro_f1": 0.9085,
+   "per_class": {
+    "pass": {
+     "precision": 0.9767,
+     "recall": 0.9997,
+     "f1": 0.9881,
+     "support": 3903
+    },
+    "missing_cap": {
+     "precision": 0.9724,
+     "recall": 1.0,
+     "f1": 0.986,
+     "support": 1940
+    },
+    "crooked_cap": {
+     "precision": 0.9995,
+     "recall": 0.9995,
+     "f1": 0.9995,
+     "support": 1939
+    },
+    "damaged_vial": {
+     "precision": 1.0,
+     "recall": 0.3975,
+     "f1": 0.5689,
+     "support": 244
+    },
+    "no_vial": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 1984
+    }
+   },
+   "confusion": [
+    [
+     3902,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1940,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     1938,
+     0,
+     0
+    ],
+    [
+     92,
+     55,
+     0,
+     97,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     1984
+    ]
+   ]
+  },
+  "tray_G": {
+   "accuracy": 0.9998,
+   "macro_f1": 0.9998,
+   "per_class": {
+    "pass": {
+     "precision": 0.9997,
+     "recall": 0.9997,
+     "f1": 0.9997,
+     "support": 3796
+    },
+    "missing_cap": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 1871
+    },
+    "crooked_cap": {
+     "precision": 0.9995,
+     "recall": 0.9995,
+     "f1": 0.9995,
+     "support": 1919
+    },
+    "no_vial": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 1924
+    }
+   },
+   "confusion": [
+    [
+     3795,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1871,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     1918,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     1924
+    ]
+   ]
+  },
+  "tray_S": {
+   "accuracy": 0.706,
+   "macro_f1": 0.7966,
+   "per_class": {
+    "pass": {
+     "precision": 0.5377,
+     "recall": 1.0,
+     "f1": 0.6993,
+     "support": 107
+    },
+    "missing_cap": {
+     "precision": 0.5565,
+     "recall": 1.0,
+     "f1": 0.715,
+     "support": 69
+    },
+    "crooked_cap": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 20
+    },
+    "damaged_vial": {
+     "precision": 1.0,
+     "recall": 0.3975,
+     "f1": 0.5689,
+     "support": 244
+    },
+    "no_vial": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 60
+    }
+   },
+   "confusion": [
+    [
+     107,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     69,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     20,
+     0,
+     0
+    ],
+    [
+     92,
+     55,
+     0,
+     97,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     60
+    ]
+   ]
+  }
+ },
+ "train_counts": {
+  "crooked_cap": 16258,
+  "no_vial": 16515,
+  "pass": 33449,
+  "missing_cap": 16757,
+  "damaged_vial": 2011
+ },
+ "args": {
+  "crops": "crops",
+  "out": "/job/out",
+  "epochs": "15",
+  "batch": "256",
+  "lr": "0.001",
+  "size": "128",
+  "threads": "16",
+  "workers": "0",
+  "device": "cuda",
+  "limit": "0",
+  "no_pretrained": "False"
+ }
+}

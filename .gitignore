@@ -1,0 +1,7 @@
+# Generated data (rebuild with sdg_vials.py / make_crops.py)
+crops/
+out/
+results/
+preds/
+__pycache__/
+*.pyc
