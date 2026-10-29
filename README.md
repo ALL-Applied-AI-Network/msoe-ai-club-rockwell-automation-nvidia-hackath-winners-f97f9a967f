@@ -101,20 +101,30 @@ python classifier/predict.py run --model model/model.pt --layout model/layout.js
   `--shift DX DY`, `--scale` and `--rotate`, and check the result with `--check-layout`.
 - **Evaluation:** `--labels DIR` reports accuracy against hand labels.
 
-## Results (synthetic validation set: 10,010 crops from frames never used for training)
+## Results (synthetic validation set: 10,920 crops from frames never used for training)
+
+The current model (`model/model.pt`) is trained on scrap-tray data with cracks drawn at resolvable sizes
+(v2, see finding 3).
 
 | Scope | Accuracy | Macro-F1 |
 |---|---|---|
-| All | 0.985 | 0.909 |
-| `G` tray | 0.9998 | 0.9998 |
-| `S` tray | 0.706 | 0.797 |
+| All | 0.998 | 0.991 |
+| `G` tray | 0.9999 | 0.9999 |
+| `S` tray | 0.960 | 0.963 |
 
-| `S` `damaged_vial` by damage type | Recall |
-|---|---|
-| `broken_neck` | 1.00 |
-| `chipped_rim` | 1.00 |
-| `body_crack` | 0.00 |
-| `star_fracture` | 0.00 |
+| `S` `damaged_vial` by damage type | Recall, v1 (invisible cracks) | Recall, v2 (visible cracks) |
+|---|---|---|
+| `broken_neck` | 1.00 | 1.00 |
+| `chipped_rim` | 1.00 | 1.00 |
+| `star_fracture` | 0.00 | 0.99 |
+| `body_crack` | 0.00 | 0.72 |
+
+`damaged_vial` precision is 0.996. The intact scrap-tray vials get a median damage probability of 0.03, and
+the damaged ones 0.96. Lowering the damage threshold from 0.5 to 0.1 raises damage recall from 0.92 to
+0.95, while flagging 3% of intact vials. The body cracks it still misses are the faintest ones, short
+cracks that fall on the reflection streak or over a dark tray hole.
+
+![Missed vs caught damage, per type](docs/images/damage_sheet.png)
 
 **These are synthetic scores.** No real labeled frames were available yet. A `G` score of 0.9998 says the
 renders are cleaner than reality, not that the model will be that good on the real line.
@@ -129,11 +139,14 @@ renders are cleaner than reality, not that the model will be that good on the re
    includes the stock `render_example.py`. `sdg_vials.py` scales the focal length and both apertures by
    100, which keeps the field of view, and checks the result through `camera_params` (652.91 px).
 3. **Hairline cracks are invisible at this camera's resolution.** The camera resolves about 0.7 px/mm, so
-   0.2–0.6 mm cracks cover less than half a pixel. They also merge with the reflection along the top of a
-   lying vial. The model gets 0% recall on them, with the same damage probability as for intact vials.
-   This is a limit of the data, not the model. Whether real cracks can be detected depends on how they
-   look in real frames. Shape damage (broken neck, chipped rim) is detected reliably.
-   ![Cracked vials at full resolution, 6× zoom](docs/images/crack_fullres.png)
+   the first version's 0.2–0.6 mm cracks covered less than half a pixel. They also merged with the
+   reflection along the top of a lying vial. That model got 0% recall on them, with the same damage
+   probability as for intact vials. The generator now draws cracks 1–2.3 mm wide, with an impact spot for
+   star fractures. They're placed 20–50° off the top of the vial, still facing the camera but out of the
+   reflection, and each label records its `crack_width_mm`. With that, star fractures are found 99% of the
+   time and body cracks 72%. **This assumes real damage is that visible.** Real hairline cracks finer than
+   about 1 mm probably can't be seen by this camera at all.
+   ![v1 cracked vials at full resolution, 6× zoom: the cracks are not visible](docs/images/crack_fullres.png)
 4. **On the good tray, `damaged_vial` isn't learnable from this camera.** It looks almost straight down,
    so caps hide the rims and bodies, and a broken or chipped vial with its cap off looks like
    `missing_cap`. Damage is therefore generated on the scrap tray, where the lying vials face the camera.
@@ -145,14 +158,14 @@ renders are cleaner than reality, not that the model will be that good on the re
 - **Get real frames** from the cap-seal camera: full 640×480 frames, a mix of lighting and fill levels,
   and examples of each damage type. Check them with `predict.py --check-layout` first, then measure
   real-world accuracy with `--labels`.
-- **Render cracks only at sizes the camera can see,** matched to real examples, or drop them from
-  training.
+- **Match crack size and look to real damaged vials** once examples exist. `crack_width_mm` in the labels
+  allows testing recall by crack size.
 - **Rebuild the scrap tray** to match the real layout.
 
 ## Reproducing on YAAD
 
 - `yaad/run_s_preview.sh`: render a preview from the team workspace.
-- `yaad/prep_training.sh`: build the crops and the layout from the generator's job results.
+- `yaad/prep_training.sh JOB_ID ...`: build the crops and the layout from the given generator jobs.
 - `yaad/train_job.sh`: the training pool job (image `python:3.12-slim`, PyTorch cu130 wheels).
 
 Generator jobs used image `nvcr.io/nvidia/isaac-sim:5.1.0` with `ACCEPT_EULA=Y` and `PRIVACY_CONSENT=Y`,

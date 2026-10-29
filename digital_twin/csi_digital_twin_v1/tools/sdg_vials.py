@@ -15,8 +15,8 @@ final image). With --preview it also writes overlays/NNNNNN.png with the labels 
 
 damaged_vial on the G tray is limited to damage the near-top-down camera can see: a broken neck, or a
 chipped rim with the cap off. Body cracks on upright capped vials are hidden by the cap. On the S tray the
-vials lie on their side, so damage is a star fracture or body crack on the side facing the camera, a
-chipped rim or a broken neck.
+vials lie on their side, so damage is a chipped rim, a broken neck, or a star fracture or body crack on the
+camera-facing side, beside the specular streak and drawn 1-2.3 mm wide so the camera can resolve it.
 """
 import argparse, json, math, os, traceback
 from pathlib import Path
@@ -169,6 +169,14 @@ try:
     frac_rough = frac_sh.CreateInput("roughness", Sdf.ValueTypeNames.Float)
     frac_opacity = frac_sh.CreateInput("opacity", Sdf.ValueTypeNames.Float)
     frac_mat.CreateSurfaceOutput().ConnectToSource(frac_sh.ConnectableAPI(), "surface")
+    # Body cracks and star fractures: nearly opaque white, so a 1-2 px line still reads against clear plastic.
+    crack_mat = UsdShade.Material.Define(stage, "/SDG/looks/crack")
+    crack_sh = UsdShade.Shader.Define(stage, "/SDG/looks/crack/shader")
+    crack_sh.CreateIdAttr("UsdPreviewSurface")
+    crack_sh.CreateInput("diffuseColor", Sdf.ValueTypeNames.Color3f).Set(Gf.Vec3f(0.95, 0.96, 0.97))
+    crack_rough = crack_sh.CreateInput("roughness", Sdf.ValueTypeNames.Float)
+    crack_opacity = crack_sh.CreateInput("opacity", Sdf.ValueTypeNames.Float)
+    crack_mat.CreateSurfaceOutput().ConnectToSource(crack_sh.ConnectableAPI(), "surface")
 
     # Render product, as in render_example.py (including the clipping-range re-sync for the scaled camera).
     rp = rep.create.render_product(str(cam_prim.GetPath()), (RW, RH))
@@ -291,14 +299,14 @@ try:
         return np.stack([th0 + s / TUBE_R, np.clip(z, 0.1, 3.5)], 1)
 
     def star_fracture(rng, thc, zc):
-        return [crack_walk(rng, thc, zc, rng.uniform(0, 2 * np.pi), rng.uniform(0.08, 0.35), step=0.03, wobble=0.25)
+        return [crack_walk(rng, thc, zc, rng.uniform(0, 2 * np.pi), rng.uniform(0.15, 0.45), step=0.03, wobble=0.25)
                 for _ in range(int(rng.integers(4, 9)))]
 
     def body_crack(rng, thc, zc):
         # Across or diagonal to the vial axis, never along it: the specular streak of an intact lying vial
         # runs along the axis and must not look like a crack.
         heading = rng.uniform(-np.pi / 2 + 0.45, np.pi / 2 - 0.45) + rng.choice([0.0, np.pi])
-        main = crack_walk(rng, thc, zc, heading, rng.uniform(0.3, 1.0), step=0.03, wobble=0.5)
+        main = crack_walk(rng, thc, zc, heading, rng.uniform(0.4, 1.2), step=0.03, wobble=0.5)
         lines = [main]
         for _ in range(int(rng.integers(1, 5))):
             i = int(rng.integers(1, len(main)))
@@ -306,10 +314,20 @@ try:
                                     step=0.03, wobble=0.5))
         return lines
 
-    def crack_mesh(path, lines, width):
-        """Thin white ribbons just outside the vial surface along each crack line (tube-local inches)."""
+    def crack_mesh(path, lines, width, spot=None):
+        """White ribbons just outside the vial surface along each crack line (tube-local inches), plus an
+        optional whitened impact spot (thc, zc, radius) for star fractures."""
         r = TUBE_R + 0.004
-        pts, idx = [], []
+        pts, idx, cnt = [], [], []
+        if spot:
+            thc, zc, rr = spot
+            ang = np.linspace(0, 2 * np.pi, 16, endpoint=False)
+            rim = [(r * math.cos(thc + rr * math.cos(t) / TUBE_R), r * math.sin(thc + rr * math.cos(t) / TUBE_R),
+                    zc + rr * math.sin(t)) for t in ang]
+            pts += [(r * math.cos(thc), r * math.sin(thc), zc)] + rim
+            for k in range(16):
+                idx += [0, 1 + k, 1 + (k + 1) % 16]
+                cnt.append(3)
         for ln in lines:
             th, z = ln[:, 0], ln[:, 1]
             P3 = np.stack([r * np.cos(th), r * np.sin(th), z], 1)
@@ -320,11 +338,12 @@ try:
                 b = len(pts)
                 pts += [P3[i] - side, P3[i] + side, P3[i + 1] + side, P3[i + 1] - side]
                 idx += [b, b + 1, b + 2, b + 3]
+                cnt.append(4)
         m = UsdGeom.Mesh.Define(stage, path)
         m.CreatePointsAttr(Vt.Vec3fArray.FromNumpy(np.asarray(pts, np.float32)))
-        m.CreateFaceVertexCountsAttr([4] * (len(pts) // 4)); m.CreateFaceVertexIndicesAttr(idx)
+        m.CreateFaceVertexCountsAttr(cnt); m.CreateFaceVertexIndicesAttr(idx)
         m.CreateDoubleSidedAttr(True)
-        UsdShade.MaterialBindingAPI.Apply(m.GetPrim()).Bind(frac_mat)
+        UsdShade.MaterialBindingAPI.Apply(m.GetPrim()).Bind(crack_mat)
 
     def apply_position(p, cls, rng):
         tray = p[0]
@@ -367,9 +386,15 @@ try:
             else:
                 kind = ["star_fracture", "body_crack", "chipped_rim", "broken_neck"][int(rng.choice(4, p=[0.3, 0.3, 0.2, 0.2]))]
             if kind in ("star_fracture", "body_crack"):
-                thc, zc = face + rng.uniform(-0.6, 0.6), rng.uniform(0.5, 3.0)
+                # Cracks sized to be resolvable (1-2.3 mm wide; the camera resolves about 0.7 px/mm) and set
+                # 20-50 degrees off the top of the vial: still facing the camera, but out of the specular streak.
+                thc = face + rng.choice([-1, 1]) * rng.uniform(0.35, 0.9)
+                zc = rng.uniform(0.5, 3.0)
+                width = rng.uniform(0.04, 0.09)
                 lines = star_fracture(rng, thc, zc) if kind == "star_fracture" else body_crack(rng, thc, zc)
-                crack_mesh(f"{tube_path}/sdg_crack", lines, rng.uniform(0.008, 0.025))
+                spot = (thc, zc, rng.uniform(0.06, 0.14)) if kind == "star_fracture" else None
+                crack_mesh(f"{tube_path}/sdg_crack", lines, width, spot)
+                info["crack_width_mm"] = round(width * 25.4, 2)
                 if rng.random() < 0.4:                         # damage is on the body; the cap may be on or off
                     set_visible(cap_path, False)
                     info["cap_off"] = True
@@ -422,6 +447,8 @@ try:
         plastic_sh.GetInput("roughness").Set(float(rng.uniform(0.03, 0.3)))
         plastic_sh.GetInput("specular").Set(float(rng.uniform(0.25, 0.6)))
         frac_opacity.Set(float(rng.uniform(0.5, 0.9)))
+        crack_rough.Set(float(rng.uniform(0.5, 0.9)))
+        crack_opacity.Set(float(rng.uniform(0.85, 1.0)))
         jt = rng.uniform(-0.12, 0.12, 3)                       # about +-3 mm and +-0.4 deg of camera pose jitter
         ax = rng.normal(size=3); ax /= np.linalg.norm(ax)
         cam_xf_op.Set(rot(ax, rng.uniform(0, 0.4)) * trans(jt) * cam_xf0)

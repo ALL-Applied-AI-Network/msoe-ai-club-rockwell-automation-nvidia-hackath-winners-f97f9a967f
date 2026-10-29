@@ -1,6 +1,6 @@
 {
- "best_macro_f1": 0.9085,
- "best_epoch": 13,
+ "best_macro_f1": 0.9905,
+ "best_epoch": 14,
  "epochs_done": 15,
  "classes": [
   "pass",
@@ -11,67 +11,67 @@
  ],
  "metrics": {
   "all": {
-   "accuracy": 0.9851,
-   "macro_f1": 0.9085,
+   "accuracy": 0.9976,
+   "macro_f1": 0.9905,
    "per_class": {
     "pass": {
-     "precision": 0.9767,
-     "recall": 0.9997,
-     "f1": 0.9881,
-     "support": 3903
+     "precision": 0.9967,
+     "recall": 1.0,
+     "f1": 0.9983,
+     "support": 4224
     },
     "missing_cap": {
-     "precision": 0.9724,
-     "recall": 1.0,
-     "f1": 0.986,
-     "support": 1940
+     "precision": 0.9949,
+     "recall": 0.9995,
+     "f1": 0.9972,
+     "support": 2137
     },
     "crooked_cap": {
-     "precision": 0.9995,
-     "recall": 0.9995,
-     "f1": 0.9995,
-     "support": 1939
+     "precision": 1.0,
+     "recall": 0.9986,
+     "f1": 0.9993,
+     "support": 2152
     },
     "damaged_vial": {
-     "precision": 1.0,
-     "recall": 0.3975,
-     "f1": 0.5689,
-     "support": 244
+     "precision": 0.9962,
+     "recall": 0.9223,
+     "f1": 0.9578,
+     "support": 283
     },
     "no_vial": {
      "precision": 1.0,
      "recall": 1.0,
      "f1": 1.0,
-     "support": 1984
+     "support": 2124
     }
    },
    "confusion": [
     [
-     3902,
+     4224,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     2136,
      0,
      1,
+     0
+    ],
+    [
+     3,
+     0,
+     2149,
      0,
      0
     ],
     [
+     11,
+     11,
      0,
-     1940,
-     0,
-     0,
-     0
-    ],
-    [
-     1,
-     0,
-     1938,
-     0,
-     0
-    ],
-    [
-     92,
-     55,
-     0,
-     97,
+     261,
      0
     ],
     [
@@ -79,58 +79,58 @@
      0,
      0,
      0,
-     1984
+     2124
     ]
    ]
   },
   "tray_G": {
-   "accuracy": 0.9998,
-   "macro_f1": 0.9998,
+   "accuracy": 0.9999,
+   "macro_f1": 0.9999,
    "per_class": {
     "pass": {
-     "precision": 0.9997,
-     "recall": 0.9997,
-     "f1": 0.9997,
-     "support": 3796
+     "precision": 0.9998,
+     "recall": 1.0,
+     "f1": 0.9999,
+     "support": 4050
     },
     "missing_cap": {
      "precision": 1.0,
      "recall": 1.0,
      "f1": 1.0,
-     "support": 1871
+     "support": 2053
     },
     "crooked_cap": {
-     "precision": 0.9995,
+     "precision": 1.0,
      "recall": 0.9995,
-     "f1": 0.9995,
-     "support": 1919
+     "f1": 0.9998,
+     "support": 2127
     },
     "no_vial": {
      "precision": 1.0,
      "recall": 1.0,
      "f1": 1.0,
-     "support": 1924
+     "support": 2060
     }
    },
    "confusion": [
     [
-     3795,
+     4050,
      0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     2053,
+     0,
+     0,
+     0
+    ],
+    [
      1,
      0,
-     0
-    ],
-    [
-     0,
-     1871,
-     0,
-     0,
-     0
-    ],
-    [
-     1,
-     0,
-     1918,
+     2126,
      0,
      0
     ],
@@ -146,48 +146,48 @@
      0,
      0,
      0,
-     1924
+     2060
     ]
    ]
   },
   "tray_S": {
-   "accuracy": 0.706,
-   "macro_f1": 0.7966,
+   "accuracy": 0.9603,
+   "macro_f1": 0.9625,
    "per_class": {
     "pass": {
-     "precision": 0.5377,
+     "precision": 0.9305,
      "recall": 1.0,
-     "f1": 0.6993,
-     "support": 107
+     "f1": 0.964,
+     "support": 174
     },
     "missing_cap": {
-     "precision": 0.5565,
-     "recall": 1.0,
-     "f1": 0.715,
-     "support": 69
+     "precision": 0.883,
+     "recall": 0.9881,
+     "f1": 0.9326,
+     "support": 84
     },
     "crooked_cap": {
      "precision": 1.0,
-     "recall": 1.0,
-     "f1": 1.0,
-     "support": 20
+     "recall": 0.92,
+     "f1": 0.9583,
+     "support": 25
     },
     "damaged_vial": {
-     "precision": 1.0,
-     "recall": 0.3975,
-     "f1": 0.5689,
-     "support": 244
+     "precision": 0.9962,
+     "recall": 0.9223,
+     "f1": 0.9578,
+     "support": 283
     },
     "no_vial": {
      "precision": 1.0,
      "recall": 1.0,
      "f1": 1.0,
-     "support": 60
+     "support": 64
     }
    },
    "confusion": [
     [
-     107,
+     174,
      0,
      0,
      0,
@@ -195,41 +195,41 @@
     ],
     [
      0,
-     69,
+     83,
      0,
+     1,
+     0
+    ],
+    [
+     2,
      0,
+     23,
+     0,
+     0
+    ],
+    [
+     11,
+     11,
+     0,
+     261,
      0
     ],
     [
      0,
      0,
-     20,
-     0,
-     0
-    ],
-    [
-     92,
-     55,
-     0,
-     97,
-     0
-    ],
-    [
      0,
      0,
-     0,
-     0,
-     60
+     64
     ]
    ]
   }
  },
  "train_counts": {
-  "crooked_cap": 16258,
-  "no_vial": 16515,
-  "pass": 33449,
-  "missing_cap": 16757,
-  "damaged_vial": 2011
+  "crooked_cap": 16049,
+  "no_vial": 16568,
+  "pass": 32914,
+  "missing_cap": 16571,
+  "damaged_vial": 1978
  },
  "args": {
   "crops": "crops",
