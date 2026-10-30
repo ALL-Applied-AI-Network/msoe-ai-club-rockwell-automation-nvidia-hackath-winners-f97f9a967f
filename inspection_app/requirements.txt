@@ -1,5 +1,7 @@
 fastapi==0.119.0
-starlette>=0.40,<0.49
+# FastAPI 0.119 is incompatible with Starlette 1.x (Router no longer accepts
+# the on_startup/on_shutdown arguments FastAPI still passes).
+starlette==0.48.0
 uvicorn>=0.30,<1
 python-multipart>=0.0.18
 httpx>=0.27,<0.29

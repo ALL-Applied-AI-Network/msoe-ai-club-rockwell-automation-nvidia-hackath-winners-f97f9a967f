@@ -1,0 +1,67 @@
+{
+  "version": "v3_HZ",
+  "source_job": "8b7c5eb5-adad-4d34-934d-5db2174e693d",
+  "model_sha256": "050eab098da06634664ea66fe1381f3376d40df7c3ab47ef91a7c42e575ea8bb",
+  "released_for_testing": true,
+  "production_validated": false,
+  "training_source": "synthetic-only",
+  "crop_mode": "review_bbox_v1",
+  "development_gate": {
+    "passed": false,
+    "checks": {
+      "fewer_unflagged_defects": true,
+      "higher_accuracy": false,
+      "no_extra_good_holds": false
+    }
+  },
+  "real_reference": {
+    "scope": "Two supplied public development reference images; no independent real-line generalization claim",
+    "v2": {
+      "positions": 120,
+      "accuracy": 0.26666666666666666,
+      "macro_f1": 0.2374741200828157,
+      "defects": 24,
+      "defects_accepted": 3,
+      "defects_as_empty": 1,
+      "good": 49,
+      "good_held": 47,
+      "uncertain": 26
+    },
+    "v3_HZ": {
+      "positions": 120,
+      "accuracy": 0.24166666666666667,
+      "macro_f1": 0.15794994994994996,
+      "defects": 24,
+      "defects_accepted": 0,
+      "defects_as_empty": 2,
+      "good": 49,
+      "good_held": 48,
+      "uncertain": 9
+    }
+  },
+  "synthetic_test": {
+    "v2": {
+      "positions": 1440,
+      "accuracy": 0.5770833333333333,
+      "macro_f1": 0.5431135876523976,
+      "defects": 635,
+      "defects_accepted": 21,
+      "defects_as_empty": 71,
+      "good": 396,
+      "good_held": 105,
+      "uncertain": 233
+    },
+    "v3_HZ": {
+      "positions": 1440,
+      "accuracy": 0.9486111111111111,
+      "macro_f1": 0.9418198589208572,
+      "defects": 635,
+      "defects_accepted": 24,
+      "defects_as_empty": 0,
+      "good": 396,
+      "good_held": 9,
+      "uncertain": 8
+    }
+  },
+  "limitation": "Only two reviewed real development reference images; independent real-line testing remains required."
+}

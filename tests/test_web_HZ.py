@@ -76,7 +76,7 @@ class WebBoundaryTests(unittest.TestCase):
     def test_status_uses_cached_health_without_contacting_dgx(self):
         with patch.object(server.cosmos_client,'call',side_effect=AssertionError('network on status path')):
             data=self.client.get('/api/status').json()
-        self.assertIn('v3_HZ',data['models']);self.assertIn('ready',data['cosmos'])
+        self.assertIn('v4_HZ',data['models']);self.assertIn('ready',data['cosmos'])
 
     def test_invalid_counts_and_image_are_rejected_before_inference(self):
         with patch.object(server.engine,'inspect',side_effect=AssertionError('invalid input reached inference')):
@@ -94,12 +94,12 @@ class WebBoundaryTests(unittest.TestCase):
     def test_inspection_contract_and_model_session_isolation(self):
         session='3d5ba681-2aa3-4f8e-b60e-3936a3e14cc5'
         with patch.object(server.engine,'inspect',side_effect=fake_inspect):
-            for version in ['v2','v3_HZ']:
+            for version in ['v2','v3_HZ','v4_HZ']:
                 response=self.client.post('/api/inspect',data={'version':version,'session':session},files={'file':('image.jpg',self.image,'image/jpeg')})
                 self.assertEqual(response.status_code,200,response.text[:200]);data=response.json()
                 self.assertEqual(len(data['slots']),60);self.assertTrue(data['overlay'].startswith('data:image/jpeg;base64,'))
                 self.assertEqual(data['events'],[])
-            self.assertIn((session,'v2'),server.sessions);self.assertIn((session,'v3_HZ'),server.sessions)
+            self.assertIn((session,'v2'),server.sessions);self.assertIn((session,'v3_HZ'),server.sessions);self.assertIn((session,'v4_HZ'),server.sessions)
 
     def test_video_samples_and_only_final_frame_receives_completion_signal(self):
         with tempfile.TemporaryDirectory() as directory:

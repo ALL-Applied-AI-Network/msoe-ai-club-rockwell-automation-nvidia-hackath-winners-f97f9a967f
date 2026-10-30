@@ -1,0 +1,7 @@
+{
+  "model_sha256": "b0349200d8f30fc840a658afe810bcb7480fb698fc9c3b24aa4d35207369705b",
+  "review_sha256": "22de39ca98a254f9e65fa03b889fd5915c5d342faa3bf40a138818107fcaff6c",
+  "training_source": "synthetic+reviewed-real",
+  "real_repeat": 64,
+  "limitation": "The two reviewed real images were used for training; their fit metrics are not independent accuracy."
+}

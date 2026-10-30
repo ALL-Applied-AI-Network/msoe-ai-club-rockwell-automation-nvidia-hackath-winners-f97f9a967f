@@ -1,0 +1,20 @@
+{
+  "version": "v4_HZ",
+  "source_job": "e1ebf13c-e778-4575-8d18-7e2b69a873b9",
+  "model_sha256": "b0349200d8f30fc840a658afe810bcb7480fb698fc9c3b24aa4d35207369705b",
+  "released_for_testing": true,
+  "production_validated": false,
+  "training_source": "synthetic+reviewed-real",
+  "reviewed_real_training_fit": {
+    "positions": 120,
+    "accuracy": 1.0,
+    "good_held": 0,
+    "defects_accepted": 0
+  },
+  "frozen_synthetic_test": {
+    "positions": 1440,
+    "accuracy": 0.95,
+    "macro_f1": 0.9450873342392399
+  },
+  "limitation": "The two reviewed real images were used for training; their perfect fit is not independent accuracy. Test on new labeled camera frames before production use."
+}

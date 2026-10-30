@@ -1,0 +1,512 @@
+{
+  "version": "v4_HZ",
+  "model_sha256": "b0349200d8f30fc840a658afe810bcb7480fb698fc9c3b24aa4d35207369705b",
+  "device": "NVIDIA GB10",
+  "inference_ms": 394.4666131865233,
+  "training_source": "synthetic+reviewed-real",
+  "scope": "Two supplied public development reference images; no independent real-line generalization claim",
+  "all": {
+    "positions": 120,
+    "accuracy": 1.0,
+    "raw_accuracy": 1.0,
+    "confusion": [
+      [
+        48,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        14,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        47,
+        0
+      ]
+    ],
+    "classes": [
+      "pass",
+      "missing_cap",
+      "crooked_cap",
+      "damaged_vial",
+      "no_vial",
+      "uncertain"
+    ],
+    "defects": 25,
+    "defects_accepted": 0,
+    "defects_as_empty": 0,
+    "occupied_as_empty": 0,
+    "empty_as_occupied": 0,
+    "uncertain": 0,
+    "good": 48,
+    "good_held": 0,
+    "per_class": {
+      "pass": {
+        "support": 48,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "missing_cap": {
+        "support": 6,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "crooked_cap": {
+        "support": 14,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "damaged_vial": {
+        "support": 5,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "no_vial": {
+        "support": 47,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "macro_f1": 1.0,
+    "diagnostic_threshold_to_catch_all_known_defects": 0.9894430041313171,
+    "diagnostic_false_alarm_rate_at_that_threshold": 0.0,
+    "threshold_note": "Post-hoc diagnostic only; not deployed or an unbiased accuracy claim",
+    "errors": []
+  },
+  "by_image": {
+    "tray_000001.jpg": {
+      "positions": 60,
+      "accuracy": 1.0,
+      "raw_accuracy": 1.0,
+      "confusion": [
+        [
+          30,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          20,
+          0
+        ]
+      ],
+      "classes": [
+        "pass",
+        "missing_cap",
+        "crooked_cap",
+        "damaged_vial",
+        "no_vial",
+        "uncertain"
+      ],
+      "defects": 10,
+      "defects_accepted": 0,
+      "defects_as_empty": 0,
+      "occupied_as_empty": 0,
+      "empty_as_occupied": 0,
+      "uncertain": 0,
+      "good": 30,
+      "good_held": 0,
+      "per_class": {
+        "pass": {
+          "support": 30,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "missing_cap": {
+          "support": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "crooked_cap": {
+          "support": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "damaged_vial": {
+          "support": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "no_vial": {
+          "support": 20,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "macro_f1": 1.0,
+      "diagnostic_threshold_to_catch_all_known_defects": 0.9900292158126831,
+      "diagnostic_false_alarm_rate_at_that_threshold": 0.0,
+      "threshold_note": "Post-hoc diagnostic only; not deployed or an unbiased accuracy claim",
+      "errors": []
+    },
+    "tray_000122.jpg": {
+      "positions": 60,
+      "accuracy": 1.0,
+      "raw_accuracy": 1.0,
+      "confusion": [
+        [
+          18,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          11,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          27,
+          0
+        ]
+      ],
+      "classes": [
+        "pass",
+        "missing_cap",
+        "crooked_cap",
+        "damaged_vial",
+        "no_vial",
+        "uncertain"
+      ],
+      "defects": 15,
+      "defects_accepted": 0,
+      "defects_as_empty": 0,
+      "occupied_as_empty": 0,
+      "empty_as_occupied": 0,
+      "uncertain": 0,
+      "good": 18,
+      "good_held": 0,
+      "per_class": {
+        "pass": {
+          "support": 18,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "missing_cap": {
+          "support": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "crooked_cap": {
+          "support": 11,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "damaged_vial": {
+          "support": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "no_vial": {
+          "support": 27,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "macro_f1": 1.0,
+      "diagnostic_threshold_to_catch_all_known_defects": 0.9894430041313171,
+      "diagnostic_false_alarm_rate_at_that_threshold": 0.0,
+      "threshold_note": "Post-hoc diagnostic only; not deployed or an unbiased accuracy claim",
+      "errors": []
+    }
+  },
+  "by_tray": {
+    "G": {
+      "positions": 60,
+      "accuracy": 1.0,
+      "raw_accuracy": 1.0,
+      "confusion": [
+        [
+          48,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          7,
+          0
+        ]
+      ],
+      "classes": [
+        "pass",
+        "missing_cap",
+        "crooked_cap",
+        "damaged_vial",
+        "no_vial",
+        "uncertain"
+      ],
+      "defects": 5,
+      "defects_accepted": 0,
+      "defects_as_empty": 0,
+      "occupied_as_empty": 0,
+      "empty_as_occupied": 0,
+      "uncertain": 0,
+      "good": 48,
+      "good_held": 0,
+      "per_class": {
+        "pass": {
+          "support": 48,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "missing_cap": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "crooked_cap": {
+          "support": 5,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "damaged_vial": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "no_vial": {
+          "support": 7,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "macro_f1": 1.0,
+      "diagnostic_threshold_to_catch_all_known_defects": 0.9929955005645752,
+      "diagnostic_false_alarm_rate_at_that_threshold": 0.0,
+      "threshold_note": "Post-hoc diagnostic only; not deployed or an unbiased accuracy claim",
+      "errors": []
+    },
+    "S": {
+      "positions": 60,
+      "accuracy": 1.0,
+      "raw_accuracy": 1.0,
+      "confusion": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          9,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          5,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          40,
+          0
+        ]
+      ],
+      "classes": [
+        "pass",
+        "missing_cap",
+        "crooked_cap",
+        "damaged_vial",
+        "no_vial",
+        "uncertain"
+      ],
+      "defects": 20,
+      "defects_accepted": 0,
+      "defects_as_empty": 0,
+      "occupied_as_empty": 0,
+      "empty_as_occupied": 0,
+      "uncertain": 0,
+      "good": 0,
+      "good_held": 0,
+      "per_class": {
+        "pass": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "missing_cap": {
+          "support": 6,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "crooked_cap": {
+          "support": 9,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "damaged_vial": {
+          "support": 5,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "no_vial": {
+          "support": 40,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "macro_f1": 1.0,
+      "diagnostic_threshold_to_catch_all_known_defects": 0.9894430041313171,
+      "diagnostic_false_alarm_rate_at_that_threshold": null,
+      "threshold_note": "Post-hoc diagnostic only; not deployed or an unbiased accuracy claim",
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,4213 @@
+{
+  "version": "v2",
+  "model_sha256": "453be3f451fe5e6f801ffd6b20e7096aa8cc1724244db13711c9ce4566c456af",
+  "device": "NVIDIA GB10",
+  "inference_ms": 347.37385995686054,
+  "training_source": "synthetic-only",
+  "scope": "Two supplied public development reference images; no independent real-line generalization claim",
+  "all": {
+    "positions": 120,
+    "accuracy": 0.26666666666666666,
+    "raw_accuracy": 0.3333333333333333,
+    "confusion": [
+      [
+        2,
+        0,
+        45,
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        0,
+        3
+      ],
+      [
+        3,
+        0,
+        4,
+        1,
+        1,
+        6
+      ],
+      [
+        0,
+        0,
+        1,
+        2,
+        0,
+        1
+      ],
+      [
+        2,
+        0,
+        4,
+        2,
+        24,
+        15
+      ]
+    ],
+    "classes": [
+      "pass",
+      "missing_cap",
+      "crooked_cap",
+      "damaged_vial",
+      "no_vial",
+      "uncertain"
+    ],
+    "defects": 24,
+    "defects_accepted": 3,
+    "defects_as_empty": 1,
+    "occupied_as_empty": 1,
+    "empty_as_occupied": 8,
+    "uncertain": 26,
+    "good": 49,
+    "good_held": 47,
+    "per_class": {
+      "pass": {
+        "support": 49,
+        "precision": 0.2857142857142857,
+        "recall": 0.04081632653061224,
+        "f1": 0.07142857142857142
+      },
+      "missing_cap": {
+        "support": 5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "crooked_cap": {
+        "support": 15,
+        "precision": 0.07407407407407407,
+        "recall": 0.26666666666666666,
+        "f1": 0.11594202898550725
+      },
+      "damaged_vial": {
+        "support": 4,
+        "precision": 0.25,
+        "recall": 0.5,
+        "f1": 0.3333333333333333
+      },
+      "no_vial": {
+        "support": 47,
+        "precision": 0.96,
+        "recall": 0.5106382978723404,
+        "f1": 0.6666666666666666
+      }
+    },
+    "macro_f1": 0.2374741200828157,
+    "diagnostic_threshold_to_catch_all_known_defects": 0.12308299541473389,
+    "diagnostic_false_alarm_rate_at_that_threshold": 1.0,
+    "threshold_note": "Post-hoc diagnostic only; not deployed or an unbiased accuracy claim",
+    "errors": [
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G01",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.03042346052825451,
+          "missing_cap": 0.040092770010232925,
+          "crooked_cap": 0.8786569237709045,
+          "damaged_vial": 0.016487909480929375,
+          "no_vial": 0.034338995814323425
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G02",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.012838984839618206,
+          "missing_cap": 0.02000352181494236,
+          "crooked_cap": 0.9376698136329651,
+          "damaged_vial": 0.010870476253330708,
+          "no_vial": 0.018617194145917892
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G03",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.020952332764863968,
+          "missing_cap": 0.012302489951252937,
+          "crooked_cap": 0.9407165050506592,
+          "damaged_vial": 0.014985334128141403,
+          "no_vial": 0.011043366976082325
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G04",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.032197315245866776,
+          "missing_cap": 0.01176148559898138,
+          "crooked_cap": 0.9231995940208435,
+          "damaged_vial": 0.013099412433803082,
+          "no_vial": 0.019742265343666077
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G05",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.07441851496696472,
+          "missing_cap": 0.04605291783809662,
+          "crooked_cap": 0.7835535407066345,
+          "damaged_vial": 0.0620909184217453,
+          "no_vial": 0.033884093165397644
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G06",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.014909779652953148,
+          "missing_cap": 0.01567867211997509,
+          "crooked_cap": 0.9422107934951782,
+          "damaged_vial": 0.013288263231515884,
+          "no_vial": 0.013912534341216087
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G07",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.012764270417392254,
+          "missing_cap": 0.018765151500701904,
+          "crooked_cap": 0.9440234303474426,
+          "damaged_vial": 0.010153044946491718,
+          "no_vial": 0.014294049702584743
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G08",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.01817452535033226,
+          "missing_cap": 0.028673676773905754,
+          "crooked_cap": 0.9257761836051941,
+          "damaged_vial": 0.010001018643379211,
+          "no_vial": 0.017374588176608086
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G09",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.0425582155585289,
+          "missing_cap": 0.04292912036180496,
+          "crooked_cap": 0.869485080242157,
+          "damaged_vial": 0.016657955944538116,
+          "no_vial": 0.028369557112455368
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G10",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.047697458416223526,
+          "missing_cap": 0.010736757889389992,
+          "crooked_cap": 0.9210242629051208,
+          "damaged_vial": 0.008960085920989513,
+          "no_vial": 0.011581392958760262
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G11",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.028219856321811676,
+          "missing_cap": 0.01211840845644474,
+          "crooked_cap": 0.9196534752845764,
+          "damaged_vial": 0.02918626368045807,
+          "no_vial": 0.010821986012160778
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G12",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.0899151861667633,
+          "missing_cap": 0.06371765583753586,
+          "crooked_cap": 0.8059995770454407,
+          "damaged_vial": 0.0192961897701025,
+          "no_vial": 0.021071426570415497
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G13",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.18405435979366302,
+          "missing_cap": 0.0326584130525589,
+          "crooked_cap": 0.752114474773407,
+          "damaged_vial": 0.01858581230044365,
+          "no_vial": 0.01258687674999237
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G14",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.03214453533291817,
+          "missing_cap": 0.013581640087068081,
+          "crooked_cap": 0.9257935285568237,
+          "damaged_vial": 0.01889362744987011,
+          "no_vial": 0.009586609899997711
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G15",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.14442354440689087,
+          "missing_cap": 0.019225986674427986,
+          "crooked_cap": 0.6829906702041626,
+          "damaged_vial": 0.14047622680664062,
+          "no_vial": 0.012883571907877922
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G16",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.028546759858727455,
+          "missing_cap": 0.010716812685132027,
+          "crooked_cap": 0.9374794960021973,
+          "damaged_vial": 0.011229815892875195,
+          "no_vial": 0.012027159333229065
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G17",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.025882191956043243,
+          "missing_cap": 0.015574727207422256,
+          "crooked_cap": 0.9246290922164917,
+          "damaged_vial": 0.011678117327392101,
+          "no_vial": 0.022235795855522156
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G18",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.046407949179410934,
+          "missing_cap": 0.016982384026050568,
+          "crooked_cap": 0.9128631353378296,
+          "damaged_vial": 0.013889359310269356,
+          "no_vial": 0.00985710322856903
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G19",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.01323825865983963,
+          "missing_cap": 0.008436922915279865,
+          "crooked_cap": 0.9607018232345581,
+          "damaged_vial": 0.008344755508005619,
+          "no_vial": 0.009278341196477413
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G20",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.08296021819114685,
+          "missing_cap": 0.03721635416150093,
+          "crooked_cap": 0.8049620985984802,
+          "damaged_vial": 0.0608581081032753,
+          "no_vial": 0.014003199525177479
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G21",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.01118942815810442,
+          "missing_cap": 0.013800419867038727,
+          "crooked_cap": 0.9408955574035645,
+          "damaged_vial": 0.012478155083954334,
+          "no_vial": 0.021636422723531723
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G22",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.027075184509158134,
+          "missing_cap": 0.01322790514677763,
+          "crooked_cap": 0.9377087354660034,
+          "damaged_vial": 0.013461345806717873,
+          "no_vial": 0.008526897057890892
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G23",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.024438094347715378,
+          "missing_cap": 0.01704828441143036,
+          "crooked_cap": 0.9403480291366577,
+          "damaged_vial": 0.009301915764808655,
+          "no_vial": 0.008863743394613266
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G24",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.02385328896343708,
+          "missing_cap": 0.04845503717660904,
+          "crooked_cap": 0.9076856970787048,
+          "damaged_vial": 0.00836117472499609,
+          "no_vial": 0.011644848622381687
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G26",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.017047559842467308,
+          "missing_cap": 0.014342403039336205,
+          "crooked_cap": 0.9399405121803284,
+          "damaged_vial": 0.012533477507531643,
+          "no_vial": 0.01613609679043293
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G27",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.011706442572176456,
+          "missing_cap": 0.017705757170915604,
+          "crooked_cap": 0.9486922025680542,
+          "damaged_vial": 0.012491730973124504,
+          "no_vial": 0.00940379872918129
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G28",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.022232215851545334,
+          "missing_cap": 0.01493243221193552,
+          "crooked_cap": 0.9477909803390503,
+          "damaged_vial": 0.00703679071739316,
+          "no_vial": 0.008007541298866272
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G29",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.021603059023618698,
+          "missing_cap": 0.022843020036816597,
+          "crooked_cap": 0.9092820882797241,
+          "damaged_vial": 0.022867143154144287,
+          "no_vial": 0.023404734209179878
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "G30",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.22949402034282684,
+          "missing_cap": 0.019958842545747757,
+          "crooked_cap": 0.7023270130157471,
+          "damaged_vial": 0.021492157131433487,
+          "no_vial": 0.026727864518761635
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "S01",
+        "tray": "S",
+        "class": "missing_cap",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.07798433303833008,
+          "missing_cap": 0.04430002719163895,
+          "crooked_cap": 0.03958151116967201,
+          "damaged_vial": 0.8052499890327454,
+          "no_vial": 0.032884109765291214
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "S03",
+        "tray": "S",
+        "class": "crooked_cap",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.5793383717536926,
+          "missing_cap": 0.03945378586649895,
+          "crooked_cap": 0.290069580078125,
+          "damaged_vial": 0.0533534400165081,
+          "no_vial": 0.03778482973575592
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "S04",
+        "tray": "S",
+        "class": "missing_cap",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.48763135075569153,
+          "missing_cap": 0.06834277510643005,
+          "crooked_cap": 0.24642999470233917,
+          "damaged_vial": 0.14588342607021332,
+          "no_vial": 0.051712434738874435
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "S05",
+        "tray": "S",
+        "class": "crooked_cap",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.42742934823036194,
+          "missing_cap": 0.06990493834018707,
+          "crooked_cap": 0.2119615525007248,
+          "damaged_vial": 0.2254975140094757,
+          "no_vial": 0.0652066320180893
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "S06",
+        "tray": "S",
+        "class": "missing_cap",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.05145295709371567,
+          "missing_cap": 0.05547880381345749,
+          "crooked_cap": 0.07801546901464462,
+          "damaged_vial": 0.778997540473938,
+          "no_vial": 0.03605515882372856
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "S07",
+        "tray": "S",
+        "class": "crooked_cap",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.22948677837848663,
+          "missing_cap": 0.3720185160636902,
+          "crooked_cap": 0.25978514552116394,
+          "damaged_vial": 0.07856030762195587,
+          "no_vial": 0.06014927476644516
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "S08",
+        "tray": "S",
+        "class": "damaged_vial",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.2859801948070526,
+          "missing_cap": 0.09610488265752792,
+          "crooked_cap": 0.17345203459262848,
+          "damaged_vial": 0.3900699019432068,
+          "no_vial": 0.05439288914203644
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "S10",
+        "tray": "S",
+        "class": "crooked_cap",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.2762119472026825,
+          "missing_cap": 0.05568375810980797,
+          "crooked_cap": 0.4920071065425873,
+          "damaged_vial": 0.1423470377922058,
+          "no_vial": 0.033750176429748535
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "S11",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.09971697628498077,
+          "missing_cap": 0.16150663793087006,
+          "crooked_cap": 0.07819800823926926,
+          "damaged_vial": 0.5704975128173828,
+          "no_vial": 0.0900808796286583
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "S12",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.15828219056129456,
+          "missing_cap": 0.4993744492530823,
+          "crooked_cap": 0.2184969186782837,
+          "damaged_vial": 0.06284111738204956,
+          "no_vial": 0.06100522354245186
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "S13",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.1809595227241516,
+          "missing_cap": 0.3036900460720062,
+          "crooked_cap": 0.1487220823764801,
+          "damaged_vial": 0.3271142840385437,
+          "no_vial": 0.039514120668172836
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "S14",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.13565002381801605,
+          "missing_cap": 0.2819056808948517,
+          "crooked_cap": 0.13089703023433685,
+          "damaged_vial": 0.39860624074935913,
+          "no_vial": 0.0529409684240818
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "S15",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.32868441939353943,
+          "missing_cap": 0.050143495202064514,
+          "crooked_cap": 0.5318314433097839,
+          "damaged_vial": 0.059918686747550964,
+          "no_vial": 0.029421962797641754
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "S17",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.09144116193056107,
+          "missing_cap": 0.17359615862369537,
+          "crooked_cap": 0.19760079681873322,
+          "damaged_vial": 0.0865841880440712,
+          "no_vial": 0.45077770948410034
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "S18",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.04867319017648697,
+          "missing_cap": 0.21625928580760956,
+          "crooked_cap": 0.06514843553304672,
+          "damaged_vial": 0.5331043601036072,
+          "no_vial": 0.1368146687746048
+        }
+      },
+      {
+        "image": "tray_000001.jpg",
+        "pos": "S20",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.21915772557258606,
+          "missing_cap": 0.3169150948524475,
+          "crooked_cap": 0.0907873660326004,
+          "damaged_vial": 0.06116049364209175,
+          "no_vial": 0.31197938323020935
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G01",
+        "tray": "G",
+        "class": "no_vial",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.5736868977546692,
+          "missing_cap": 0.06344995647668839,
+          "crooked_cap": 0.24716654419898987,
+          "damaged_vial": 0.03150872886180878,
+          "no_vial": 0.08418792486190796
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G02",
+        "tray": "G",
+        "class": "no_vial",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.42633068561553955,
+          "missing_cap": 0.11989559978246689,
+          "crooked_cap": 0.18840457499027252,
+          "damaged_vial": 0.04873625934123993,
+          "no_vial": 0.2166328877210617
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G03",
+        "tray": "G",
+        "class": "no_vial",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.4878985285758972,
+          "missing_cap": 0.09486580640077591,
+          "crooked_cap": 0.28414618968963623,
+          "damaged_vial": 0.021779008209705353,
+          "no_vial": 0.11131046712398529
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G06",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.011364655569195747,
+          "missing_cap": 0.0120698856189847,
+          "crooked_cap": 0.959203839302063,
+          "damaged_vial": 0.008549457415938377,
+          "no_vial": 0.008812151849269867
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G07",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.008274829015135765,
+          "missing_cap": 0.006425891537219286,
+          "crooked_cap": 0.9715409278869629,
+          "damaged_vial": 0.007325159385800362,
+          "no_vial": 0.006433194503188133
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G08",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.4812173545360565,
+          "missing_cap": 0.019526632502675056,
+          "crooked_cap": 0.4418882429599762,
+          "damaged_vial": 0.04370145499706268,
+          "no_vial": 0.013666232116520405
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G09",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.2717258036136627,
+          "missing_cap": 0.0695536881685257,
+          "crooked_cap": 0.6092629432678223,
+          "damaged_vial": 0.027084358036518097,
+          "no_vial": 0.022373205050826073
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G10",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.010264033451676369,
+          "missing_cap": 0.008348117582499981,
+          "crooked_cap": 0.962073802947998,
+          "damaged_vial": 0.010431177914142609,
+          "no_vial": 0.0088829779997468
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G11",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.007431700360029936,
+          "missing_cap": 0.008101505227386951,
+          "crooked_cap": 0.966559886932373,
+          "damaged_vial": 0.009045598097145557,
+          "no_vial": 0.008861280977725983
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G12",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.028574008494615555,
+          "missing_cap": 0.017866110429167747,
+          "crooked_cap": 0.9289546012878418,
+          "damaged_vial": 0.012101405300199986,
+          "no_vial": 0.012503932230174541
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G15",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.014705315232276917,
+          "missing_cap": 0.0072974879294633865,
+          "crooked_cap": 0.9586359262466431,
+          "damaged_vial": 0.011035251431167126,
+          "no_vial": 0.008325997740030289
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G17",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.007187244016677141,
+          "missing_cap": 0.008404555730521679,
+          "crooked_cap": 0.9654096961021423,
+          "damaged_vial": 0.008463028818368912,
+          "no_vial": 0.010535462759435177
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G19",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.015419265255331993,
+          "missing_cap": 0.01154889352619648,
+          "crooked_cap": 0.9496174454689026,
+          "damaged_vial": 0.012632865458726883,
+          "no_vial": 0.010781493969261646
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G20",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.08379540592432022,
+          "missing_cap": 0.026817891746759415,
+          "crooked_cap": 0.1899220198392868,
+          "damaged_vial": 0.6807900667190552,
+          "no_vial": 0.018674610182642937
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G24",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.03883621096611023,
+          "missing_cap": 0.01707783341407776,
+          "crooked_cap": 0.9134820699691772,
+          "damaged_vial": 0.017931846901774406,
+          "no_vial": 0.012672056443989277
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G25",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.08156593888998032,
+          "missing_cap": 0.0214128065854311,
+          "crooked_cap": 0.8441406488418579,
+          "damaged_vial": 0.03511635586619377,
+          "no_vial": 0.01776428334414959
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G26",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.007831389084458351,
+          "missing_cap": 0.007960045710206032,
+          "crooked_cap": 0.9664551019668579,
+          "damaged_vial": 0.0081360824406147,
+          "no_vial": 0.009617392905056477
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G27",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.012488746084272861,
+          "missing_cap": 0.009002644568681717,
+          "crooked_cap": 0.9587406516075134,
+          "damaged_vial": 0.010808438993990421,
+          "no_vial": 0.008959502913057804
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G28",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.013352546840906143,
+          "missing_cap": 0.00834441464394331,
+          "crooked_cap": 0.9631995558738708,
+          "damaged_vial": 0.006968731991946697,
+          "no_vial": 0.008134765550494194
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G29",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.019388612359762192,
+          "missing_cap": 0.012589494697749615,
+          "crooked_cap": 0.9312660694122314,
+          "damaged_vial": 0.014610003679990768,
+          "no_vial": 0.022145912051200867
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "G30",
+        "tray": "G",
+        "class": "pass",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.295445054769516,
+          "missing_cap": 0.026489809155464172,
+          "crooked_cap": 0.6336154341697693,
+          "damaged_vial": 0.03049890324473381,
+          "no_vial": 0.013950804248452187
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S01",
+        "tray": "S",
+        "class": "crooked_cap",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.13494746387004852,
+          "missing_cap": 0.043730515986680984,
+          "crooked_cap": 0.10218030214309692,
+          "damaged_vial": 0.6941848993301392,
+          "no_vial": 0.02495683543384075
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S02",
+        "tray": "S",
+        "class": "damaged_vial",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.16255797445774078,
+          "missing_cap": 0.07899997383356094,
+          "crooked_cap": 0.6841678619384766,
+          "damaged_vial": 0.05385473370552063,
+          "no_vial": 0.020419415086507797
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S03",
+        "tray": "S",
+        "class": "crooked_cap",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.8769170045852661,
+          "missing_cap": 0.011301006190478802,
+          "crooked_cap": 0.0739152729511261,
+          "damaged_vial": 0.017200076952576637,
+          "no_vial": 0.02066667750477791
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S04",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.6824284195899963,
+          "missing_cap": 0.0666399672627449,
+          "crooked_cap": 0.19151602685451508,
+          "damaged_vial": 0.02659410424530506,
+          "no_vial": 0.03282145410776138
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S05",
+        "tray": "S",
+        "class": "crooked_cap",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.7490929961204529,
+          "missing_cap": 0.014568513259291649,
+          "crooked_cap": 0.183332622051239,
+          "damaged_vial": 0.03478275611996651,
+          "no_vial": 0.01822306402027607
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S06",
+        "tray": "S",
+        "class": "crooked_cap",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.1574489027261734,
+          "missing_cap": 0.03316408023238182,
+          "crooked_cap": 0.40472808480262756,
+          "damaged_vial": 0.3798993229866028,
+          "no_vial": 0.024759648367762566
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S07",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.16246932744979858,
+          "missing_cap": 0.018753686919808388,
+          "crooked_cap": 0.7977440357208252,
+          "damaged_vial": 0.010272201150655746,
+          "no_vial": 0.010760817676782608
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S08",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.3937126100063324,
+          "missing_cap": 0.02455889992415905,
+          "crooked_cap": 0.5195163488388062,
+          "damaged_vial": 0.018647996708750725,
+          "no_vial": 0.043564144521951675
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S10",
+        "tray": "S",
+        "class": "crooked_cap",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.47425588965415955,
+          "missing_cap": 0.015633417293429375,
+          "crooked_cap": 0.4309978783130646,
+          "damaged_vial": 0.06744726002216339,
+          "no_vial": 0.01166554819792509
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S11",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.10554268211126328,
+          "missing_cap": 0.1645692139863968,
+          "crooked_cap": 0.36958035826683044,
+          "damaged_vial": 0.15933987498283386,
+          "no_vial": 0.20096786320209503
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S12",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.16856275498867035,
+          "missing_cap": 0.07538577914237976,
+          "crooked_cap": 0.3733322322368622,
+          "damaged_vial": 0.017493536695837975,
+          "no_vial": 0.36522576212882996
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S13",
+        "tray": "S",
+        "class": "crooked_cap",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.20757174491882324,
+          "missing_cap": 0.23283270001411438,
+          "crooked_cap": 0.2093912810087204,
+          "damaged_vial": 0.10580743104219437,
+          "no_vial": 0.24439691007137299
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S14",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.05954393744468689,
+          "missing_cap": 0.16908422112464905,
+          "crooked_cap": 0.06261931359767914,
+          "damaged_vial": 0.3155879080295563,
+          "no_vial": 0.393164724111557
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S15",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.12123974412679672,
+          "missing_cap": 0.025227824226021767,
+          "crooked_cap": 0.7974966168403625,
+          "damaged_vial": 0.022623969241976738,
+          "no_vial": 0.0334119014441967
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S16",
+        "tray": "S",
+        "class": "crooked_cap",
+        "prediction": "no_vial",
+        "probabilities": {
+          "pass": 0.0390363410115242,
+          "missing_cap": 0.04031142592430115,
+          "crooked_cap": 0.03710853308439255,
+          "damaged_vial": 0.01089405920356512,
+          "no_vial": 0.872649610042572
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S17",
+        "tray": "S",
+        "class": "missing_cap",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.29534950852394104,
+          "missing_cap": 0.17756076157093048,
+          "crooked_cap": 0.2704375684261322,
+          "damaged_vial": 0.03797198832035065,
+          "no_vial": 0.21868012845516205
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S18",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.1967989057302475,
+          "missing_cap": 0.3937598466873169,
+          "crooked_cap": 0.12186163663864136,
+          "damaged_vial": 0.1511850357055664,
+          "no_vial": 0.13639450073242188
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S20",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.44982466101646423,
+          "missing_cap": 0.12926195561885834,
+          "crooked_cap": 0.26262181997299194,
+          "damaged_vial": 0.0622202530503273,
+          "no_vial": 0.09607136994600296
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S22",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.37287747859954834,
+          "missing_cap": 0.06516857445240021,
+          "crooked_cap": 0.4633919298648834,
+          "damaged_vial": 0.023287814110517502,
+          "no_vial": 0.07527417689561844
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S23",
+        "tray": "S",
+        "class": "missing_cap",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.15151919424533844,
+          "missing_cap": 0.2117892950773239,
+          "crooked_cap": 0.11828892678022385,
+          "damaged_vial": 0.10181279480457306,
+          "no_vial": 0.41658976674079895
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S25",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.21667182445526123,
+          "missing_cap": 0.2620549201965332,
+          "crooked_cap": 0.14533086121082306,
+          "damaged_vial": 0.09526173770427704,
+          "no_vial": 0.28068065643310547
+        }
+      },
+      {
+        "image": "tray_000122.jpg",
+        "pos": "S26",
+        "tray": "S",
+        "class": "no_vial",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.0503198616206646,
+          "missing_cap": 0.08926945924758911,
+          "crooked_cap": 0.056450486183166504,
+          "damaged_vial": 0.3062327802181244,
+          "no_vial": 0.4977273941040039
+        }
+      }
+    ]
+  },
+  "by_image": {
+    "tray_000001.jpg": {
+      "positions": 60,
+      "accuracy": 0.25,
+      "raw_accuracy": 0.3,
+      "confusion": [
+        [
+          1,
+          0,
+          29,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          12,
+          5
+        ]
+      ],
+      "classes": [
+        "pass",
+        "missing_cap",
+        "crooked_cap",
+        "damaged_vial",
+        "no_vial",
+        "uncertain"
+      ],
+      "defects": 10,
+      "defects_accepted": 1,
+      "defects_as_empty": 0,
+      "occupied_as_empty": 0,
+      "empty_as_occupied": 3,
+      "uncertain": 10,
+      "good": 30,
+      "good_held": 29,
+      "per_class": {
+        "pass": {
+          "support": 30,
+          "precision": 0.5,
+          "recall": 0.03333333333333333,
+          "f1": 0.0625
+        },
+        "missing_cap": {
+          "support": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "crooked_cap": {
+          "support": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "damaged_vial": {
+          "support": 3,
+          "precision": 0.3333333333333333,
+          "recall": 0.6666666666666666,
+          "f1": 0.4444444444444444
+        },
+        "no_vial": {
+          "support": 20,
+          "precision": 1.0,
+          "recall": 0.6,
+          "f1": 0.7499999999999999
+        }
+      },
+      "macro_f1": 0.25138888888888883,
+      "diagnostic_threshold_to_catch_all_known_defects": 0.4206616282463074,
+      "diagnostic_false_alarm_rate_at_that_threshold": 0.9666666666666667,
+      "threshold_note": "Post-hoc diagnostic only; not deployed or an unbiased accuracy claim",
+      "errors": [
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G01",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.03042346052825451,
+            "missing_cap": 0.040092770010232925,
+            "crooked_cap": 0.8786569237709045,
+            "damaged_vial": 0.016487909480929375,
+            "no_vial": 0.034338995814323425
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G02",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.012838984839618206,
+            "missing_cap": 0.02000352181494236,
+            "crooked_cap": 0.9376698136329651,
+            "damaged_vial": 0.010870476253330708,
+            "no_vial": 0.018617194145917892
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G03",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.020952332764863968,
+            "missing_cap": 0.012302489951252937,
+            "crooked_cap": 0.9407165050506592,
+            "damaged_vial": 0.014985334128141403,
+            "no_vial": 0.011043366976082325
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G04",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.032197315245866776,
+            "missing_cap": 0.01176148559898138,
+            "crooked_cap": 0.9231995940208435,
+            "damaged_vial": 0.013099412433803082,
+            "no_vial": 0.019742265343666077
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G05",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.07441851496696472,
+            "missing_cap": 0.04605291783809662,
+            "crooked_cap": 0.7835535407066345,
+            "damaged_vial": 0.0620909184217453,
+            "no_vial": 0.033884093165397644
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G06",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.014909779652953148,
+            "missing_cap": 0.01567867211997509,
+            "crooked_cap": 0.9422107934951782,
+            "damaged_vial": 0.013288263231515884,
+            "no_vial": 0.013912534341216087
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G07",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.012764270417392254,
+            "missing_cap": 0.018765151500701904,
+            "crooked_cap": 0.9440234303474426,
+            "damaged_vial": 0.010153044946491718,
+            "no_vial": 0.014294049702584743
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G08",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.01817452535033226,
+            "missing_cap": 0.028673676773905754,
+            "crooked_cap": 0.9257761836051941,
+            "damaged_vial": 0.010001018643379211,
+            "no_vial": 0.017374588176608086
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G09",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.0425582155585289,
+            "missing_cap": 0.04292912036180496,
+            "crooked_cap": 0.869485080242157,
+            "damaged_vial": 0.016657955944538116,
+            "no_vial": 0.028369557112455368
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G10",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.047697458416223526,
+            "missing_cap": 0.010736757889389992,
+            "crooked_cap": 0.9210242629051208,
+            "damaged_vial": 0.008960085920989513,
+            "no_vial": 0.011581392958760262
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G11",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.028219856321811676,
+            "missing_cap": 0.01211840845644474,
+            "crooked_cap": 0.9196534752845764,
+            "damaged_vial": 0.02918626368045807,
+            "no_vial": 0.010821986012160778
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G12",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.0899151861667633,
+            "missing_cap": 0.06371765583753586,
+            "crooked_cap": 0.8059995770454407,
+            "damaged_vial": 0.0192961897701025,
+            "no_vial": 0.021071426570415497
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G13",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.18405435979366302,
+            "missing_cap": 0.0326584130525589,
+            "crooked_cap": 0.752114474773407,
+            "damaged_vial": 0.01858581230044365,
+            "no_vial": 0.01258687674999237
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G14",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.03214453533291817,
+            "missing_cap": 0.013581640087068081,
+            "crooked_cap": 0.9257935285568237,
+            "damaged_vial": 0.01889362744987011,
+            "no_vial": 0.009586609899997711
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G15",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.14442354440689087,
+            "missing_cap": 0.019225986674427986,
+            "crooked_cap": 0.6829906702041626,
+            "damaged_vial": 0.14047622680664062,
+            "no_vial": 0.012883571907877922
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G16",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.028546759858727455,
+            "missing_cap": 0.010716812685132027,
+            "crooked_cap": 0.9374794960021973,
+            "damaged_vial": 0.011229815892875195,
+            "no_vial": 0.012027159333229065
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G17",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.025882191956043243,
+            "missing_cap": 0.015574727207422256,
+            "crooked_cap": 0.9246290922164917,
+            "damaged_vial": 0.011678117327392101,
+            "no_vial": 0.022235795855522156
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G18",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.046407949179410934,
+            "missing_cap": 0.016982384026050568,
+            "crooked_cap": 0.9128631353378296,
+            "damaged_vial": 0.013889359310269356,
+            "no_vial": 0.00985710322856903
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G19",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.01323825865983963,
+            "missing_cap": 0.008436922915279865,
+            "crooked_cap": 0.9607018232345581,
+            "damaged_vial": 0.008344755508005619,
+            "no_vial": 0.009278341196477413
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G20",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.08296021819114685,
+            "missing_cap": 0.03721635416150093,
+            "crooked_cap": 0.8049620985984802,
+            "damaged_vial": 0.0608581081032753,
+            "no_vial": 0.014003199525177479
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G21",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.01118942815810442,
+            "missing_cap": 0.013800419867038727,
+            "crooked_cap": 0.9408955574035645,
+            "damaged_vial": 0.012478155083954334,
+            "no_vial": 0.021636422723531723
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G22",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.027075184509158134,
+            "missing_cap": 0.01322790514677763,
+            "crooked_cap": 0.9377087354660034,
+            "damaged_vial": 0.013461345806717873,
+            "no_vial": 0.008526897057890892
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G23",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.024438094347715378,
+            "missing_cap": 0.01704828441143036,
+            "crooked_cap": 0.9403480291366577,
+            "damaged_vial": 0.009301915764808655,
+            "no_vial": 0.008863743394613266
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G24",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.02385328896343708,
+            "missing_cap": 0.04845503717660904,
+            "crooked_cap": 0.9076856970787048,
+            "damaged_vial": 0.00836117472499609,
+            "no_vial": 0.011644848622381687
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G26",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.017047559842467308,
+            "missing_cap": 0.014342403039336205,
+            "crooked_cap": 0.9399405121803284,
+            "damaged_vial": 0.012533477507531643,
+            "no_vial": 0.01613609679043293
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G27",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.011706442572176456,
+            "missing_cap": 0.017705757170915604,
+            "crooked_cap": 0.9486922025680542,
+            "damaged_vial": 0.012491730973124504,
+            "no_vial": 0.00940379872918129
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G28",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.022232215851545334,
+            "missing_cap": 0.01493243221193552,
+            "crooked_cap": 0.9477909803390503,
+            "damaged_vial": 0.00703679071739316,
+            "no_vial": 0.008007541298866272
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G29",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.021603059023618698,
+            "missing_cap": 0.022843020036816597,
+            "crooked_cap": 0.9092820882797241,
+            "damaged_vial": 0.022867143154144287,
+            "no_vial": 0.023404734209179878
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G30",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.22949402034282684,
+            "missing_cap": 0.019958842545747757,
+            "crooked_cap": 0.7023270130157471,
+            "damaged_vial": 0.021492157131433487,
+            "no_vial": 0.026727864518761635
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S01",
+          "tray": "S",
+          "class": "missing_cap",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.07798433303833008,
+            "missing_cap": 0.04430002719163895,
+            "crooked_cap": 0.03958151116967201,
+            "damaged_vial": 0.8052499890327454,
+            "no_vial": 0.032884109765291214
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S03",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.5793383717536926,
+            "missing_cap": 0.03945378586649895,
+            "crooked_cap": 0.290069580078125,
+            "damaged_vial": 0.0533534400165081,
+            "no_vial": 0.03778482973575592
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S04",
+          "tray": "S",
+          "class": "missing_cap",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.48763135075569153,
+            "missing_cap": 0.06834277510643005,
+            "crooked_cap": 0.24642999470233917,
+            "damaged_vial": 0.14588342607021332,
+            "no_vial": 0.051712434738874435
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S05",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.42742934823036194,
+            "missing_cap": 0.06990493834018707,
+            "crooked_cap": 0.2119615525007248,
+            "damaged_vial": 0.2254975140094757,
+            "no_vial": 0.0652066320180893
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S06",
+          "tray": "S",
+          "class": "missing_cap",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.05145295709371567,
+            "missing_cap": 0.05547880381345749,
+            "crooked_cap": 0.07801546901464462,
+            "damaged_vial": 0.778997540473938,
+            "no_vial": 0.03605515882372856
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S07",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.22948677837848663,
+            "missing_cap": 0.3720185160636902,
+            "crooked_cap": 0.25978514552116394,
+            "damaged_vial": 0.07856030762195587,
+            "no_vial": 0.06014927476644516
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S08",
+          "tray": "S",
+          "class": "damaged_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.2859801948070526,
+            "missing_cap": 0.09610488265752792,
+            "crooked_cap": 0.17345203459262848,
+            "damaged_vial": 0.3900699019432068,
+            "no_vial": 0.05439288914203644
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S10",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.2762119472026825,
+            "missing_cap": 0.05568375810980797,
+            "crooked_cap": 0.4920071065425873,
+            "damaged_vial": 0.1423470377922058,
+            "no_vial": 0.033750176429748535
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S11",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.09971697628498077,
+            "missing_cap": 0.16150663793087006,
+            "crooked_cap": 0.07819800823926926,
+            "damaged_vial": 0.5704975128173828,
+            "no_vial": 0.0900808796286583
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S12",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.15828219056129456,
+            "missing_cap": 0.4993744492530823,
+            "crooked_cap": 0.2184969186782837,
+            "damaged_vial": 0.06284111738204956,
+            "no_vial": 0.06100522354245186
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S13",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.1809595227241516,
+            "missing_cap": 0.3036900460720062,
+            "crooked_cap": 0.1487220823764801,
+            "damaged_vial": 0.3271142840385437,
+            "no_vial": 0.039514120668172836
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S14",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.13565002381801605,
+            "missing_cap": 0.2819056808948517,
+            "crooked_cap": 0.13089703023433685,
+            "damaged_vial": 0.39860624074935913,
+            "no_vial": 0.0529409684240818
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S15",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.32868441939353943,
+            "missing_cap": 0.050143495202064514,
+            "crooked_cap": 0.5318314433097839,
+            "damaged_vial": 0.059918686747550964,
+            "no_vial": 0.029421962797641754
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S17",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.09144116193056107,
+            "missing_cap": 0.17359615862369537,
+            "crooked_cap": 0.19760079681873322,
+            "damaged_vial": 0.0865841880440712,
+            "no_vial": 0.45077770948410034
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S18",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.04867319017648697,
+            "missing_cap": 0.21625928580760956,
+            "crooked_cap": 0.06514843553304672,
+            "damaged_vial": 0.5331043601036072,
+            "no_vial": 0.1368146687746048
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S20",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.21915772557258606,
+            "missing_cap": 0.3169150948524475,
+            "crooked_cap": 0.0907873660326004,
+            "damaged_vial": 0.06116049364209175,
+            "no_vial": 0.31197938323020935
+          }
+        }
+      ]
+    },
+    "tray_000122.jpg": {
+      "positions": 60,
+      "accuracy": 0.2833333333333333,
+      "raw_accuracy": 0.36666666666666664,
+      "confusion": [
+        [
+          1,
+          0,
+          16,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          2,
+          0,
+          4,
+          1,
+          1,
+          3
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          0,
+          12,
+          10
+        ]
+      ],
+      "classes": [
+        "pass",
+        "missing_cap",
+        "crooked_cap",
+        "damaged_vial",
+        "no_vial",
+        "uncertain"
+      ],
+      "defects": 14,
+      "defects_accepted": 2,
+      "defects_as_empty": 1,
+      "occupied_as_empty": 1,
+      "empty_as_occupied": 5,
+      "uncertain": 16,
+      "good": 19,
+      "good_held": 18,
+      "per_class": {
+        "pass": {
+          "support": 19,
+          "precision": 0.2,
+          "recall": 0.05263157894736842,
+          "f1": 0.08333333333333333
+        },
+        "missing_cap": {
+          "support": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "crooked_cap": {
+          "support": 11,
+          "precision": 0.16666666666666666,
+          "recall": 0.36363636363636365,
+          "f1": 0.2285714285714286
+        },
+        "damaged_vial": {
+          "support": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "no_vial": {
+          "support": 27,
+          "precision": 0.9230769230769231,
+          "recall": 0.4444444444444444,
+          "f1": 0.6
+        }
+      },
+      "macro_f1": 0.18238095238095237,
+      "diagnostic_threshold_to_catch_all_known_defects": 0.12308299541473389,
+      "diagnostic_false_alarm_rate_at_that_threshold": 1.0,
+      "threshold_note": "Post-hoc diagnostic only; not deployed or an unbiased accuracy claim",
+      "errors": [
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G01",
+          "tray": "G",
+          "class": "no_vial",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.5736868977546692,
+            "missing_cap": 0.06344995647668839,
+            "crooked_cap": 0.24716654419898987,
+            "damaged_vial": 0.03150872886180878,
+            "no_vial": 0.08418792486190796
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G02",
+          "tray": "G",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.42633068561553955,
+            "missing_cap": 0.11989559978246689,
+            "crooked_cap": 0.18840457499027252,
+            "damaged_vial": 0.04873625934123993,
+            "no_vial": 0.2166328877210617
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G03",
+          "tray": "G",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.4878985285758972,
+            "missing_cap": 0.09486580640077591,
+            "crooked_cap": 0.28414618968963623,
+            "damaged_vial": 0.021779008209705353,
+            "no_vial": 0.11131046712398529
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G06",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.011364655569195747,
+            "missing_cap": 0.0120698856189847,
+            "crooked_cap": 0.959203839302063,
+            "damaged_vial": 0.008549457415938377,
+            "no_vial": 0.008812151849269867
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G07",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.008274829015135765,
+            "missing_cap": 0.006425891537219286,
+            "crooked_cap": 0.9715409278869629,
+            "damaged_vial": 0.007325159385800362,
+            "no_vial": 0.006433194503188133
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G08",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.4812173545360565,
+            "missing_cap": 0.019526632502675056,
+            "crooked_cap": 0.4418882429599762,
+            "damaged_vial": 0.04370145499706268,
+            "no_vial": 0.013666232116520405
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G09",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.2717258036136627,
+            "missing_cap": 0.0695536881685257,
+            "crooked_cap": 0.6092629432678223,
+            "damaged_vial": 0.027084358036518097,
+            "no_vial": 0.022373205050826073
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G10",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.010264033451676369,
+            "missing_cap": 0.008348117582499981,
+            "crooked_cap": 0.962073802947998,
+            "damaged_vial": 0.010431177914142609,
+            "no_vial": 0.0088829779997468
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G11",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.007431700360029936,
+            "missing_cap": 0.008101505227386951,
+            "crooked_cap": 0.966559886932373,
+            "damaged_vial": 0.009045598097145557,
+            "no_vial": 0.008861280977725983
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G12",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.028574008494615555,
+            "missing_cap": 0.017866110429167747,
+            "crooked_cap": 0.9289546012878418,
+            "damaged_vial": 0.012101405300199986,
+            "no_vial": 0.012503932230174541
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G15",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.014705315232276917,
+            "missing_cap": 0.0072974879294633865,
+            "crooked_cap": 0.9586359262466431,
+            "damaged_vial": 0.011035251431167126,
+            "no_vial": 0.008325997740030289
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G17",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.007187244016677141,
+            "missing_cap": 0.008404555730521679,
+            "crooked_cap": 0.9654096961021423,
+            "damaged_vial": 0.008463028818368912,
+            "no_vial": 0.010535462759435177
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G19",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.015419265255331993,
+            "missing_cap": 0.01154889352619648,
+            "crooked_cap": 0.9496174454689026,
+            "damaged_vial": 0.012632865458726883,
+            "no_vial": 0.010781493969261646
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G20",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.08379540592432022,
+            "missing_cap": 0.026817891746759415,
+            "crooked_cap": 0.1899220198392868,
+            "damaged_vial": 0.6807900667190552,
+            "no_vial": 0.018674610182642937
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G24",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.03883621096611023,
+            "missing_cap": 0.01707783341407776,
+            "crooked_cap": 0.9134820699691772,
+            "damaged_vial": 0.017931846901774406,
+            "no_vial": 0.012672056443989277
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G25",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.08156593888998032,
+            "missing_cap": 0.0214128065854311,
+            "crooked_cap": 0.8441406488418579,
+            "damaged_vial": 0.03511635586619377,
+            "no_vial": 0.01776428334414959
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G26",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.007831389084458351,
+            "missing_cap": 0.007960045710206032,
+            "crooked_cap": 0.9664551019668579,
+            "damaged_vial": 0.0081360824406147,
+            "no_vial": 0.009617392905056477
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G27",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.012488746084272861,
+            "missing_cap": 0.009002644568681717,
+            "crooked_cap": 0.9587406516075134,
+            "damaged_vial": 0.010808438993990421,
+            "no_vial": 0.008959502913057804
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G28",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.013352546840906143,
+            "missing_cap": 0.00834441464394331,
+            "crooked_cap": 0.9631995558738708,
+            "damaged_vial": 0.006968731991946697,
+            "no_vial": 0.008134765550494194
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G29",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.019388612359762192,
+            "missing_cap": 0.012589494697749615,
+            "crooked_cap": 0.9312660694122314,
+            "damaged_vial": 0.014610003679990768,
+            "no_vial": 0.022145912051200867
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G30",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.295445054769516,
+            "missing_cap": 0.026489809155464172,
+            "crooked_cap": 0.6336154341697693,
+            "damaged_vial": 0.03049890324473381,
+            "no_vial": 0.013950804248452187
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S01",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.13494746387004852,
+            "missing_cap": 0.043730515986680984,
+            "crooked_cap": 0.10218030214309692,
+            "damaged_vial": 0.6941848993301392,
+            "no_vial": 0.02495683543384075
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S02",
+          "tray": "S",
+          "class": "damaged_vial",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.16255797445774078,
+            "missing_cap": 0.07899997383356094,
+            "crooked_cap": 0.6841678619384766,
+            "damaged_vial": 0.05385473370552063,
+            "no_vial": 0.020419415086507797
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S03",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.8769170045852661,
+            "missing_cap": 0.011301006190478802,
+            "crooked_cap": 0.0739152729511261,
+            "damaged_vial": 0.017200076952576637,
+            "no_vial": 0.02066667750477791
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S04",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.6824284195899963,
+            "missing_cap": 0.0666399672627449,
+            "crooked_cap": 0.19151602685451508,
+            "damaged_vial": 0.02659410424530506,
+            "no_vial": 0.03282145410776138
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S05",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.7490929961204529,
+            "missing_cap": 0.014568513259291649,
+            "crooked_cap": 0.183332622051239,
+            "damaged_vial": 0.03478275611996651,
+            "no_vial": 0.01822306402027607
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S06",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.1574489027261734,
+            "missing_cap": 0.03316408023238182,
+            "crooked_cap": 0.40472808480262756,
+            "damaged_vial": 0.3798993229866028,
+            "no_vial": 0.024759648367762566
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S07",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.16246932744979858,
+            "missing_cap": 0.018753686919808388,
+            "crooked_cap": 0.7977440357208252,
+            "damaged_vial": 0.010272201150655746,
+            "no_vial": 0.010760817676782608
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S08",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.3937126100063324,
+            "missing_cap": 0.02455889992415905,
+            "crooked_cap": 0.5195163488388062,
+            "damaged_vial": 0.018647996708750725,
+            "no_vial": 0.043564144521951675
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S10",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.47425588965415955,
+            "missing_cap": 0.015633417293429375,
+            "crooked_cap": 0.4309978783130646,
+            "damaged_vial": 0.06744726002216339,
+            "no_vial": 0.01166554819792509
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S11",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.10554268211126328,
+            "missing_cap": 0.1645692139863968,
+            "crooked_cap": 0.36958035826683044,
+            "damaged_vial": 0.15933987498283386,
+            "no_vial": 0.20096786320209503
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S12",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.16856275498867035,
+            "missing_cap": 0.07538577914237976,
+            "crooked_cap": 0.3733322322368622,
+            "damaged_vial": 0.017493536695837975,
+            "no_vial": 0.36522576212882996
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S13",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.20757174491882324,
+            "missing_cap": 0.23283270001411438,
+            "crooked_cap": 0.2093912810087204,
+            "damaged_vial": 0.10580743104219437,
+            "no_vial": 0.24439691007137299
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S14",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.05954393744468689,
+            "missing_cap": 0.16908422112464905,
+            "crooked_cap": 0.06261931359767914,
+            "damaged_vial": 0.3155879080295563,
+            "no_vial": 0.393164724111557
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S15",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.12123974412679672,
+            "missing_cap": 0.025227824226021767,
+            "crooked_cap": 0.7974966168403625,
+            "damaged_vial": 0.022623969241976738,
+            "no_vial": 0.0334119014441967
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S16",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "no_vial",
+          "probabilities": {
+            "pass": 0.0390363410115242,
+            "missing_cap": 0.04031142592430115,
+            "crooked_cap": 0.03710853308439255,
+            "damaged_vial": 0.01089405920356512,
+            "no_vial": 0.872649610042572
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S17",
+          "tray": "S",
+          "class": "missing_cap",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.29534950852394104,
+            "missing_cap": 0.17756076157093048,
+            "crooked_cap": 0.2704375684261322,
+            "damaged_vial": 0.03797198832035065,
+            "no_vial": 0.21868012845516205
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S18",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.1967989057302475,
+            "missing_cap": 0.3937598466873169,
+            "crooked_cap": 0.12186163663864136,
+            "damaged_vial": 0.1511850357055664,
+            "no_vial": 0.13639450073242188
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S20",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.44982466101646423,
+            "missing_cap": 0.12926195561885834,
+            "crooked_cap": 0.26262181997299194,
+            "damaged_vial": 0.0622202530503273,
+            "no_vial": 0.09607136994600296
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S22",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.37287747859954834,
+            "missing_cap": 0.06516857445240021,
+            "crooked_cap": 0.4633919298648834,
+            "damaged_vial": 0.023287814110517502,
+            "no_vial": 0.07527417689561844
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S23",
+          "tray": "S",
+          "class": "missing_cap",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.15151919424533844,
+            "missing_cap": 0.2117892950773239,
+            "crooked_cap": 0.11828892678022385,
+            "damaged_vial": 0.10181279480457306,
+            "no_vial": 0.41658976674079895
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S25",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.21667182445526123,
+            "missing_cap": 0.2620549201965332,
+            "crooked_cap": 0.14533086121082306,
+            "damaged_vial": 0.09526173770427704,
+            "no_vial": 0.28068065643310547
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S26",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.0503198616206646,
+            "missing_cap": 0.08926945924758911,
+            "crooked_cap": 0.056450486183166504,
+            "damaged_vial": 0.3062327802181244,
+            "no_vial": 0.4977273941040039
+          }
+        }
+      ]
+    }
+  },
+  "by_tray": {
+    "G": {
+      "positions": 60,
+      "accuracy": 0.16666666666666666,
+      "raw_accuracy": 0.18333333333333332,
+      "confusion": [
+        [
+          2,
+          0,
+          45,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          4,
+          2
+        ]
+      ],
+      "classes": [
+        "pass",
+        "missing_cap",
+        "crooked_cap",
+        "damaged_vial",
+        "no_vial",
+        "uncertain"
+      ],
+      "defects": 4,
+      "defects_accepted": 0,
+      "defects_as_empty": 0,
+      "occupied_as_empty": 0,
+      "empty_as_occupied": 1,
+      "uncertain": 3,
+      "good": 49,
+      "good_held": 47,
+      "per_class": {
+        "pass": {
+          "support": 49,
+          "precision": 0.6666666666666666,
+          "recall": 0.04081632653061224,
+          "f1": 0.07692307692307691
+        },
+        "missing_cap": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "crooked_cap": {
+          "support": 4,
+          "precision": 0.08163265306122448,
+          "recall": 1.0,
+          "f1": 0.15094339622641506
+        },
+        "damaged_vial": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "no_vial": {
+          "support": 7,
+          "precision": 1.0,
+          "recall": 0.5714285714285714,
+          "f1": 0.7272727272727273
+        }
+      },
+      "macro_f1": 0.31837973347407306,
+      "diagnostic_threshold_to_catch_all_known_defects": 0.8439272046089172,
+      "diagnostic_false_alarm_rate_at_that_threshold": 0.8571428571428571,
+      "threshold_note": "Post-hoc diagnostic only; not deployed or an unbiased accuracy claim",
+      "errors": [
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G01",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.03042346052825451,
+            "missing_cap": 0.040092770010232925,
+            "crooked_cap": 0.8786569237709045,
+            "damaged_vial": 0.016487909480929375,
+            "no_vial": 0.034338995814323425
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G02",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.012838984839618206,
+            "missing_cap": 0.02000352181494236,
+            "crooked_cap": 0.9376698136329651,
+            "damaged_vial": 0.010870476253330708,
+            "no_vial": 0.018617194145917892
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G03",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.020952332764863968,
+            "missing_cap": 0.012302489951252937,
+            "crooked_cap": 0.9407165050506592,
+            "damaged_vial": 0.014985334128141403,
+            "no_vial": 0.011043366976082325
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G04",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.032197315245866776,
+            "missing_cap": 0.01176148559898138,
+            "crooked_cap": 0.9231995940208435,
+            "damaged_vial": 0.013099412433803082,
+            "no_vial": 0.019742265343666077
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G05",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.07441851496696472,
+            "missing_cap": 0.04605291783809662,
+            "crooked_cap": 0.7835535407066345,
+            "damaged_vial": 0.0620909184217453,
+            "no_vial": 0.033884093165397644
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G06",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.014909779652953148,
+            "missing_cap": 0.01567867211997509,
+            "crooked_cap": 0.9422107934951782,
+            "damaged_vial": 0.013288263231515884,
+            "no_vial": 0.013912534341216087
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G07",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.012764270417392254,
+            "missing_cap": 0.018765151500701904,
+            "crooked_cap": 0.9440234303474426,
+            "damaged_vial": 0.010153044946491718,
+            "no_vial": 0.014294049702584743
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G08",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.01817452535033226,
+            "missing_cap": 0.028673676773905754,
+            "crooked_cap": 0.9257761836051941,
+            "damaged_vial": 0.010001018643379211,
+            "no_vial": 0.017374588176608086
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G09",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.0425582155585289,
+            "missing_cap": 0.04292912036180496,
+            "crooked_cap": 0.869485080242157,
+            "damaged_vial": 0.016657955944538116,
+            "no_vial": 0.028369557112455368
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G10",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.047697458416223526,
+            "missing_cap": 0.010736757889389992,
+            "crooked_cap": 0.9210242629051208,
+            "damaged_vial": 0.008960085920989513,
+            "no_vial": 0.011581392958760262
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G11",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.028219856321811676,
+            "missing_cap": 0.01211840845644474,
+            "crooked_cap": 0.9196534752845764,
+            "damaged_vial": 0.02918626368045807,
+            "no_vial": 0.010821986012160778
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G12",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.0899151861667633,
+            "missing_cap": 0.06371765583753586,
+            "crooked_cap": 0.8059995770454407,
+            "damaged_vial": 0.0192961897701025,
+            "no_vial": 0.021071426570415497
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G13",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.18405435979366302,
+            "missing_cap": 0.0326584130525589,
+            "crooked_cap": 0.752114474773407,
+            "damaged_vial": 0.01858581230044365,
+            "no_vial": 0.01258687674999237
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G14",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.03214453533291817,
+            "missing_cap": 0.013581640087068081,
+            "crooked_cap": 0.9257935285568237,
+            "damaged_vial": 0.01889362744987011,
+            "no_vial": 0.009586609899997711
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G15",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.14442354440689087,
+            "missing_cap": 0.019225986674427986,
+            "crooked_cap": 0.6829906702041626,
+            "damaged_vial": 0.14047622680664062,
+            "no_vial": 0.012883571907877922
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G16",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.028546759858727455,
+            "missing_cap": 0.010716812685132027,
+            "crooked_cap": 0.9374794960021973,
+            "damaged_vial": 0.011229815892875195,
+            "no_vial": 0.012027159333229065
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G17",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.025882191956043243,
+            "missing_cap": 0.015574727207422256,
+            "crooked_cap": 0.9246290922164917,
+            "damaged_vial": 0.011678117327392101,
+            "no_vial": 0.022235795855522156
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G18",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.046407949179410934,
+            "missing_cap": 0.016982384026050568,
+            "crooked_cap": 0.9128631353378296,
+            "damaged_vial": 0.013889359310269356,
+            "no_vial": 0.00985710322856903
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G19",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.01323825865983963,
+            "missing_cap": 0.008436922915279865,
+            "crooked_cap": 0.9607018232345581,
+            "damaged_vial": 0.008344755508005619,
+            "no_vial": 0.009278341196477413
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G20",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.08296021819114685,
+            "missing_cap": 0.03721635416150093,
+            "crooked_cap": 0.8049620985984802,
+            "damaged_vial": 0.0608581081032753,
+            "no_vial": 0.014003199525177479
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G21",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.01118942815810442,
+            "missing_cap": 0.013800419867038727,
+            "crooked_cap": 0.9408955574035645,
+            "damaged_vial": 0.012478155083954334,
+            "no_vial": 0.021636422723531723
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G22",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.027075184509158134,
+            "missing_cap": 0.01322790514677763,
+            "crooked_cap": 0.9377087354660034,
+            "damaged_vial": 0.013461345806717873,
+            "no_vial": 0.008526897057890892
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G23",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.024438094347715378,
+            "missing_cap": 0.01704828441143036,
+            "crooked_cap": 0.9403480291366577,
+            "damaged_vial": 0.009301915764808655,
+            "no_vial": 0.008863743394613266
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G24",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.02385328896343708,
+            "missing_cap": 0.04845503717660904,
+            "crooked_cap": 0.9076856970787048,
+            "damaged_vial": 0.00836117472499609,
+            "no_vial": 0.011644848622381687
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G26",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.017047559842467308,
+            "missing_cap": 0.014342403039336205,
+            "crooked_cap": 0.9399405121803284,
+            "damaged_vial": 0.012533477507531643,
+            "no_vial": 0.01613609679043293
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G27",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.011706442572176456,
+            "missing_cap": 0.017705757170915604,
+            "crooked_cap": 0.9486922025680542,
+            "damaged_vial": 0.012491730973124504,
+            "no_vial": 0.00940379872918129
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G28",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.022232215851545334,
+            "missing_cap": 0.01493243221193552,
+            "crooked_cap": 0.9477909803390503,
+            "damaged_vial": 0.00703679071739316,
+            "no_vial": 0.008007541298866272
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G29",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.021603059023618698,
+            "missing_cap": 0.022843020036816597,
+            "crooked_cap": 0.9092820882797241,
+            "damaged_vial": 0.022867143154144287,
+            "no_vial": 0.023404734209179878
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "G30",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.22949402034282684,
+            "missing_cap": 0.019958842545747757,
+            "crooked_cap": 0.7023270130157471,
+            "damaged_vial": 0.021492157131433487,
+            "no_vial": 0.026727864518761635
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G01",
+          "tray": "G",
+          "class": "no_vial",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.5736868977546692,
+            "missing_cap": 0.06344995647668839,
+            "crooked_cap": 0.24716654419898987,
+            "damaged_vial": 0.03150872886180878,
+            "no_vial": 0.08418792486190796
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G02",
+          "tray": "G",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.42633068561553955,
+            "missing_cap": 0.11989559978246689,
+            "crooked_cap": 0.18840457499027252,
+            "damaged_vial": 0.04873625934123993,
+            "no_vial": 0.2166328877210617
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G03",
+          "tray": "G",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.4878985285758972,
+            "missing_cap": 0.09486580640077591,
+            "crooked_cap": 0.28414618968963623,
+            "damaged_vial": 0.021779008209705353,
+            "no_vial": 0.11131046712398529
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G06",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.011364655569195747,
+            "missing_cap": 0.0120698856189847,
+            "crooked_cap": 0.959203839302063,
+            "damaged_vial": 0.008549457415938377,
+            "no_vial": 0.008812151849269867
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G07",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.008274829015135765,
+            "missing_cap": 0.006425891537219286,
+            "crooked_cap": 0.9715409278869629,
+            "damaged_vial": 0.007325159385800362,
+            "no_vial": 0.006433194503188133
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G08",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.4812173545360565,
+            "missing_cap": 0.019526632502675056,
+            "crooked_cap": 0.4418882429599762,
+            "damaged_vial": 0.04370145499706268,
+            "no_vial": 0.013666232116520405
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G09",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.2717258036136627,
+            "missing_cap": 0.0695536881685257,
+            "crooked_cap": 0.6092629432678223,
+            "damaged_vial": 0.027084358036518097,
+            "no_vial": 0.022373205050826073
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G10",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.010264033451676369,
+            "missing_cap": 0.008348117582499981,
+            "crooked_cap": 0.962073802947998,
+            "damaged_vial": 0.010431177914142609,
+            "no_vial": 0.0088829779997468
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G11",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.007431700360029936,
+            "missing_cap": 0.008101505227386951,
+            "crooked_cap": 0.966559886932373,
+            "damaged_vial": 0.009045598097145557,
+            "no_vial": 0.008861280977725983
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G12",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.028574008494615555,
+            "missing_cap": 0.017866110429167747,
+            "crooked_cap": 0.9289546012878418,
+            "damaged_vial": 0.012101405300199986,
+            "no_vial": 0.012503932230174541
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G15",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.014705315232276917,
+            "missing_cap": 0.0072974879294633865,
+            "crooked_cap": 0.9586359262466431,
+            "damaged_vial": 0.011035251431167126,
+            "no_vial": 0.008325997740030289
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G17",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.007187244016677141,
+            "missing_cap": 0.008404555730521679,
+            "crooked_cap": 0.9654096961021423,
+            "damaged_vial": 0.008463028818368912,
+            "no_vial": 0.010535462759435177
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G19",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.015419265255331993,
+            "missing_cap": 0.01154889352619648,
+            "crooked_cap": 0.9496174454689026,
+            "damaged_vial": 0.012632865458726883,
+            "no_vial": 0.010781493969261646
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G20",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.08379540592432022,
+            "missing_cap": 0.026817891746759415,
+            "crooked_cap": 0.1899220198392868,
+            "damaged_vial": 0.6807900667190552,
+            "no_vial": 0.018674610182642937
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G24",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.03883621096611023,
+            "missing_cap": 0.01707783341407776,
+            "crooked_cap": 0.9134820699691772,
+            "damaged_vial": 0.017931846901774406,
+            "no_vial": 0.012672056443989277
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G25",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.08156593888998032,
+            "missing_cap": 0.0214128065854311,
+            "crooked_cap": 0.8441406488418579,
+            "damaged_vial": 0.03511635586619377,
+            "no_vial": 0.01776428334414959
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G26",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.007831389084458351,
+            "missing_cap": 0.007960045710206032,
+            "crooked_cap": 0.9664551019668579,
+            "damaged_vial": 0.0081360824406147,
+            "no_vial": 0.009617392905056477
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G27",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.012488746084272861,
+            "missing_cap": 0.009002644568681717,
+            "crooked_cap": 0.9587406516075134,
+            "damaged_vial": 0.010808438993990421,
+            "no_vial": 0.008959502913057804
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G28",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.013352546840906143,
+            "missing_cap": 0.00834441464394331,
+            "crooked_cap": 0.9631995558738708,
+            "damaged_vial": 0.006968731991946697,
+            "no_vial": 0.008134765550494194
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G29",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.019388612359762192,
+            "missing_cap": 0.012589494697749615,
+            "crooked_cap": 0.9312660694122314,
+            "damaged_vial": 0.014610003679990768,
+            "no_vial": 0.022145912051200867
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "G30",
+          "tray": "G",
+          "class": "pass",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.295445054769516,
+            "missing_cap": 0.026489809155464172,
+            "crooked_cap": 0.6336154341697693,
+            "damaged_vial": 0.03049890324473381,
+            "no_vial": 0.013950804248452187
+          }
+        }
+      ]
+    },
+    "S": {
+      "positions": 60,
+      "accuracy": 0.36666666666666664,
+      "raw_accuracy": 0.48333333333333334,
+      "confusion": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          3
+        ],
+        [
+          3,
+          0,
+          0,
+          1,
+          1,
+          6
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          4,
+          2,
+          20,
+          13
+        ]
+      ],
+      "classes": [
+        "pass",
+        "missing_cap",
+        "crooked_cap",
+        "damaged_vial",
+        "no_vial",
+        "uncertain"
+      ],
+      "defects": 20,
+      "defects_accepted": 3,
+      "defects_as_empty": 1,
+      "occupied_as_empty": 1,
+      "empty_as_occupied": 7,
+      "uncertain": 23,
+      "good": 0,
+      "good_held": 0,
+      "per_class": {
+        "pass": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "missing_cap": {
+          "support": 5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "crooked_cap": {
+          "support": 11,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "damaged_vial": {
+          "support": 4,
+          "precision": 0.2857142857142857,
+          "recall": 0.5,
+          "f1": 0.36363636363636365
+        },
+        "no_vial": {
+          "support": 40,
+          "precision": 0.9523809523809523,
+          "recall": 0.5,
+          "f1": 0.6557377049180327
+        }
+      },
+      "macro_f1": 0.2548435171385991,
+      "diagnostic_threshold_to_catch_all_known_defects": 0.12308299541473389,
+      "diagnostic_false_alarm_rate_at_that_threshold": null,
+      "threshold_note": "Post-hoc diagnostic only; not deployed or an unbiased accuracy claim",
+      "errors": [
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S01",
+          "tray": "S",
+          "class": "missing_cap",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.07798433303833008,
+            "missing_cap": 0.04430002719163895,
+            "crooked_cap": 0.03958151116967201,
+            "damaged_vial": 0.8052499890327454,
+            "no_vial": 0.032884109765291214
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S03",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.5793383717536926,
+            "missing_cap": 0.03945378586649895,
+            "crooked_cap": 0.290069580078125,
+            "damaged_vial": 0.0533534400165081,
+            "no_vial": 0.03778482973575592
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S04",
+          "tray": "S",
+          "class": "missing_cap",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.48763135075569153,
+            "missing_cap": 0.06834277510643005,
+            "crooked_cap": 0.24642999470233917,
+            "damaged_vial": 0.14588342607021332,
+            "no_vial": 0.051712434738874435
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S05",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.42742934823036194,
+            "missing_cap": 0.06990493834018707,
+            "crooked_cap": 0.2119615525007248,
+            "damaged_vial": 0.2254975140094757,
+            "no_vial": 0.0652066320180893
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S06",
+          "tray": "S",
+          "class": "missing_cap",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.05145295709371567,
+            "missing_cap": 0.05547880381345749,
+            "crooked_cap": 0.07801546901464462,
+            "damaged_vial": 0.778997540473938,
+            "no_vial": 0.03605515882372856
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S07",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.22948677837848663,
+            "missing_cap": 0.3720185160636902,
+            "crooked_cap": 0.25978514552116394,
+            "damaged_vial": 0.07856030762195587,
+            "no_vial": 0.06014927476644516
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S08",
+          "tray": "S",
+          "class": "damaged_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.2859801948070526,
+            "missing_cap": 0.09610488265752792,
+            "crooked_cap": 0.17345203459262848,
+            "damaged_vial": 0.3900699019432068,
+            "no_vial": 0.05439288914203644
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S10",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.2762119472026825,
+            "missing_cap": 0.05568375810980797,
+            "crooked_cap": 0.4920071065425873,
+            "damaged_vial": 0.1423470377922058,
+            "no_vial": 0.033750176429748535
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S11",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.09971697628498077,
+            "missing_cap": 0.16150663793087006,
+            "crooked_cap": 0.07819800823926926,
+            "damaged_vial": 0.5704975128173828,
+            "no_vial": 0.0900808796286583
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S12",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.15828219056129456,
+            "missing_cap": 0.4993744492530823,
+            "crooked_cap": 0.2184969186782837,
+            "damaged_vial": 0.06284111738204956,
+            "no_vial": 0.06100522354245186
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S13",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.1809595227241516,
+            "missing_cap": 0.3036900460720062,
+            "crooked_cap": 0.1487220823764801,
+            "damaged_vial": 0.3271142840385437,
+            "no_vial": 0.039514120668172836
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S14",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.13565002381801605,
+            "missing_cap": 0.2819056808948517,
+            "crooked_cap": 0.13089703023433685,
+            "damaged_vial": 0.39860624074935913,
+            "no_vial": 0.0529409684240818
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S15",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.32868441939353943,
+            "missing_cap": 0.050143495202064514,
+            "crooked_cap": 0.5318314433097839,
+            "damaged_vial": 0.059918686747550964,
+            "no_vial": 0.029421962797641754
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S17",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.09144116193056107,
+            "missing_cap": 0.17359615862369537,
+            "crooked_cap": 0.19760079681873322,
+            "damaged_vial": 0.0865841880440712,
+            "no_vial": 0.45077770948410034
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S18",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.04867319017648697,
+            "missing_cap": 0.21625928580760956,
+            "crooked_cap": 0.06514843553304672,
+            "damaged_vial": 0.5331043601036072,
+            "no_vial": 0.1368146687746048
+          }
+        },
+        {
+          "image": "tray_000001.jpg",
+          "pos": "S20",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.21915772557258606,
+            "missing_cap": 0.3169150948524475,
+            "crooked_cap": 0.0907873660326004,
+            "damaged_vial": 0.06116049364209175,
+            "no_vial": 0.31197938323020935
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S01",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.13494746387004852,
+            "missing_cap": 0.043730515986680984,
+            "crooked_cap": 0.10218030214309692,
+            "damaged_vial": 0.6941848993301392,
+            "no_vial": 0.02495683543384075
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S02",
+          "tray": "S",
+          "class": "damaged_vial",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.16255797445774078,
+            "missing_cap": 0.07899997383356094,
+            "crooked_cap": 0.6841678619384766,
+            "damaged_vial": 0.05385473370552063,
+            "no_vial": 0.020419415086507797
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S03",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.8769170045852661,
+            "missing_cap": 0.011301006190478802,
+            "crooked_cap": 0.0739152729511261,
+            "damaged_vial": 0.017200076952576637,
+            "no_vial": 0.02066667750477791
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S04",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.6824284195899963,
+            "missing_cap": 0.0666399672627449,
+            "crooked_cap": 0.19151602685451508,
+            "damaged_vial": 0.02659410424530506,
+            "no_vial": 0.03282145410776138
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S05",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.7490929961204529,
+            "missing_cap": 0.014568513259291649,
+            "crooked_cap": 0.183332622051239,
+            "damaged_vial": 0.03478275611996651,
+            "no_vial": 0.01822306402027607
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S06",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.1574489027261734,
+            "missing_cap": 0.03316408023238182,
+            "crooked_cap": 0.40472808480262756,
+            "damaged_vial": 0.3798993229866028,
+            "no_vial": 0.024759648367762566
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S07",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.16246932744979858,
+            "missing_cap": 0.018753686919808388,
+            "crooked_cap": 0.7977440357208252,
+            "damaged_vial": 0.010272201150655746,
+            "no_vial": 0.010760817676782608
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S08",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.3937126100063324,
+            "missing_cap": 0.02455889992415905,
+            "crooked_cap": 0.5195163488388062,
+            "damaged_vial": 0.018647996708750725,
+            "no_vial": 0.043564144521951675
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S10",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.47425588965415955,
+            "missing_cap": 0.015633417293429375,
+            "crooked_cap": 0.4309978783130646,
+            "damaged_vial": 0.06744726002216339,
+            "no_vial": 0.01166554819792509
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S11",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.10554268211126328,
+            "missing_cap": 0.1645692139863968,
+            "crooked_cap": 0.36958035826683044,
+            "damaged_vial": 0.15933987498283386,
+            "no_vial": 0.20096786320209503
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S12",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.16856275498867035,
+            "missing_cap": 0.07538577914237976,
+            "crooked_cap": 0.3733322322368622,
+            "damaged_vial": 0.017493536695837975,
+            "no_vial": 0.36522576212882996
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S13",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.20757174491882324,
+            "missing_cap": 0.23283270001411438,
+            "crooked_cap": 0.2093912810087204,
+            "damaged_vial": 0.10580743104219437,
+            "no_vial": 0.24439691007137299
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S14",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.05954393744468689,
+            "missing_cap": 0.16908422112464905,
+            "crooked_cap": 0.06261931359767914,
+            "damaged_vial": 0.3155879080295563,
+            "no_vial": 0.393164724111557
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S15",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.12123974412679672,
+            "missing_cap": 0.025227824226021767,
+            "crooked_cap": 0.7974966168403625,
+            "damaged_vial": 0.022623969241976738,
+            "no_vial": 0.0334119014441967
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S16",
+          "tray": "S",
+          "class": "crooked_cap",
+          "prediction": "no_vial",
+          "probabilities": {
+            "pass": 0.0390363410115242,
+            "missing_cap": 0.04031142592430115,
+            "crooked_cap": 0.03710853308439255,
+            "damaged_vial": 0.01089405920356512,
+            "no_vial": 0.872649610042572
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S17",
+          "tray": "S",
+          "class": "missing_cap",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.29534950852394104,
+            "missing_cap": 0.17756076157093048,
+            "crooked_cap": 0.2704375684261322,
+            "damaged_vial": 0.03797198832035065,
+            "no_vial": 0.21868012845516205
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S18",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.1967989057302475,
+            "missing_cap": 0.3937598466873169,
+            "crooked_cap": 0.12186163663864136,
+            "damaged_vial": 0.1511850357055664,
+            "no_vial": 0.13639450073242188
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S20",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.44982466101646423,
+            "missing_cap": 0.12926195561885834,
+            "crooked_cap": 0.26262181997299194,
+            "damaged_vial": 0.0622202530503273,
+            "no_vial": 0.09607136994600296
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S22",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.37287747859954834,
+            "missing_cap": 0.06516857445240021,
+            "crooked_cap": 0.4633919298648834,
+            "damaged_vial": 0.023287814110517502,
+            "no_vial": 0.07527417689561844
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S23",
+          "tray": "S",
+          "class": "missing_cap",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.15151919424533844,
+            "missing_cap": 0.2117892950773239,
+            "crooked_cap": 0.11828892678022385,
+            "damaged_vial": 0.10181279480457306,
+            "no_vial": 0.41658976674079895
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S25",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.21667182445526123,
+            "missing_cap": 0.2620549201965332,
+            "crooked_cap": 0.14533086121082306,
+            "damaged_vial": 0.09526173770427704,
+            "no_vial": 0.28068065643310547
+          }
+        },
+        {
+          "image": "tray_000122.jpg",
+          "pos": "S26",
+          "tray": "S",
+          "class": "no_vial",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.0503198616206646,
+            "missing_cap": 0.08926945924758911,
+            "crooked_cap": 0.056450486183166504,
+            "damaged_vial": 0.3062327802181244,
+            "no_vial": 0.4977273941040039
+          }
+        }
+      ]
+    }
+  }
+}

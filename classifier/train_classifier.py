@@ -41,8 +41,10 @@ ap.add_argument("--seed", type=int, default=301026)
 ap.add_argument("--damage-weight", type=float, default=1.0, help="additional damaged-vial loss weight")
 ap.add_argument("--model-version", default="v2", help="checkpoint release name")
 ap.add_argument("--crop-mode", default="legacy_position_v1")
+ap.add_argument("--real-repeat", type=int, default=0,
+                help="repeat reviewed real_eval crops in training; 0 keeps synthetic-only training")
 a = ap.parse_args()
-if a.epochs < 1 or a.batch < 2 or a.damage_weight <= 0:
+if a.epochs < 1 or a.batch < 2 or a.damage_weight <= 0 or a.real_repeat < 0:
     ap.error("epochs >= 1, batch >= 2 and positive damage weight required")
 if a.out.exists() and any(a.out.iterdir()):
     ap.error("output directory must be empty; existing models are never overwritten")
@@ -56,6 +58,10 @@ split_rows = {s: [r for r in rows if r["split"] == s] for s in ("train", "val")}
 assert all(r.get('source','synthetic') == 'synthetic' for rs in split_rows.values() for r in rs), 'real evaluation rows must never enter training/selection'
 groups = {s: {(r['run'], r['frame']) for r in rs} for s, rs in split_rows.items()}
 assert groups['train'] and groups['val'] and not groups['train'] & groups['val'], 'invalid frame split'
+if a.real_repeat:
+    real = [r for r in rows if r['split'] == 'real_eval']
+    assert len(real) == 120 and all(r.get('source') == 'real_evaluation_only' for r in real), 'expected 120 reviewed real crops'
+    split_rows['train'].extend(real * a.real_repeat)
 if a.limit:
     rng = np.random.default_rng(0)
     split_rows = {s: [r[i] for i in rng.permutation(len(r))[:a.limit]] for s, r in split_rows.items()}
@@ -220,7 +226,8 @@ for ep in range(1, a.epochs + 1):
         best, best_metrics, best_epoch = f1, m, ep
         torch.save({"state_dict": model.state_dict(), "classes": CLASSES, "size": a.size, "mean": MEAN, "std": STD,
                     "arch": "resnet18", "epoch": ep, "version": a.model_version, "crop_mode": a.crop_mode,
-                    "training_source": "synthetic-only"}, a.out / "model.pt")
+                    "training_source": "synthetic+reviewed-real" if a.real_repeat else "synthetic-only",
+                    "real_repeat": a.real_repeat}, a.out / "model.pt")
     json.dump({"best_macro_f1": best, "best_epoch": best_epoch, "epochs_done": ep, "classes": CLASSES,
                "metrics": best_metrics, "train_counts": dict(freq), "args": {k: str(v) for k, v in vars(a).items()}},
               open(a.out / "metrics.json", "w"), indent=1)

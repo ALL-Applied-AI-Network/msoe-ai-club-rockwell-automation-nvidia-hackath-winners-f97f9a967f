@@ -33,7 +33,7 @@ function refreshControls() {
   const version=$('model').value;
   text('model-state',backend ? (available ? (version==='v2'?'GitHub model/model.pt · diagnostic':'Checkpoint available') : 'Checkpoint unavailable / training') : 'Checking checkpoint…');
   if (version==='v2') modelNotice('Cross-camera diagnostic: v2 uses the GitHub model/model.pt checkpoint, built for different crops and a 640 × 480 camera view. Its predictions on this 60-position view require validation.');
-  else if (backend && !available) modelNotice('v3_HZ is not available yet. The interface will detect its checkpoint when training completes. No inspection results are simulated.');
+  else if (backend && !available) modelNotice(`${version} is not available yet. The interface will detect its checkpoint when training completes. No inspection results are simulated.`);
   else modelNotice('');
 }
 async function checkStatus() {

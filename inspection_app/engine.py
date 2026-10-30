@@ -22,6 +22,7 @@ class Engine:
     def model_path(version):
         if version=='v2':return ROOT/'model/model.pt'
         if version=='v3_HZ':return ROOT/'model/v3_HZ/model.pt'
+        if version=='v4_HZ':return ROOT/'model/v4_HZ/model.pt'
         raise ValueError('Unknown model version')
 
     def load(self,version):
@@ -30,7 +31,7 @@ class Engine:
         stamp=path.stat().st_mtime_ns
         if version not in self.models or self.models[version]['stamp']!=stamp:
             ck=torch.load(path,map_location='cpu',weights_only=True)
-            if version=='v3_HZ' and ck.get('crop_mode')!='review_bbox_v1':raise ValueError('Model crop contract mismatch')
+            if version in {'v3_HZ','v4_HZ'} and ck.get('crop_mode')!='review_bbox_v1':raise ValueError('Model crop contract mismatch')
             model=torchvision.models.resnet18(weights=None);model.fc=torch.nn.Linear(model.fc.in_features,len(ck['classes']))
             model.load_state_dict(ck['state_dict']);model.to(self.device).eval()
             self.models[version]=dict(model=model,checkpoint=ck,stamp=stamp,sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
@@ -38,7 +39,7 @@ class Engine:
                                      std=torch.tensor(ck['std'],device=self.device).view(1,3,1,1))
         return self.models[version]
 
-    def inspect(self,image,version='v3_HZ',counts=None,complete=False,geometry_override=None):
+    def inspect(self,image,version='v4_HZ',counts=None,complete=False,geometry_override=None):
         tick=time.perf_counter()
         slots,alignment=geometry_override if geometry_override else self.geometry.align(image)
         with self.lock,torch.inference_mode():
@@ -52,7 +53,7 @@ class Engine:
         groups=summarize(slots,counts,complete)
         return dict(model=version,model_sha256=entry['sha256'],device=self.device,slots=slots,groups=groups,alignment=alignment,
                     elapsed_ms=round((time.perf_counter()-tick)*1000,1),
-                    validation_status='experimental; real-world acceptance gate is in model/v3_HZ/report.json',
+                    validation_status='experimental; independent real-camera validation is still required',
                     baseline_domain_warning=version=='v2')
 
 

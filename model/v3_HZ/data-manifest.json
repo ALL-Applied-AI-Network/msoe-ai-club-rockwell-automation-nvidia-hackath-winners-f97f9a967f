@@ -1,0 +1,21 @@
+{
+  "crop_mode": "review_bbox_v1",
+  "real_pixels_used_for_training": false,
+  "seed_groups": {
+    "train": [
+      30102641
+    ],
+    "val": [
+      30102642
+    ],
+    "test": [
+      30102643
+    ]
+  },
+  "counts": {
+    "train": 5760,
+    "val": 1440,
+    "test": 1440,
+    "real_eval": 120
+  }
+}

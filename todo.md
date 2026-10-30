@@ -1,4 +1,14 @@
-# v3_HZ real-camera training and inspection application — October 30, 2026
+# v4_HZ reviewed-real adaptation — October 30, 2026
+
+- [x] Preserve and validate the corrected 120-position review export (SHA-256 `22de39ca…aff6c`).
+- [x] Apply the four corrected classes to the existing crop manifest.
+- [x] Fine-tune `v4_HZ` on DGX Spark GB10 with synthetic rehearsal and reviewed-real augmentation.
+- [x] Verify 120/120 reviewed training fit and 95.0% frozen synthetic-test accuracy.
+- [x] Install `model/v4_HZ/model.pt`, verify its checksum, and run both reference images end to end.
+- [x] Make `v4_HZ` the website default and verify the real API returns 60 predictions.
+- [ ] Collect new labeled camera images not used in training for an unbiased production gate.
+
+## v3_HZ implementation history
 
 Parallel ownership: main chat owns model/data/geometry/DGX/Cosmos. Branched chat
 `01a18dfb-7f1e-7d73-b766-743ea1a743d0` owns website, camera/video UI, web API/sequence tests,

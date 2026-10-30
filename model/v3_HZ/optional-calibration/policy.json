@@ -1,0 +1,7 @@
+{
+  "pass_min_conf": 0.5,
+  "model_sha256": "050eab098da06634664ea66fe1381f3376d40df7c3ab47ef91a7c42e575ea8bb",
+  "calibration_good_hold_budget": 0.01,
+  "status": "synthetic-only; requires real calibration",
+  "rule": "argmax pass below threshold becomes uncertain/review; never relabel as a defect"
+}

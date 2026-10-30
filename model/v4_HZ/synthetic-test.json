@@ -1,0 +1,4192 @@
+{
+  "model_sha256": "b0349200d8f30fc840a658afe810bcb7480fb698fc9c3b24aa4d35207369705b",
+  "device": "NVIDIA GB10",
+  "all": {
+    "positions": 1440,
+    "accuracy": 0.95,
+    "raw_accuracy": 0.95625,
+    "confusion": [
+      [
+        389,
+        0,
+        1,
+        6,
+        0,
+        0
+      ],
+      [
+        0,
+        183,
+        0,
+        7,
+        0,
+        4
+      ],
+      [
+        9,
+        0,
+        196,
+        1,
+        0,
+        3
+      ],
+      [
+        14,
+        16,
+        3,
+        193,
+        0,
+        6
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        407,
+        0
+      ]
+    ],
+    "classes": [
+      "pass",
+      "missing_cap",
+      "crooked_cap",
+      "damaged_vial",
+      "no_vial",
+      "uncertain"
+    ],
+    "defects": 635,
+    "defects_accepted": 23,
+    "defects_as_empty": 0,
+    "occupied_as_empty": 0,
+    "empty_as_occupied": 2,
+    "uncertain": 13,
+    "good": 396,
+    "good_held": 7,
+    "per_class": {
+      "pass": {
+        "support": 396,
+        "precision": 0.9441747572815534,
+        "recall": 0.9823232323232324,
+        "f1": 0.962871287128713
+      },
+      "missing_cap": {
+        "support": 194,
+        "precision": 0.9195979899497487,
+        "recall": 0.9432989690721649,
+        "f1": 0.9312977099236641
+      },
+      "crooked_cap": {
+        "support": 209,
+        "precision": 0.98,
+        "recall": 0.937799043062201,
+        "f1": 0.9584352078239609
+      },
+      "damaged_vial": {
+        "support": 232,
+        "precision": 0.9234449760765551,
+        "recall": 0.8318965517241379,
+        "f1": 0.8752834467120181
+      },
+      "no_vial": {
+        "support": 409,
+        "precision": 1.0,
+        "recall": 0.9951100244498777,
+        "f1": 0.9975490196078431
+      }
+    },
+    "macro_f1": 0.9450873342392399,
+    "diagnostic_threshold_to_catch_all_known_defects": 0.03791993856430054,
+    "diagnostic_false_alarm_rate_at_that_threshold": 0.6313131313131313,
+    "threshold_note": "Post-hoc diagnostic only; not deployed or an unbiased accuracy claim",
+    "errors": [
+      {
+        "path": "test/damaged_vial/30102643_000000_S18.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S18",
+        "frame": "0",
+        "run": "30102643",
+        "damage": "chipped_rim",
+        "source": "synthetic",
+        "prediction": "missing_cap",
+        "probabilities": {
+          "pass": 0.005858396179974079,
+          "missing_cap": 0.5455923080444336,
+          "crooked_cap": 0.011132952757179737,
+          "damaged_vial": 0.4307204782962799,
+          "no_vial": 0.006695860531181097
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000000_S23.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S23",
+        "frame": "0",
+        "run": "30102643",
+        "damage": "star_fracture",
+        "source": "synthetic",
+        "prediction": "missing_cap",
+        "probabilities": {
+          "pass": 0.004239823203533888,
+          "missing_cap": 0.6301445960998535,
+          "crooked_cap": 0.007139186374843121,
+          "damaged_vial": 0.34938541054725647,
+          "no_vial": 0.009091014973819256
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000001_G01.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "G",
+        "pos": "G01",
+        "frame": "1",
+        "run": "30102643",
+        "damage": "broken_neck",
+        "source": "synthetic",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.02391715534031391,
+          "missing_cap": 0.021160325035452843,
+          "crooked_cap": 0.6749219298362732,
+          "damaged_vial": 0.263388991355896,
+          "no_vial": 0.01661156676709652
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000001_S01.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S01",
+        "frame": "1",
+        "run": "30102643",
+        "damage": "body_crack",
+        "source": "synthetic",
+        "prediction": "missing_cap",
+        "probabilities": {
+          "pass": 0.013253320008516312,
+          "missing_cap": 0.92661052942276,
+          "crooked_cap": 0.004990862216800451,
+          "damaged_vial": 0.05100437253713608,
+          "no_vial": 0.004140921868383884
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000001_S11.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S11",
+        "frame": "1",
+        "run": "30102643",
+        "damage": "star_fracture",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.926486074924469,
+          "missing_cap": 0.005867089610546827,
+          "crooked_cap": 0.003985196352005005,
+          "damaged_vial": 0.05952158942818642,
+          "no_vial": 0.00414006132632494
+        }
+      },
+      {
+        "path": "test/missing_cap/30102643_000001_S16.png",
+        "class": "missing_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S16",
+        "frame": "1",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.008710147812962532,
+          "missing_cap": 0.32162678241729736,
+          "crooked_cap": 0.032380737364292145,
+          "damaged_vial": 0.6252965927124023,
+          "no_vial": 0.011985679157078266
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000001_S19.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S19",
+        "frame": "1",
+        "run": "30102643",
+        "damage": "star_fracture",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.8451776504516602,
+          "missing_cap": 0.011886189691722393,
+          "crooked_cap": 0.026650913059711456,
+          "damaged_vial": 0.10032735019922256,
+          "no_vial": 0.01595798321068287
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000002_S14.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S14",
+        "frame": "2",
+        "run": "30102643",
+        "damage": "star_fracture",
+        "source": "synthetic",
+        "prediction": "missing_cap",
+        "probabilities": {
+          "pass": 0.008046803995966911,
+          "missing_cap": 0.9541241526603699,
+          "crooked_cap": 0.01136892382055521,
+          "damaged_vial": 0.022129792720079422,
+          "no_vial": 0.004330327268689871
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000003_G03.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "G",
+        "pos": "G03",
+        "frame": "3",
+        "run": "30102643",
+        "damage": "broken_neck",
+        "source": "synthetic",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.426211416721344,
+          "missing_cap": 0.04522841051220894,
+          "crooked_cap": 0.07881468534469604,
+          "damaged_vial": 0.4205355942249298,
+          "no_vial": 0.029209831729531288
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000003_S09.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S09",
+        "frame": "3",
+        "run": "30102643",
+        "damage": "star_fracture",
+        "source": "synthetic",
+        "prediction": "missing_cap",
+        "probabilities": {
+          "pass": 0.03277171403169632,
+          "missing_cap": 0.7211474776268005,
+          "crooked_cap": 0.012481997720897198,
+          "damaged_vial": 0.18610572814941406,
+          "no_vial": 0.047493115067481995
+        }
+      },
+      {
+        "path": "test/pass/30102643_000003_S14.png",
+        "class": "pass",
+        "split": "test",
+        "tray": "S",
+        "pos": "S14",
+        "frame": "3",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.1409827321767807,
+          "missing_cap": 0.016180213540792465,
+          "crooked_cap": 0.016730109229683876,
+          "damaged_vial": 0.8144822716712952,
+          "no_vial": 0.011624682694673538
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000006_S01.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S01",
+        "frame": "6",
+        "run": "30102643",
+        "damage": "star_fracture",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.8464978933334351,
+          "missing_cap": 0.004748912062495947,
+          "crooked_cap": 0.024396708235144615,
+          "damaged_vial": 0.10827812552452087,
+          "no_vial": 0.016078397631645203
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000006_S06.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S06",
+        "frame": "6",
+        "run": "30102643",
+        "damage": "star_fracture",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.6673137545585632,
+          "missing_cap": 0.006826878525316715,
+          "crooked_cap": 0.005332469940185547,
+          "damaged_vial": 0.311715304851532,
+          "no_vial": 0.008811574429273605
+        }
+      },
+      {
+        "path": "test/missing_cap/30102643_000006_S08.png",
+        "class": "missing_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S08",
+        "frame": "6",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.01207713969051838,
+          "missing_cap": 0.4470560550689697,
+          "crooked_cap": 0.11178446561098099,
+          "damaged_vial": 0.40120261907577515,
+          "no_vial": 0.02787972241640091
+        }
+      },
+      {
+        "path": "test/pass/30102643_000006_S11.png",
+        "class": "pass",
+        "split": "test",
+        "tray": "S",
+        "pos": "S11",
+        "frame": "6",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.44555574655532837,
+          "missing_cap": 0.0045031295157969,
+          "crooked_cap": 0.008491015061736107,
+          "damaged_vial": 0.5307744741439819,
+          "no_vial": 0.01067558117210865
+        }
+      },
+      {
+        "path": "test/crooked_cap/30102643_000006_S17.png",
+        "class": "crooked_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S17",
+        "frame": "6",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.6712125539779663,
+          "missing_cap": 0.0056244973093271255,
+          "crooked_cap": 0.13307544589042664,
+          "damaged_vial": 0.17675577104091644,
+          "no_vial": 0.013331777416169643
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000006_S26.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S26",
+        "frame": "6",
+        "run": "30102643",
+        "damage": "star_fracture",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.6293452382087708,
+          "missing_cap": 0.01061293575912714,
+          "crooked_cap": 0.006407177075743675,
+          "damaged_vial": 0.33742213249206543,
+          "no_vial": 0.01621256209909916
+        }
+      },
+      {
+        "path": "test/missing_cap/30102643_000007_S10.png",
+        "class": "missing_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S10",
+        "frame": "7",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.011854544281959534,
+          "missing_cap": 0.2337198555469513,
+          "crooked_cap": 0.021938584744930267,
+          "damaged_vial": 0.6863138675689697,
+          "no_vial": 0.04617311432957649
+        }
+      },
+      {
+        "path": "test/no_vial/30102643_000007_S12.png",
+        "class": "no_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S12",
+        "frame": "7",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.014295892789959908,
+          "missing_cap": 0.04062416031956673,
+          "crooked_cap": 0.026306873187422752,
+          "damaged_vial": 0.6304582953453064,
+          "no_vial": 0.2883147895336151
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000007_S17.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S17",
+        "frame": "7",
+        "run": "30102643",
+        "damage": "body_crack",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.5156028866767883,
+          "missing_cap": 0.03996078297495842,
+          "crooked_cap": 0.06476201117038727,
+          "damaged_vial": 0.3146681487560272,
+          "no_vial": 0.06500622630119324
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000007_S18.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S18",
+        "frame": "7",
+        "run": "30102643",
+        "damage": "star_fracture",
+        "source": "synthetic",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.3806934654712677,
+          "missing_cap": 0.013782032765448093,
+          "crooked_cap": 0.5442796349525452,
+          "damaged_vial": 0.05025786533951759,
+          "no_vial": 0.01098698377609253
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000008_S23.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S23",
+        "frame": "8",
+        "run": "30102643",
+        "damage": "body_crack",
+        "source": "synthetic",
+        "prediction": "missing_cap",
+        "probabilities": {
+          "pass": 0.0134852584451437,
+          "missing_cap": 0.9048321843147278,
+          "crooked_cap": 0.011690535582602024,
+          "damaged_vial": 0.061324574053287506,
+          "no_vial": 0.008667406626045704
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000009_S13.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S13",
+        "frame": "9",
+        "run": "30102643",
+        "damage": "body_crack",
+        "source": "synthetic",
+        "prediction": "missing_cap",
+        "probabilities": {
+          "pass": 0.0033287859987467527,
+          "missing_cap": 0.8969531655311584,
+          "crooked_cap": 0.0058088479563593864,
+          "damaged_vial": 0.08991643041372299,
+          "no_vial": 0.003992748912423849
+        }
+      },
+      {
+        "path": "test/pass/30102643_000009_S21.png",
+        "class": "pass",
+        "split": "test",
+        "tray": "S",
+        "pos": "S21",
+        "frame": "9",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.12720704078674316,
+          "missing_cap": 0.007651797495782375,
+          "crooked_cap": 0.012818223796784878,
+          "damaged_vial": 0.8373847603797913,
+          "no_vial": 0.014938149601221085
+        }
+      },
+      {
+        "path": "test/crooked_cap/30102643_000009_S23.png",
+        "class": "crooked_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S23",
+        "frame": "9",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.888865053653717,
+          "missing_cap": 0.006086783483624458,
+          "crooked_cap": 0.0751008465886116,
+          "damaged_vial": 0.021076638251543045,
+          "no_vial": 0.008870663121342659
+        }
+      },
+      {
+        "path": "test/no_vial/30102643_000009_S25.png",
+        "class": "no_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S25",
+        "frame": "9",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.01616399921476841,
+          "missing_cap": 0.020515305921435356,
+          "crooked_cap": 0.014235861599445343,
+          "damaged_vial": 0.6514235138893127,
+          "no_vial": 0.29766130447387695
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000009_S26.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S26",
+        "frame": "9",
+        "run": "30102643",
+        "damage": "star_fracture",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.5754379034042358,
+          "missing_cap": 0.018811887130141258,
+          "crooked_cap": 0.023484069854021072,
+          "damaged_vial": 0.3707038164138794,
+          "no_vial": 0.011562343686819077
+        }
+      },
+      {
+        "path": "test/pass/30102643_000010_S05.png",
+        "class": "pass",
+        "split": "test",
+        "tray": "S",
+        "pos": "S05",
+        "frame": "10",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.012278854846954346,
+          "missing_cap": 0.008985020220279694,
+          "crooked_cap": 0.004105063620954752,
+          "damaged_vial": 0.9656496047973633,
+          "no_vial": 0.008981388062238693
+        }
+      },
+      {
+        "path": "test/crooked_cap/30102643_000010_S19.png",
+        "class": "crooked_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S19",
+        "frame": "10",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.8626660704612732,
+          "missing_cap": 0.0054364921525120735,
+          "crooked_cap": 0.07041612267494202,
+          "damaged_vial": 0.05506529659032822,
+          "no_vial": 0.006416012533009052
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000011_S03.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S03",
+        "frame": "11",
+        "run": "30102643",
+        "damage": "body_crack",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.5292580723762512,
+          "missing_cap": 0.009747039526700974,
+          "crooked_cap": 0.007192159071564674,
+          "damaged_vial": 0.43683794140815735,
+          "no_vial": 0.016964811831712723
+        }
+      },
+      {
+        "path": "test/missing_cap/30102643_000011_S08.png",
+        "class": "missing_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S08",
+        "frame": "11",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.004873309284448624,
+          "missing_cap": 0.019960641860961914,
+          "crooked_cap": 0.006608961150050163,
+          "damaged_vial": 0.9478219151496887,
+          "no_vial": 0.020735109224915504
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000011_S10.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S10",
+        "frame": "11",
+        "run": "30102643",
+        "damage": "chipped_rim",
+        "source": "synthetic",
+        "prediction": "missing_cap",
+        "probabilities": {
+          "pass": 0.004680229350924492,
+          "missing_cap": 0.7426975965499878,
+          "crooked_cap": 0.006841509137302637,
+          "damaged_vial": 0.24252331256866455,
+          "no_vial": 0.0032573507633060217
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000011_S16.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S16",
+        "frame": "11",
+        "run": "30102643",
+        "damage": "chipped_rim",
+        "source": "synthetic",
+        "prediction": "missing_cap",
+        "probabilities": {
+          "pass": 0.015236945822834969,
+          "missing_cap": 0.7937318086624146,
+          "crooked_cap": 0.03724063187837601,
+          "damaged_vial": 0.14492453634738922,
+          "no_vial": 0.00886599812656641
+        }
+      },
+      {
+        "path": "test/crooked_cap/30102643_000011_S19.png",
+        "class": "crooked_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S19",
+        "frame": "11",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.47220104932785034,
+          "missing_cap": 0.006850895006209612,
+          "crooked_cap": 0.4472423493862152,
+          "damaged_vial": 0.06171903759241104,
+          "no_vial": 0.011986726894974709
+        }
+      },
+      {
+        "path": "test/pass/30102643_000012_S10.png",
+        "class": "pass",
+        "split": "test",
+        "tray": "S",
+        "pos": "S10",
+        "frame": "12",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.39445775747299194,
+          "missing_cap": 0.008981692604720592,
+          "crooked_cap": 0.013518966734409332,
+          "damaged_vial": 0.5623130202293396,
+          "no_vial": 0.0207285787910223
+        }
+      },
+      {
+        "path": "test/crooked_cap/30102643_000012_S21.png",
+        "class": "crooked_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S21",
+        "frame": "12",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.08714496344327927,
+          "missing_cap": 0.094764843583107,
+          "crooked_cap": 0.09802819043397903,
+          "damaged_vial": 0.6291919350624084,
+          "no_vial": 0.09087008982896805
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000012_S24.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S24",
+        "frame": "12",
+        "run": "30102643",
+        "damage": "body_crack",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.9620800614356995,
+          "missing_cap": 0.007643767632544041,
+          "crooked_cap": 0.009839150123298168,
+          "damaged_vial": 0.013418418355286121,
+          "no_vial": 0.007018645294010639
+        }
+      },
+      {
+        "path": "test/crooked_cap/30102643_000013_S01.png",
+        "class": "crooked_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S01",
+        "frame": "13",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.038301996886730194,
+          "missing_cap": 0.05365555360913277,
+          "crooked_cap": 0.4826042056083679,
+          "damaged_vial": 0.37037912011146545,
+          "no_vial": 0.055059075355529785
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000013_S06.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S06",
+        "frame": "13",
+        "run": "30102643",
+        "damage": "chipped_rim",
+        "source": "synthetic",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.0041193184442818165,
+          "missing_cap": 0.4877118170261383,
+          "crooked_cap": 0.004219728987663984,
+          "damaged_vial": 0.4986429810523987,
+          "no_vial": 0.005306154023855925
+        }
+      },
+      {
+        "path": "test/crooked_cap/30102643_000013_S11.png",
+        "class": "crooked_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S11",
+        "frame": "13",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.6017062067985535,
+          "missing_cap": 0.00969591923058033,
+          "crooked_cap": 0.3691573739051819,
+          "damaged_vial": 0.01379361841827631,
+          "no_vial": 0.005646962206810713
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000014_S02.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S02",
+        "frame": "14",
+        "run": "30102643",
+        "damage": "star_fracture",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.9456380009651184,
+          "missing_cap": 0.006592035759240389,
+          "crooked_cap": 0.00987672433257103,
+          "damaged_vial": 0.026460353285074234,
+          "no_vial": 0.011432810686528683
+        }
+      },
+      {
+        "path": "test/missing_cap/30102643_000014_S10.png",
+        "class": "missing_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S10",
+        "frame": "14",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.019508354365825653,
+          "missing_cap": 0.48094019293785095,
+          "crooked_cap": 0.03663923963904381,
+          "damaged_vial": 0.09179982542991638,
+          "no_vial": 0.3711123764514923
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000014_S17.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S17",
+        "frame": "14",
+        "run": "30102643",
+        "damage": "body_crack",
+        "source": "synthetic",
+        "prediction": "missing_cap",
+        "probabilities": {
+          "pass": 0.007630664389580488,
+          "missing_cap": 0.6178142428398132,
+          "crooked_cap": 0.013791254721581936,
+          "damaged_vial": 0.33338814973831177,
+          "no_vial": 0.02737574465572834
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000014_S20.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S20",
+        "frame": "14",
+        "run": "30102643",
+        "damage": "body_crack",
+        "source": "synthetic",
+        "prediction": "missing_cap",
+        "probabilities": {
+          "pass": 0.004421129357069731,
+          "missing_cap": 0.8326036334037781,
+          "crooked_cap": 0.005819931160658598,
+          "damaged_vial": 0.14998531341552734,
+          "no_vial": 0.00717001361772418
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000014_S30.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S30",
+        "frame": "14",
+        "run": "30102643",
+        "damage": "body_crack",
+        "source": "synthetic",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.009215234778821468,
+          "missing_cap": 0.49677520990371704,
+          "crooked_cap": 0.02181415818631649,
+          "damaged_vial": 0.4659087061882019,
+          "no_vial": 0.0062866429798305035
+        }
+      },
+      {
+        "path": "test/missing_cap/30102643_000015_S07.png",
+        "class": "missing_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S07",
+        "frame": "15",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.0175155159085989,
+          "missing_cap": 0.4948991537094116,
+          "crooked_cap": 0.025872934609651566,
+          "damaged_vial": 0.39080923795700073,
+          "no_vial": 0.07090319693088531
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000015_S10.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S10",
+        "frame": "15",
+        "run": "30102643",
+        "damage": "body_crack",
+        "source": "synthetic",
+        "prediction": "missing_cap",
+        "probabilities": {
+          "pass": 0.006858260836452246,
+          "missing_cap": 0.7780802249908447,
+          "crooked_cap": 0.029125310480594635,
+          "damaged_vial": 0.1807968020439148,
+          "no_vial": 0.005139400716871023
+        }
+      },
+      {
+        "path": "test/pass/30102643_000015_S21.png",
+        "class": "pass",
+        "split": "test",
+        "tray": "S",
+        "pos": "S21",
+        "frame": "15",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.17394214868545532,
+          "missing_cap": 0.02142130397260189,
+          "crooked_cap": 0.09327567368745804,
+          "damaged_vial": 0.6830251812934875,
+          "no_vial": 0.02833564393222332
+        }
+      },
+      {
+        "path": "test/missing_cap/30102643_000016_G26.png",
+        "class": "missing_cap",
+        "split": "test",
+        "tray": "G",
+        "pos": "G26",
+        "frame": "16",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.010670030489563942,
+          "missing_cap": 0.03238110616803169,
+          "crooked_cap": 0.011777208186686039,
+          "damaged_vial": 0.9366070032119751,
+          "no_vial": 0.008564632385969162
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000016_S09.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S09",
+        "frame": "16",
+        "run": "30102643",
+        "damage": "broken_neck",
+        "source": "synthetic",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.012264080345630646,
+          "missing_cap": 0.4538869559764862,
+          "crooked_cap": 0.03395107015967369,
+          "damaged_vial": 0.45928460359573364,
+          "no_vial": 0.04061330482363701
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000016_S21.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S21",
+        "frame": "16",
+        "run": "30102643",
+        "damage": "star_fracture",
+        "source": "synthetic",
+        "prediction": "missing_cap",
+        "probabilities": {
+          "pass": 0.006832662038505077,
+          "missing_cap": 0.7000279426574707,
+          "crooked_cap": 0.010451894253492355,
+          "damaged_vial": 0.27627041935920715,
+          "no_vial": 0.006417146418243647
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000016_S22.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S22",
+        "frame": "16",
+        "run": "30102643",
+        "damage": "body_crack",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.8305151462554932,
+          "missing_cap": 0.019365888088941574,
+          "crooked_cap": 0.01216081902384758,
+          "damaged_vial": 0.12950515747070312,
+          "no_vial": 0.008453071117401123
+        }
+      },
+      {
+        "path": "test/crooked_cap/30102643_000016_S24.png",
+        "class": "crooked_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S24",
+        "frame": "16",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.8498328924179077,
+          "missing_cap": 0.0032177516259253025,
+          "crooked_cap": 0.06286408752202988,
+          "damaged_vial": 0.08001302182674408,
+          "no_vial": 0.00407215254381299
+        }
+      },
+      {
+        "path": "test/crooked_cap/30102643_000017_S08.png",
+        "class": "crooked_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S08",
+        "frame": "17",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.8058464527130127,
+          "missing_cap": 0.0047210766933858395,
+          "crooked_cap": 0.16691318154335022,
+          "damaged_vial": 0.00745058711618185,
+          "no_vial": 0.01506864931434393
+        }
+      },
+      {
+        "path": "test/crooked_cap/30102643_000017_S24.png",
+        "class": "crooked_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S24",
+        "frame": "17",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.5843960642814636,
+          "missing_cap": 0.011713440530002117,
+          "crooked_cap": 0.06113963574171066,
+          "damaged_vial": 0.3304882347583771,
+          "no_vial": 0.012262574397027493
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000018_S10.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S10",
+        "frame": "18",
+        "run": "30102643",
+        "damage": "body_crack",
+        "source": "synthetic",
+        "prediction": "missing_cap",
+        "probabilities": {
+          "pass": 0.007077815942466259,
+          "missing_cap": 0.9466378688812256,
+          "crooked_cap": 0.007993003353476524,
+          "damaged_vial": 0.0324164517223835,
+          "no_vial": 0.005874809809029102
+        }
+      },
+      {
+        "path": "test/missing_cap/30102643_000018_S13.png",
+        "class": "missing_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S13",
+        "frame": "18",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.004038057290017605,
+          "missing_cap": 0.37348225712776184,
+          "crooked_cap": 0.006250899750739336,
+          "damaged_vial": 0.6076550483703613,
+          "no_vial": 0.008573748171329498
+        }
+      },
+      {
+        "path": "test/missing_cap/30102643_000018_S30.png",
+        "class": "missing_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S30",
+        "frame": "18",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.025965852662920952,
+          "missing_cap": 0.4149138927459717,
+          "crooked_cap": 0.042772430926561356,
+          "damaged_vial": 0.5050128698348999,
+          "no_vial": 0.011334998533129692
+        }
+      },
+      {
+        "path": "test/missing_cap/30102643_000019_S11.png",
+        "class": "missing_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S11",
+        "frame": "19",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "damaged_vial",
+        "probabilities": {
+          "pass": 0.016199788078665733,
+          "missing_cap": 0.2909860610961914,
+          "crooked_cap": 0.03642958775162697,
+          "damaged_vial": 0.525054395198822,
+          "no_vial": 0.13133014738559723
+        }
+      },
+      {
+        "path": "test/crooked_cap/30102643_000019_S16.png",
+        "class": "crooked_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S16",
+        "frame": "19",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.6760509014129639,
+          "missing_cap": 0.007627192419022322,
+          "crooked_cap": 0.2581321597099304,
+          "damaged_vial": 0.049766287207603455,
+          "no_vial": 0.00842343270778656
+        }
+      },
+      {
+        "path": "test/crooked_cap/30102643_000019_S22.png",
+        "class": "crooked_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S22",
+        "frame": "19",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.4753452241420746,
+          "missing_cap": 0.006271230988204479,
+          "crooked_cap": 0.4908648431301117,
+          "damaged_vial": 0.01830313540995121,
+          "no_vial": 0.009215555153787136
+        }
+      },
+      {
+        "path": "test/missing_cap/30102643_000020_S09.png",
+        "class": "missing_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S09",
+        "frame": "20",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.013069091364741325,
+          "missing_cap": 0.48817887902259827,
+          "crooked_cap": 0.026549044996500015,
+          "damaged_vial": 0.4283308684825897,
+          "no_vial": 0.043872058391571045
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000020_S14.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S14",
+        "frame": "20",
+        "run": "30102643",
+        "damage": "broken_neck",
+        "source": "synthetic",
+        "prediction": "missing_cap",
+        "probabilities": {
+          "pass": 0.03828243911266327,
+          "missing_cap": 0.6481130719184875,
+          "crooked_cap": 0.0205969400703907,
+          "damaged_vial": 0.16225503385066986,
+          "no_vial": 0.13075248897075653
+        }
+      },
+      {
+        "path": "test/crooked_cap/30102643_000020_S19.png",
+        "class": "crooked_cap",
+        "split": "test",
+        "tray": "S",
+        "pos": "S19",
+        "frame": "20",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.6157132387161255,
+          "missing_cap": 0.0043181683868169785,
+          "crooked_cap": 0.353699266910553,
+          "damaged_vial": 0.017995046451687813,
+          "no_vial": 0.008274335414171219
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000021_S05.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S05",
+        "frame": "21",
+        "run": "30102643",
+        "damage": "body_crack",
+        "source": "synthetic",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.021212667226791382,
+          "missing_cap": 0.372850626707077,
+          "crooked_cap": 0.040810901671648026,
+          "damaged_vial": 0.4432072341442108,
+          "no_vial": 0.12191861867904663
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000021_S08.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S08",
+        "frame": "21",
+        "run": "30102643",
+        "damage": "body_crack",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.9155598282814026,
+          "missing_cap": 0.003996768034994602,
+          "crooked_cap": 0.009790733456611633,
+          "damaged_vial": 0.05424901470541954,
+          "no_vial": 0.01640363410115242
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000022_S19.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S19",
+        "frame": "22",
+        "run": "30102643",
+        "damage": "chipped_rim",
+        "source": "synthetic",
+        "prediction": "uncertain",
+        "probabilities": {
+          "pass": 0.011860240250825882,
+          "missing_cap": 0.487659752368927,
+          "crooked_cap": 0.01933208666741848,
+          "damaged_vial": 0.47224366664886475,
+          "no_vial": 0.008904253132641315
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000022_S27.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S27",
+        "frame": "22",
+        "run": "30102643",
+        "damage": "body_crack",
+        "source": "synthetic",
+        "prediction": "missing_cap",
+        "probabilities": {
+          "pass": 0.004607043694704771,
+          "missing_cap": 0.8719800710678101,
+          "crooked_cap": 0.00585460988804698,
+          "damaged_vial": 0.10721595585346222,
+          "no_vial": 0.010342327877879143
+        }
+      },
+      {
+        "path": "test/pass/30102643_000023_G14.png",
+        "class": "pass",
+        "split": "test",
+        "tray": "G",
+        "pos": "G14",
+        "frame": "23",
+        "run": "30102643",
+        "damage": "",
+        "source": "synthetic",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.4443502426147461,
+          "missing_cap": 0.018002035096287727,
+          "crooked_cap": 0.5081648230552673,
+          "damaged_vial": 0.0159614160656929,
+          "no_vial": 0.013521497137844563
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000023_G26.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "G",
+        "pos": "G26",
+        "frame": "23",
+        "run": "30102643",
+        "damage": "broken_neck",
+        "source": "synthetic",
+        "prediction": "crooked_cap",
+        "probabilities": {
+          "pass": 0.014666320756077766,
+          "missing_cap": 0.018462492153048515,
+          "crooked_cap": 0.8107603192329407,
+          "damaged_vial": 0.13103866577148438,
+          "no_vial": 0.025072131305933
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000023_S08.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S08",
+        "frame": "23",
+        "run": "30102643",
+        "damage": "star_fracture",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.7743210792541504,
+          "missing_cap": 0.015434173867106438,
+          "crooked_cap": 0.024583159014582634,
+          "damaged_vial": 0.16071204841136932,
+          "no_vial": 0.02494952082633972
+        }
+      },
+      {
+        "path": "test/damaged_vial/30102643_000023_S24.png",
+        "class": "damaged_vial",
+        "split": "test",
+        "tray": "S",
+        "pos": "S24",
+        "frame": "23",
+        "run": "30102643",
+        "damage": "star_fracture",
+        "source": "synthetic",
+        "prediction": "pass",
+        "probabilities": {
+          "pass": 0.744264543056488,
+          "missing_cap": 0.007746310904622078,
+          "crooked_cap": 0.004641802050173283,
+          "damaged_vial": 0.23866820335388184,
+          "no_vial": 0.00467905355617404
+        }
+      }
+    ]
+  },
+  "by_tray": {
+    "G": {
+      "positions": 720,
+      "accuracy": 0.9930555555555556,
+      "raw_accuracy": 0.9930555555555556,
+      "confusion": [
+        [
+          260,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          113,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          125,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          106,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          111,
+          0
+        ]
+      ],
+      "classes": [
+        "pass",
+        "missing_cap",
+        "crooked_cap",
+        "damaged_vial",
+        "no_vial",
+        "uncertain"
+      ],
+      "defects": 348,
+      "defects_accepted": 0,
+      "defects_as_empty": 0,
+      "occupied_as_empty": 0,
+      "empty_as_occupied": 0,
+      "uncertain": 1,
+      "good": 261,
+      "good_held": 1,
+      "per_class": {
+        "pass": {
+          "support": 261,
+          "precision": 1.0,
+          "recall": 0.9961685823754789,
+          "f1": 0.9980806142034548
+        },
+        "missing_cap": {
+          "support": 114,
+          "precision": 1.0,
+          "recall": 0.9912280701754386,
+          "f1": 0.9955947136563876
+        },
+        "crooked_cap": {
+          "support": 125,
+          "precision": 0.9765625,
+          "recall": 1.0,
+          "f1": 0.9881422924901185
+        },
+        "damaged_vial": {
+          "support": 109,
+          "precision": 0.9906542056074766,
+          "recall": 0.9724770642201835,
+          "f1": 0.9814814814814815
+        },
+        "no_vial": {
+          "support": 111,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "macro_f1": 0.9926598203662884,
+      "diagnostic_threshold_to_catch_all_known_defects": 0.573788583278656,
+      "diagnostic_false_alarm_rate_at_that_threshold": 0.0,
+      "threshold_note": "Post-hoc diagnostic only; not deployed or an unbiased accuracy claim",
+      "errors": [
+        {
+          "path": "test/damaged_vial/30102643_000001_G01.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "G",
+          "pos": "G01",
+          "frame": "1",
+          "run": "30102643",
+          "damage": "broken_neck",
+          "source": "synthetic",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.02391715534031391,
+            "missing_cap": 0.021160325035452843,
+            "crooked_cap": 0.6749219298362732,
+            "damaged_vial": 0.263388991355896,
+            "no_vial": 0.01661156676709652
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000003_G03.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "G",
+          "pos": "G03",
+          "frame": "3",
+          "run": "30102643",
+          "damage": "broken_neck",
+          "source": "synthetic",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.426211416721344,
+            "missing_cap": 0.04522841051220894,
+            "crooked_cap": 0.07881468534469604,
+            "damaged_vial": 0.4205355942249298,
+            "no_vial": 0.029209831729531288
+          }
+        },
+        {
+          "path": "test/missing_cap/30102643_000016_G26.png",
+          "class": "missing_cap",
+          "split": "test",
+          "tray": "G",
+          "pos": "G26",
+          "frame": "16",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.010670030489563942,
+            "missing_cap": 0.03238110616803169,
+            "crooked_cap": 0.011777208186686039,
+            "damaged_vial": 0.9366070032119751,
+            "no_vial": 0.008564632385969162
+          }
+        },
+        {
+          "path": "test/pass/30102643_000023_G14.png",
+          "class": "pass",
+          "split": "test",
+          "tray": "G",
+          "pos": "G14",
+          "frame": "23",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.4443502426147461,
+            "missing_cap": 0.018002035096287727,
+            "crooked_cap": 0.5081648230552673,
+            "damaged_vial": 0.0159614160656929,
+            "no_vial": 0.013521497137844563
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000023_G26.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "G",
+          "pos": "G26",
+          "frame": "23",
+          "run": "30102643",
+          "damage": "broken_neck",
+          "source": "synthetic",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.014666320756077766,
+            "missing_cap": 0.018462492153048515,
+            "crooked_cap": 0.8107603192329407,
+            "damaged_vial": 0.13103866577148438,
+            "no_vial": 0.025072131305933
+          }
+        }
+      ]
+    },
+    "S": {
+      "positions": 720,
+      "accuracy": 0.9069444444444444,
+      "raw_accuracy": 0.9194444444444444,
+      "confusion": [
+        [
+          129,
+          0,
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          70,
+          0,
+          6,
+          0,
+          4
+        ],
+        [
+          9,
+          0,
+          71,
+          1,
+          0,
+          3
+        ],
+        [
+          14,
+          16,
+          1,
+          87,
+          0,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          296,
+          0
+        ]
+      ],
+      "classes": [
+        "pass",
+        "missing_cap",
+        "crooked_cap",
+        "damaged_vial",
+        "no_vial",
+        "uncertain"
+      ],
+      "defects": 287,
+      "defects_accepted": 23,
+      "defects_as_empty": 0,
+      "occupied_as_empty": 0,
+      "empty_as_occupied": 2,
+      "uncertain": 12,
+      "good": 135,
+      "good_held": 6,
+      "per_class": {
+        "pass": {
+          "support": 135,
+          "precision": 0.8486842105263158,
+          "recall": 0.9555555555555556,
+          "f1": 0.8989547038327526
+        },
+        "missing_cap": {
+          "support": 80,
+          "precision": 0.813953488372093,
+          "recall": 0.875,
+          "f1": 0.8433734939759036
+        },
+        "crooked_cap": {
+          "support": 84,
+          "precision": 0.9861111111111112,
+          "recall": 0.8452380952380952,
+          "f1": 0.9102564102564102
+        },
+        "damaged_vial": {
+          "support": 123,
+          "precision": 0.8529411764705882,
+          "recall": 0.7073170731707317,
+          "f1": 0.7733333333333334
+        },
+        "no_vial": {
+          "support": 298,
+          "precision": 1.0,
+          "recall": 0.9932885906040269,
+          "f1": 0.9966329966329966
+        }
+      },
+      "macro_f1": 0.8845101876062793,
+      "diagnostic_threshold_to_catch_all_known_defects": 0.03791993856430054,
+      "diagnostic_false_alarm_rate_at_that_threshold": 0.8962962962962963,
+      "threshold_note": "Post-hoc diagnostic only; not deployed or an unbiased accuracy claim",
+      "errors": [
+        {
+          "path": "test/damaged_vial/30102643_000000_S18.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S18",
+          "frame": "0",
+          "run": "30102643",
+          "damage": "chipped_rim",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.005858396179974079,
+            "missing_cap": 0.5455923080444336,
+            "crooked_cap": 0.011132952757179737,
+            "damaged_vial": 0.4307204782962799,
+            "no_vial": 0.006695860531181097
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000000_S23.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S23",
+          "frame": "0",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.004239823203533888,
+            "missing_cap": 0.6301445960998535,
+            "crooked_cap": 0.007139186374843121,
+            "damaged_vial": 0.34938541054725647,
+            "no_vial": 0.009091014973819256
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000001_S01.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S01",
+          "frame": "1",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.013253320008516312,
+            "missing_cap": 0.92661052942276,
+            "crooked_cap": 0.004990862216800451,
+            "damaged_vial": 0.05100437253713608,
+            "no_vial": 0.004140921868383884
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000001_S11.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S11",
+          "frame": "1",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.926486074924469,
+            "missing_cap": 0.005867089610546827,
+            "crooked_cap": 0.003985196352005005,
+            "damaged_vial": 0.05952158942818642,
+            "no_vial": 0.00414006132632494
+          }
+        },
+        {
+          "path": "test/missing_cap/30102643_000001_S16.png",
+          "class": "missing_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S16",
+          "frame": "1",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.008710147812962532,
+            "missing_cap": 0.32162678241729736,
+            "crooked_cap": 0.032380737364292145,
+            "damaged_vial": 0.6252965927124023,
+            "no_vial": 0.011985679157078266
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000001_S19.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S19",
+          "frame": "1",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.8451776504516602,
+            "missing_cap": 0.011886189691722393,
+            "crooked_cap": 0.026650913059711456,
+            "damaged_vial": 0.10032735019922256,
+            "no_vial": 0.01595798321068287
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000002_S14.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S14",
+          "frame": "2",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.008046803995966911,
+            "missing_cap": 0.9541241526603699,
+            "crooked_cap": 0.01136892382055521,
+            "damaged_vial": 0.022129792720079422,
+            "no_vial": 0.004330327268689871
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000003_S09.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S09",
+          "frame": "3",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.03277171403169632,
+            "missing_cap": 0.7211474776268005,
+            "crooked_cap": 0.012481997720897198,
+            "damaged_vial": 0.18610572814941406,
+            "no_vial": 0.047493115067481995
+          }
+        },
+        {
+          "path": "test/pass/30102643_000003_S14.png",
+          "class": "pass",
+          "split": "test",
+          "tray": "S",
+          "pos": "S14",
+          "frame": "3",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.1409827321767807,
+            "missing_cap": 0.016180213540792465,
+            "crooked_cap": 0.016730109229683876,
+            "damaged_vial": 0.8144822716712952,
+            "no_vial": 0.011624682694673538
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000006_S01.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S01",
+          "frame": "6",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.8464978933334351,
+            "missing_cap": 0.004748912062495947,
+            "crooked_cap": 0.024396708235144615,
+            "damaged_vial": 0.10827812552452087,
+            "no_vial": 0.016078397631645203
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000006_S06.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S06",
+          "frame": "6",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.6673137545585632,
+            "missing_cap": 0.006826878525316715,
+            "crooked_cap": 0.005332469940185547,
+            "damaged_vial": 0.311715304851532,
+            "no_vial": 0.008811574429273605
+          }
+        },
+        {
+          "path": "test/missing_cap/30102643_000006_S08.png",
+          "class": "missing_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S08",
+          "frame": "6",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.01207713969051838,
+            "missing_cap": 0.4470560550689697,
+            "crooked_cap": 0.11178446561098099,
+            "damaged_vial": 0.40120261907577515,
+            "no_vial": 0.02787972241640091
+          }
+        },
+        {
+          "path": "test/pass/30102643_000006_S11.png",
+          "class": "pass",
+          "split": "test",
+          "tray": "S",
+          "pos": "S11",
+          "frame": "6",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.44555574655532837,
+            "missing_cap": 0.0045031295157969,
+            "crooked_cap": 0.008491015061736107,
+            "damaged_vial": 0.5307744741439819,
+            "no_vial": 0.01067558117210865
+          }
+        },
+        {
+          "path": "test/crooked_cap/30102643_000006_S17.png",
+          "class": "crooked_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S17",
+          "frame": "6",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.6712125539779663,
+            "missing_cap": 0.0056244973093271255,
+            "crooked_cap": 0.13307544589042664,
+            "damaged_vial": 0.17675577104091644,
+            "no_vial": 0.013331777416169643
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000006_S26.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S26",
+          "frame": "6",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.6293452382087708,
+            "missing_cap": 0.01061293575912714,
+            "crooked_cap": 0.006407177075743675,
+            "damaged_vial": 0.33742213249206543,
+            "no_vial": 0.01621256209909916
+          }
+        },
+        {
+          "path": "test/missing_cap/30102643_000007_S10.png",
+          "class": "missing_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S10",
+          "frame": "7",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.011854544281959534,
+            "missing_cap": 0.2337198555469513,
+            "crooked_cap": 0.021938584744930267,
+            "damaged_vial": 0.6863138675689697,
+            "no_vial": 0.04617311432957649
+          }
+        },
+        {
+          "path": "test/no_vial/30102643_000007_S12.png",
+          "class": "no_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S12",
+          "frame": "7",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.014295892789959908,
+            "missing_cap": 0.04062416031956673,
+            "crooked_cap": 0.026306873187422752,
+            "damaged_vial": 0.6304582953453064,
+            "no_vial": 0.2883147895336151
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000007_S17.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S17",
+          "frame": "7",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.5156028866767883,
+            "missing_cap": 0.03996078297495842,
+            "crooked_cap": 0.06476201117038727,
+            "damaged_vial": 0.3146681487560272,
+            "no_vial": 0.06500622630119324
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000007_S18.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S18",
+          "frame": "7",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.3806934654712677,
+            "missing_cap": 0.013782032765448093,
+            "crooked_cap": 0.5442796349525452,
+            "damaged_vial": 0.05025786533951759,
+            "no_vial": 0.01098698377609253
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000008_S23.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S23",
+          "frame": "8",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.0134852584451437,
+            "missing_cap": 0.9048321843147278,
+            "crooked_cap": 0.011690535582602024,
+            "damaged_vial": 0.061324574053287506,
+            "no_vial": 0.008667406626045704
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000009_S13.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S13",
+          "frame": "9",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.0033287859987467527,
+            "missing_cap": 0.8969531655311584,
+            "crooked_cap": 0.0058088479563593864,
+            "damaged_vial": 0.08991643041372299,
+            "no_vial": 0.003992748912423849
+          }
+        },
+        {
+          "path": "test/pass/30102643_000009_S21.png",
+          "class": "pass",
+          "split": "test",
+          "tray": "S",
+          "pos": "S21",
+          "frame": "9",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.12720704078674316,
+            "missing_cap": 0.007651797495782375,
+            "crooked_cap": 0.012818223796784878,
+            "damaged_vial": 0.8373847603797913,
+            "no_vial": 0.014938149601221085
+          }
+        },
+        {
+          "path": "test/crooked_cap/30102643_000009_S23.png",
+          "class": "crooked_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S23",
+          "frame": "9",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.888865053653717,
+            "missing_cap": 0.006086783483624458,
+            "crooked_cap": 0.0751008465886116,
+            "damaged_vial": 0.021076638251543045,
+            "no_vial": 0.008870663121342659
+          }
+        },
+        {
+          "path": "test/no_vial/30102643_000009_S25.png",
+          "class": "no_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S25",
+          "frame": "9",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.01616399921476841,
+            "missing_cap": 0.020515305921435356,
+            "crooked_cap": 0.014235861599445343,
+            "damaged_vial": 0.6514235138893127,
+            "no_vial": 0.29766130447387695
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000009_S26.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S26",
+          "frame": "9",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.5754379034042358,
+            "missing_cap": 0.018811887130141258,
+            "crooked_cap": 0.023484069854021072,
+            "damaged_vial": 0.3707038164138794,
+            "no_vial": 0.011562343686819077
+          }
+        },
+        {
+          "path": "test/pass/30102643_000010_S05.png",
+          "class": "pass",
+          "split": "test",
+          "tray": "S",
+          "pos": "S05",
+          "frame": "10",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.012278854846954346,
+            "missing_cap": 0.008985020220279694,
+            "crooked_cap": 0.004105063620954752,
+            "damaged_vial": 0.9656496047973633,
+            "no_vial": 0.008981388062238693
+          }
+        },
+        {
+          "path": "test/crooked_cap/30102643_000010_S19.png",
+          "class": "crooked_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S19",
+          "frame": "10",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.8626660704612732,
+            "missing_cap": 0.0054364921525120735,
+            "crooked_cap": 0.07041612267494202,
+            "damaged_vial": 0.05506529659032822,
+            "no_vial": 0.006416012533009052
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000011_S03.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S03",
+          "frame": "11",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.5292580723762512,
+            "missing_cap": 0.009747039526700974,
+            "crooked_cap": 0.007192159071564674,
+            "damaged_vial": 0.43683794140815735,
+            "no_vial": 0.016964811831712723
+          }
+        },
+        {
+          "path": "test/missing_cap/30102643_000011_S08.png",
+          "class": "missing_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S08",
+          "frame": "11",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.004873309284448624,
+            "missing_cap": 0.019960641860961914,
+            "crooked_cap": 0.006608961150050163,
+            "damaged_vial": 0.9478219151496887,
+            "no_vial": 0.020735109224915504
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000011_S10.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S10",
+          "frame": "11",
+          "run": "30102643",
+          "damage": "chipped_rim",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.004680229350924492,
+            "missing_cap": 0.7426975965499878,
+            "crooked_cap": 0.006841509137302637,
+            "damaged_vial": 0.24252331256866455,
+            "no_vial": 0.0032573507633060217
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000011_S16.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S16",
+          "frame": "11",
+          "run": "30102643",
+          "damage": "chipped_rim",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.015236945822834969,
+            "missing_cap": 0.7937318086624146,
+            "crooked_cap": 0.03724063187837601,
+            "damaged_vial": 0.14492453634738922,
+            "no_vial": 0.00886599812656641
+          }
+        },
+        {
+          "path": "test/crooked_cap/30102643_000011_S19.png",
+          "class": "crooked_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S19",
+          "frame": "11",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.47220104932785034,
+            "missing_cap": 0.006850895006209612,
+            "crooked_cap": 0.4472423493862152,
+            "damaged_vial": 0.06171903759241104,
+            "no_vial": 0.011986726894974709
+          }
+        },
+        {
+          "path": "test/pass/30102643_000012_S10.png",
+          "class": "pass",
+          "split": "test",
+          "tray": "S",
+          "pos": "S10",
+          "frame": "12",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.39445775747299194,
+            "missing_cap": 0.008981692604720592,
+            "crooked_cap": 0.013518966734409332,
+            "damaged_vial": 0.5623130202293396,
+            "no_vial": 0.0207285787910223
+          }
+        },
+        {
+          "path": "test/crooked_cap/30102643_000012_S21.png",
+          "class": "crooked_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S21",
+          "frame": "12",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.08714496344327927,
+            "missing_cap": 0.094764843583107,
+            "crooked_cap": 0.09802819043397903,
+            "damaged_vial": 0.6291919350624084,
+            "no_vial": 0.09087008982896805
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000012_S24.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S24",
+          "frame": "12",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.9620800614356995,
+            "missing_cap": 0.007643767632544041,
+            "crooked_cap": 0.009839150123298168,
+            "damaged_vial": 0.013418418355286121,
+            "no_vial": 0.007018645294010639
+          }
+        },
+        {
+          "path": "test/crooked_cap/30102643_000013_S01.png",
+          "class": "crooked_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S01",
+          "frame": "13",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.038301996886730194,
+            "missing_cap": 0.05365555360913277,
+            "crooked_cap": 0.4826042056083679,
+            "damaged_vial": 0.37037912011146545,
+            "no_vial": 0.055059075355529785
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000013_S06.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S06",
+          "frame": "13",
+          "run": "30102643",
+          "damage": "chipped_rim",
+          "source": "synthetic",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.0041193184442818165,
+            "missing_cap": 0.4877118170261383,
+            "crooked_cap": 0.004219728987663984,
+            "damaged_vial": 0.4986429810523987,
+            "no_vial": 0.005306154023855925
+          }
+        },
+        {
+          "path": "test/crooked_cap/30102643_000013_S11.png",
+          "class": "crooked_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S11",
+          "frame": "13",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.6017062067985535,
+            "missing_cap": 0.00969591923058033,
+            "crooked_cap": 0.3691573739051819,
+            "damaged_vial": 0.01379361841827631,
+            "no_vial": 0.005646962206810713
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000014_S02.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S02",
+          "frame": "14",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.9456380009651184,
+            "missing_cap": 0.006592035759240389,
+            "crooked_cap": 0.00987672433257103,
+            "damaged_vial": 0.026460353285074234,
+            "no_vial": 0.011432810686528683
+          }
+        },
+        {
+          "path": "test/missing_cap/30102643_000014_S10.png",
+          "class": "missing_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S10",
+          "frame": "14",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.019508354365825653,
+            "missing_cap": 0.48094019293785095,
+            "crooked_cap": 0.03663923963904381,
+            "damaged_vial": 0.09179982542991638,
+            "no_vial": 0.3711123764514923
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000014_S17.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S17",
+          "frame": "14",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.007630664389580488,
+            "missing_cap": 0.6178142428398132,
+            "crooked_cap": 0.013791254721581936,
+            "damaged_vial": 0.33338814973831177,
+            "no_vial": 0.02737574465572834
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000014_S20.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S20",
+          "frame": "14",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.004421129357069731,
+            "missing_cap": 0.8326036334037781,
+            "crooked_cap": 0.005819931160658598,
+            "damaged_vial": 0.14998531341552734,
+            "no_vial": 0.00717001361772418
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000014_S30.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S30",
+          "frame": "14",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.009215234778821468,
+            "missing_cap": 0.49677520990371704,
+            "crooked_cap": 0.02181415818631649,
+            "damaged_vial": 0.4659087061882019,
+            "no_vial": 0.0062866429798305035
+          }
+        },
+        {
+          "path": "test/missing_cap/30102643_000015_S07.png",
+          "class": "missing_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S07",
+          "frame": "15",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.0175155159085989,
+            "missing_cap": 0.4948991537094116,
+            "crooked_cap": 0.025872934609651566,
+            "damaged_vial": 0.39080923795700073,
+            "no_vial": 0.07090319693088531
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000015_S10.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S10",
+          "frame": "15",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.006858260836452246,
+            "missing_cap": 0.7780802249908447,
+            "crooked_cap": 0.029125310480594635,
+            "damaged_vial": 0.1807968020439148,
+            "no_vial": 0.005139400716871023
+          }
+        },
+        {
+          "path": "test/pass/30102643_000015_S21.png",
+          "class": "pass",
+          "split": "test",
+          "tray": "S",
+          "pos": "S21",
+          "frame": "15",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.17394214868545532,
+            "missing_cap": 0.02142130397260189,
+            "crooked_cap": 0.09327567368745804,
+            "damaged_vial": 0.6830251812934875,
+            "no_vial": 0.02833564393222332
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000016_S09.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S09",
+          "frame": "16",
+          "run": "30102643",
+          "damage": "broken_neck",
+          "source": "synthetic",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.012264080345630646,
+            "missing_cap": 0.4538869559764862,
+            "crooked_cap": 0.03395107015967369,
+            "damaged_vial": 0.45928460359573364,
+            "no_vial": 0.04061330482363701
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000016_S21.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S21",
+          "frame": "16",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.006832662038505077,
+            "missing_cap": 0.7000279426574707,
+            "crooked_cap": 0.010451894253492355,
+            "damaged_vial": 0.27627041935920715,
+            "no_vial": 0.006417146418243647
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000016_S22.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S22",
+          "frame": "16",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.8305151462554932,
+            "missing_cap": 0.019365888088941574,
+            "crooked_cap": 0.01216081902384758,
+            "damaged_vial": 0.12950515747070312,
+            "no_vial": 0.008453071117401123
+          }
+        },
+        {
+          "path": "test/crooked_cap/30102643_000016_S24.png",
+          "class": "crooked_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S24",
+          "frame": "16",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.8498328924179077,
+            "missing_cap": 0.0032177516259253025,
+            "crooked_cap": 0.06286408752202988,
+            "damaged_vial": 0.08001302182674408,
+            "no_vial": 0.00407215254381299
+          }
+        },
+        {
+          "path": "test/crooked_cap/30102643_000017_S08.png",
+          "class": "crooked_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S08",
+          "frame": "17",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.8058464527130127,
+            "missing_cap": 0.0047210766933858395,
+            "crooked_cap": 0.16691318154335022,
+            "damaged_vial": 0.00745058711618185,
+            "no_vial": 0.01506864931434393
+          }
+        },
+        {
+          "path": "test/crooked_cap/30102643_000017_S24.png",
+          "class": "crooked_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S24",
+          "frame": "17",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.5843960642814636,
+            "missing_cap": 0.011713440530002117,
+            "crooked_cap": 0.06113963574171066,
+            "damaged_vial": 0.3304882347583771,
+            "no_vial": 0.012262574397027493
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000018_S10.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S10",
+          "frame": "18",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.007077815942466259,
+            "missing_cap": 0.9466378688812256,
+            "crooked_cap": 0.007993003353476524,
+            "damaged_vial": 0.0324164517223835,
+            "no_vial": 0.005874809809029102
+          }
+        },
+        {
+          "path": "test/missing_cap/30102643_000018_S13.png",
+          "class": "missing_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S13",
+          "frame": "18",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.004038057290017605,
+            "missing_cap": 0.37348225712776184,
+            "crooked_cap": 0.006250899750739336,
+            "damaged_vial": 0.6076550483703613,
+            "no_vial": 0.008573748171329498
+          }
+        },
+        {
+          "path": "test/missing_cap/30102643_000018_S30.png",
+          "class": "missing_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S30",
+          "frame": "18",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.025965852662920952,
+            "missing_cap": 0.4149138927459717,
+            "crooked_cap": 0.042772430926561356,
+            "damaged_vial": 0.5050128698348999,
+            "no_vial": 0.011334998533129692
+          }
+        },
+        {
+          "path": "test/missing_cap/30102643_000019_S11.png",
+          "class": "missing_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S11",
+          "frame": "19",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "damaged_vial",
+          "probabilities": {
+            "pass": 0.016199788078665733,
+            "missing_cap": 0.2909860610961914,
+            "crooked_cap": 0.03642958775162697,
+            "damaged_vial": 0.525054395198822,
+            "no_vial": 0.13133014738559723
+          }
+        },
+        {
+          "path": "test/crooked_cap/30102643_000019_S16.png",
+          "class": "crooked_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S16",
+          "frame": "19",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.6760509014129639,
+            "missing_cap": 0.007627192419022322,
+            "crooked_cap": 0.2581321597099304,
+            "damaged_vial": 0.049766287207603455,
+            "no_vial": 0.00842343270778656
+          }
+        },
+        {
+          "path": "test/crooked_cap/30102643_000019_S22.png",
+          "class": "crooked_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S22",
+          "frame": "19",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.4753452241420746,
+            "missing_cap": 0.006271230988204479,
+            "crooked_cap": 0.4908648431301117,
+            "damaged_vial": 0.01830313540995121,
+            "no_vial": 0.009215555153787136
+          }
+        },
+        {
+          "path": "test/missing_cap/30102643_000020_S09.png",
+          "class": "missing_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S09",
+          "frame": "20",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.013069091364741325,
+            "missing_cap": 0.48817887902259827,
+            "crooked_cap": 0.026549044996500015,
+            "damaged_vial": 0.4283308684825897,
+            "no_vial": 0.043872058391571045
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000020_S14.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S14",
+          "frame": "20",
+          "run": "30102643",
+          "damage": "broken_neck",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.03828243911266327,
+            "missing_cap": 0.6481130719184875,
+            "crooked_cap": 0.0205969400703907,
+            "damaged_vial": 0.16225503385066986,
+            "no_vial": 0.13075248897075653
+          }
+        },
+        {
+          "path": "test/crooked_cap/30102643_000020_S19.png",
+          "class": "crooked_cap",
+          "split": "test",
+          "tray": "S",
+          "pos": "S19",
+          "frame": "20",
+          "run": "30102643",
+          "damage": "",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.6157132387161255,
+            "missing_cap": 0.0043181683868169785,
+            "crooked_cap": 0.353699266910553,
+            "damaged_vial": 0.017995046451687813,
+            "no_vial": 0.008274335414171219
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000021_S05.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S05",
+          "frame": "21",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.021212667226791382,
+            "missing_cap": 0.372850626707077,
+            "crooked_cap": 0.040810901671648026,
+            "damaged_vial": 0.4432072341442108,
+            "no_vial": 0.12191861867904663
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000021_S08.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S08",
+          "frame": "21",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.9155598282814026,
+            "missing_cap": 0.003996768034994602,
+            "crooked_cap": 0.009790733456611633,
+            "damaged_vial": 0.05424901470541954,
+            "no_vial": 0.01640363410115242
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000022_S19.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S19",
+          "frame": "22",
+          "run": "30102643",
+          "damage": "chipped_rim",
+          "source": "synthetic",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.011860240250825882,
+            "missing_cap": 0.487659752368927,
+            "crooked_cap": 0.01933208666741848,
+            "damaged_vial": 0.47224366664886475,
+            "no_vial": 0.008904253132641315
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000022_S27.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S27",
+          "frame": "22",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.004607043694704771,
+            "missing_cap": 0.8719800710678101,
+            "crooked_cap": 0.00585460988804698,
+            "damaged_vial": 0.10721595585346222,
+            "no_vial": 0.010342327877879143
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000023_S08.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S08",
+          "frame": "23",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.7743210792541504,
+            "missing_cap": 0.015434173867106438,
+            "crooked_cap": 0.024583159014582634,
+            "damaged_vial": 0.16071204841136932,
+            "no_vial": 0.02494952082633972
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000023_S24.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S24",
+          "frame": "23",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.744264543056488,
+            "missing_cap": 0.007746310904622078,
+            "crooked_cap": 0.004641802050173283,
+            "damaged_vial": 0.23866820335388184,
+            "no_vial": 0.00467905355617404
+          }
+        }
+      ]
+    }
+  },
+  "by_damage": {
+    "body_crack": {
+      "positions": 34,
+      "accuracy": 0.5588235294117647,
+      "raw_accuracy": 0.5882352941176471,
+      "confusion": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          8,
+          0,
+          19,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "classes": [
+        "pass",
+        "missing_cap",
+        "crooked_cap",
+        "damaged_vial",
+        "no_vial",
+        "uncertain"
+      ],
+      "defects": 34,
+      "defects_accepted": 5,
+      "defects_as_empty": 0,
+      "occupied_as_empty": 0,
+      "empty_as_occupied": 0,
+      "uncertain": 2,
+      "good": 0,
+      "good_held": 0,
+      "per_class": {
+        "pass": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "missing_cap": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "crooked_cap": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "damaged_vial": {
+          "support": 34,
+          "precision": 1.0,
+          "recall": 0.5588235294117647,
+          "f1": 0.7169811320754718
+        },
+        "no_vial": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        }
+      },
+      "macro_f1": 0.7169811320754718,
+      "diagnostic_threshold_to_catch_all_known_defects": 0.03791993856430054,
+      "diagnostic_false_alarm_rate_at_that_threshold": null,
+      "threshold_note": "Post-hoc diagnostic only; not deployed or an unbiased accuracy claim",
+      "errors": [
+        {
+          "path": "test/damaged_vial/30102643_000001_S01.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S01",
+          "frame": "1",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.013253320008516312,
+            "missing_cap": 0.92661052942276,
+            "crooked_cap": 0.004990862216800451,
+            "damaged_vial": 0.05100437253713608,
+            "no_vial": 0.004140921868383884
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000007_S17.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S17",
+          "frame": "7",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.5156028866767883,
+            "missing_cap": 0.03996078297495842,
+            "crooked_cap": 0.06476201117038727,
+            "damaged_vial": 0.3146681487560272,
+            "no_vial": 0.06500622630119324
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000008_S23.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S23",
+          "frame": "8",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.0134852584451437,
+            "missing_cap": 0.9048321843147278,
+            "crooked_cap": 0.011690535582602024,
+            "damaged_vial": 0.061324574053287506,
+            "no_vial": 0.008667406626045704
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000009_S13.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S13",
+          "frame": "9",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.0033287859987467527,
+            "missing_cap": 0.8969531655311584,
+            "crooked_cap": 0.0058088479563593864,
+            "damaged_vial": 0.08991643041372299,
+            "no_vial": 0.003992748912423849
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000011_S03.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S03",
+          "frame": "11",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.5292580723762512,
+            "missing_cap": 0.009747039526700974,
+            "crooked_cap": 0.007192159071564674,
+            "damaged_vial": 0.43683794140815735,
+            "no_vial": 0.016964811831712723
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000012_S24.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S24",
+          "frame": "12",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.9620800614356995,
+            "missing_cap": 0.007643767632544041,
+            "crooked_cap": 0.009839150123298168,
+            "damaged_vial": 0.013418418355286121,
+            "no_vial": 0.007018645294010639
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000014_S17.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S17",
+          "frame": "14",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.007630664389580488,
+            "missing_cap": 0.6178142428398132,
+            "crooked_cap": 0.013791254721581936,
+            "damaged_vial": 0.33338814973831177,
+            "no_vial": 0.02737574465572834
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000014_S20.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S20",
+          "frame": "14",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.004421129357069731,
+            "missing_cap": 0.8326036334037781,
+            "crooked_cap": 0.005819931160658598,
+            "damaged_vial": 0.14998531341552734,
+            "no_vial": 0.00717001361772418
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000014_S30.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S30",
+          "frame": "14",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.009215234778821468,
+            "missing_cap": 0.49677520990371704,
+            "crooked_cap": 0.02181415818631649,
+            "damaged_vial": 0.4659087061882019,
+            "no_vial": 0.0062866429798305035
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000015_S10.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S10",
+          "frame": "15",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.006858260836452246,
+            "missing_cap": 0.7780802249908447,
+            "crooked_cap": 0.029125310480594635,
+            "damaged_vial": 0.1807968020439148,
+            "no_vial": 0.005139400716871023
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000016_S22.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S22",
+          "frame": "16",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.8305151462554932,
+            "missing_cap": 0.019365888088941574,
+            "crooked_cap": 0.01216081902384758,
+            "damaged_vial": 0.12950515747070312,
+            "no_vial": 0.008453071117401123
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000018_S10.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S10",
+          "frame": "18",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.007077815942466259,
+            "missing_cap": 0.9466378688812256,
+            "crooked_cap": 0.007993003353476524,
+            "damaged_vial": 0.0324164517223835,
+            "no_vial": 0.005874809809029102
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000021_S05.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S05",
+          "frame": "21",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.021212667226791382,
+            "missing_cap": 0.372850626707077,
+            "crooked_cap": 0.040810901671648026,
+            "damaged_vial": 0.4432072341442108,
+            "no_vial": 0.12191861867904663
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000021_S08.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S08",
+          "frame": "21",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.9155598282814026,
+            "missing_cap": 0.003996768034994602,
+            "crooked_cap": 0.009790733456611633,
+            "damaged_vial": 0.05424901470541954,
+            "no_vial": 0.01640363410115242
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000022_S27.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S27",
+          "frame": "22",
+          "run": "30102643",
+          "damage": "body_crack",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.004607043694704771,
+            "missing_cap": 0.8719800710678101,
+            "crooked_cap": 0.00585460988804698,
+            "damaged_vial": 0.10721595585346222,
+            "no_vial": 0.010342327877879143
+          }
+        }
+      ]
+    },
+    "broken_neck": {
+      "positions": 90,
+      "accuracy": 0.9444444444444444,
+      "raw_accuracy": 0.9555555555555556,
+      "confusion": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          85,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "classes": [
+        "pass",
+        "missing_cap",
+        "crooked_cap",
+        "damaged_vial",
+        "no_vial",
+        "uncertain"
+      ],
+      "defects": 90,
+      "defects_accepted": 0,
+      "defects_as_empty": 0,
+      "occupied_as_empty": 0,
+      "empty_as_occupied": 0,
+      "uncertain": 2,
+      "good": 0,
+      "good_held": 0,
+      "per_class": {
+        "pass": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "missing_cap": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "crooked_cap": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "damaged_vial": {
+          "support": 90,
+          "precision": 1.0,
+          "recall": 0.9444444444444444,
+          "f1": 0.9714285714285714
+        },
+        "no_vial": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        }
+      },
+      "macro_f1": 0.9714285714285714,
+      "diagnostic_threshold_to_catch_all_known_defects": 0.573788583278656,
+      "diagnostic_false_alarm_rate_at_that_threshold": null,
+      "threshold_note": "Post-hoc diagnostic only; not deployed or an unbiased accuracy claim",
+      "errors": [
+        {
+          "path": "test/damaged_vial/30102643_000001_G01.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "G",
+          "pos": "G01",
+          "frame": "1",
+          "run": "30102643",
+          "damage": "broken_neck",
+          "source": "synthetic",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.02391715534031391,
+            "missing_cap": 0.021160325035452843,
+            "crooked_cap": 0.6749219298362732,
+            "damaged_vial": 0.263388991355896,
+            "no_vial": 0.01661156676709652
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000003_G03.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "G",
+          "pos": "G03",
+          "frame": "3",
+          "run": "30102643",
+          "damage": "broken_neck",
+          "source": "synthetic",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.426211416721344,
+            "missing_cap": 0.04522841051220894,
+            "crooked_cap": 0.07881468534469604,
+            "damaged_vial": 0.4205355942249298,
+            "no_vial": 0.029209831729531288
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000016_S09.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S09",
+          "frame": "16",
+          "run": "30102643",
+          "damage": "broken_neck",
+          "source": "synthetic",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.012264080345630646,
+            "missing_cap": 0.4538869559764862,
+            "crooked_cap": 0.03395107015967369,
+            "damaged_vial": 0.45928460359573364,
+            "no_vial": 0.04061330482363701
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000020_S14.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S14",
+          "frame": "20",
+          "run": "30102643",
+          "damage": "broken_neck",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.03828243911266327,
+            "missing_cap": 0.6481130719184875,
+            "crooked_cap": 0.0205969400703907,
+            "damaged_vial": 0.16225503385066986,
+            "no_vial": 0.13075248897075653
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000023_G26.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "G",
+          "pos": "G26",
+          "frame": "23",
+          "run": "30102643",
+          "damage": "broken_neck",
+          "source": "synthetic",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.014666320756077766,
+            "missing_cap": 0.018462492153048515,
+            "crooked_cap": 0.8107603192329407,
+            "damaged_vial": 0.13103866577148438,
+            "no_vial": 0.025072131305933
+          }
+        }
+      ]
+    },
+    "chipped_rim": {
+      "positions": 72,
+      "accuracy": 0.9305555555555556,
+      "raw_accuracy": 0.9444444444444444,
+      "confusion": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          67,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "classes": [
+        "pass",
+        "missing_cap",
+        "crooked_cap",
+        "damaged_vial",
+        "no_vial",
+        "uncertain"
+      ],
+      "defects": 72,
+      "defects_accepted": 0,
+      "defects_as_empty": 0,
+      "occupied_as_empty": 0,
+      "empty_as_occupied": 0,
+      "uncertain": 2,
+      "good": 0,
+      "good_held": 0,
+      "per_class": {
+        "pass": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "missing_cap": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "crooked_cap": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "damaged_vial": {
+          "support": 72,
+          "precision": 1.0,
+          "recall": 0.9305555555555556,
+          "f1": 0.9640287769784173
+        },
+        "no_vial": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        }
+      },
+      "macro_f1": 0.9640287769784173,
+      "diagnostic_threshold_to_catch_all_known_defects": 0.8726561069488525,
+      "diagnostic_false_alarm_rate_at_that_threshold": null,
+      "threshold_note": "Post-hoc diagnostic only; not deployed or an unbiased accuracy claim",
+      "errors": [
+        {
+          "path": "test/damaged_vial/30102643_000000_S18.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S18",
+          "frame": "0",
+          "run": "30102643",
+          "damage": "chipped_rim",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.005858396179974079,
+            "missing_cap": 0.5455923080444336,
+            "crooked_cap": 0.011132952757179737,
+            "damaged_vial": 0.4307204782962799,
+            "no_vial": 0.006695860531181097
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000011_S10.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S10",
+          "frame": "11",
+          "run": "30102643",
+          "damage": "chipped_rim",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.004680229350924492,
+            "missing_cap": 0.7426975965499878,
+            "crooked_cap": 0.006841509137302637,
+            "damaged_vial": 0.24252331256866455,
+            "no_vial": 0.0032573507633060217
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000011_S16.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S16",
+          "frame": "11",
+          "run": "30102643",
+          "damage": "chipped_rim",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.015236945822834969,
+            "missing_cap": 0.7937318086624146,
+            "crooked_cap": 0.03724063187837601,
+            "damaged_vial": 0.14492453634738922,
+            "no_vial": 0.00886599812656641
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000013_S06.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S06",
+          "frame": "13",
+          "run": "30102643",
+          "damage": "chipped_rim",
+          "source": "synthetic",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.0041193184442818165,
+            "missing_cap": 0.4877118170261383,
+            "crooked_cap": 0.004219728987663984,
+            "damaged_vial": 0.4986429810523987,
+            "no_vial": 0.005306154023855925
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000022_S19.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S19",
+          "frame": "22",
+          "run": "30102643",
+          "damage": "chipped_rim",
+          "source": "synthetic",
+          "prediction": "uncertain",
+          "probabilities": {
+            "pass": 0.011860240250825882,
+            "missing_cap": 0.487659752368927,
+            "crooked_cap": 0.01933208666741848,
+            "damaged_vial": 0.47224366664886475,
+            "no_vial": 0.008904253132641315
+          }
+        }
+      ]
+    },
+    "star_fracture": {
+      "positions": 36,
+      "accuracy": 0.6111111111111112,
+      "raw_accuracy": 0.6111111111111112,
+      "confusion": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          9,
+          4,
+          1,
+          22,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "classes": [
+        "pass",
+        "missing_cap",
+        "crooked_cap",
+        "damaged_vial",
+        "no_vial",
+        "uncertain"
+      ],
+      "defects": 36,
+      "defects_accepted": 9,
+      "defects_as_empty": 0,
+      "occupied_as_empty": 0,
+      "empty_as_occupied": 0,
+      "uncertain": 0,
+      "good": 0,
+      "good_held": 0,
+      "per_class": {
+        "pass": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "missing_cap": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "crooked_cap": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "damaged_vial": {
+          "support": 36,
+          "precision": 1.0,
+          "recall": 0.6111111111111112,
+          "f1": 0.7586206896551725
+        },
+        "no_vial": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        }
+      },
+      "macro_f1": 0.7586206896551725,
+      "diagnostic_threshold_to_catch_all_known_defects": 0.05436199903488159,
+      "diagnostic_false_alarm_rate_at_that_threshold": null,
+      "threshold_note": "Post-hoc diagnostic only; not deployed or an unbiased accuracy claim",
+      "errors": [
+        {
+          "path": "test/damaged_vial/30102643_000000_S23.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S23",
+          "frame": "0",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.004239823203533888,
+            "missing_cap": 0.6301445960998535,
+            "crooked_cap": 0.007139186374843121,
+            "damaged_vial": 0.34938541054725647,
+            "no_vial": 0.009091014973819256
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000001_S11.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S11",
+          "frame": "1",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.926486074924469,
+            "missing_cap": 0.005867089610546827,
+            "crooked_cap": 0.003985196352005005,
+            "damaged_vial": 0.05952158942818642,
+            "no_vial": 0.00414006132632494
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000001_S19.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S19",
+          "frame": "1",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.8451776504516602,
+            "missing_cap": 0.011886189691722393,
+            "crooked_cap": 0.026650913059711456,
+            "damaged_vial": 0.10032735019922256,
+            "no_vial": 0.01595798321068287
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000002_S14.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S14",
+          "frame": "2",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.008046803995966911,
+            "missing_cap": 0.9541241526603699,
+            "crooked_cap": 0.01136892382055521,
+            "damaged_vial": 0.022129792720079422,
+            "no_vial": 0.004330327268689871
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000003_S09.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S09",
+          "frame": "3",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.03277171403169632,
+            "missing_cap": 0.7211474776268005,
+            "crooked_cap": 0.012481997720897198,
+            "damaged_vial": 0.18610572814941406,
+            "no_vial": 0.047493115067481995
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000006_S01.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S01",
+          "frame": "6",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.8464978933334351,
+            "missing_cap": 0.004748912062495947,
+            "crooked_cap": 0.024396708235144615,
+            "damaged_vial": 0.10827812552452087,
+            "no_vial": 0.016078397631645203
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000006_S06.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S06",
+          "frame": "6",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.6673137545585632,
+            "missing_cap": 0.006826878525316715,
+            "crooked_cap": 0.005332469940185547,
+            "damaged_vial": 0.311715304851532,
+            "no_vial": 0.008811574429273605
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000006_S26.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S26",
+          "frame": "6",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.6293452382087708,
+            "missing_cap": 0.01061293575912714,
+            "crooked_cap": 0.006407177075743675,
+            "damaged_vial": 0.33742213249206543,
+            "no_vial": 0.01621256209909916
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000007_S18.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S18",
+          "frame": "7",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "crooked_cap",
+          "probabilities": {
+            "pass": 0.3806934654712677,
+            "missing_cap": 0.013782032765448093,
+            "crooked_cap": 0.5442796349525452,
+            "damaged_vial": 0.05025786533951759,
+            "no_vial": 0.01098698377609253
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000009_S26.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S26",
+          "frame": "9",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.5754379034042358,
+            "missing_cap": 0.018811887130141258,
+            "crooked_cap": 0.023484069854021072,
+            "damaged_vial": 0.3707038164138794,
+            "no_vial": 0.011562343686819077
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000014_S02.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S02",
+          "frame": "14",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.9456380009651184,
+            "missing_cap": 0.006592035759240389,
+            "crooked_cap": 0.00987672433257103,
+            "damaged_vial": 0.026460353285074234,
+            "no_vial": 0.011432810686528683
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000016_S21.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S21",
+          "frame": "16",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "missing_cap",
+          "probabilities": {
+            "pass": 0.006832662038505077,
+            "missing_cap": 0.7000279426574707,
+            "crooked_cap": 0.010451894253492355,
+            "damaged_vial": 0.27627041935920715,
+            "no_vial": 0.006417146418243647
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000023_S08.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S08",
+          "frame": "23",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.7743210792541504,
+            "missing_cap": 0.015434173867106438,
+            "crooked_cap": 0.024583159014582634,
+            "damaged_vial": 0.16071204841136932,
+            "no_vial": 0.02494952082633972
+          }
+        },
+        {
+          "path": "test/damaged_vial/30102643_000023_S24.png",
+          "class": "damaged_vial",
+          "split": "test",
+          "tray": "S",
+          "pos": "S24",
+          "frame": "23",
+          "run": "30102643",
+          "damage": "star_fracture",
+          "source": "synthetic",
+          "prediction": "pass",
+          "probabilities": {
+            "pass": 0.744264543056488,
+            "missing_cap": 0.007746310904622078,
+            "crooked_cap": 0.004641802050173283,
+            "damaged_vial": 0.23866820335388184,
+            "no_vial": 0.00467905355617404
+          }
+        }
+      ]
+    }
+  }
+}

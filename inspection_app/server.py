@@ -83,11 +83,11 @@ def perform(data,version,good,scrap,complete,session=None):
 @app.get('/api/status')
 def status():
     with cosmos_lock:cosmos=dict(cosmos_health)
-    return dict(device=engine.device,models={v:engine.model_path(v).exists() for v in ['v2','v3_HZ']},cosmos=cosmos)
+    return dict(device=engine.device,models={v:engine.model_path(v).exists() for v in ['v2','v3_HZ','v4_HZ']},cosmos=cosmos)
 
 
 @app.post('/api/inspect')
-def inspect(file:UploadFile=File(...),version:str=Form('v3_HZ'),good:str=Form(''),scrap:str=Form(''),
+def inspect(file:UploadFile=File(...),version:str=Form('v4_HZ'),good:str=Form(''),scrap:str=Form(''),
             complete:bool=Form(False),session:str=Form('')):
     try:
         if session:uuid.UUID(session)
@@ -98,7 +98,7 @@ def inspect(file:UploadFile=File(...),version:str=Form('v3_HZ'),good:str=Form(''
 
 
 @app.post('/api/video')
-def video(file:UploadFile=File(...),version:str=Form('v3_HZ'),good:str=Form(''),scrap:str=Form(''),complete:bool=Form(False)):
+def video(file:UploadFile=File(...),version:str=Form('v4_HZ'),good:str=Form(''),scrap:str=Form(''),complete:bool=Form(False)):
     try:counts=counts_from(good,scrap)
     except ValueError as e:raise HTTPException(422,str(e))
     # Bound file size, duration sampled, and output size; video is deleted after inspection.

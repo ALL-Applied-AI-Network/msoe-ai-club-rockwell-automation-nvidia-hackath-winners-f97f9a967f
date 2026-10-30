@@ -1,0 +1,12 @@
+{
+  "job_id": "e1ebf13c-e778-4575-8d18-7e2b69a873b9",
+  "name": "v4_HZ-reviewed-real-finetune-2",
+  "status": "succeeded",
+  "exit_code": 0,
+  "spark": "spark-8191",
+  "started_at": "2026-10-30T20:01:47.302684+00:00",
+  "finished_at": "2026-10-30T20:06:33.67047+00:00",
+  "gpu": "NVIDIA GB10",
+  "training_source": "synthetic+reviewed-real",
+  "review_sha256": "22de39ca98a254f9e65fa03b889fd5915c5d342faa3bf40a138818107fcaff6c"
+}

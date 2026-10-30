@@ -8,8 +8,8 @@ model release/evaluation, synthetic generation, and the actual DGX Cosmos servic
 - Image upload, drag/drop, supplied examples, and camera snapshots.
 - Live camera capture with sampled inference, 60-position overlays, and stable-change events.
 - Uploaded video with up to 30 unique sampled frames and a selectable result timeline.
-- Model selection defaults to **v2 · GitHub model.pt**; `v3_HZ · new model` is also
-  selectable and stays unavailable until its checkpoint exists. The v2 domain warning remains visible.
+- Model selection defaults to **v4_HZ · reviewed-real adapted**; `v3_HZ` and the diagnostic
+  `v2` baseline remain selectable. A model stays unavailable until its checkpoint exists.
 - Good/scrap counts and a **good-order** completion signal; classifications and placement
   findings remain separate. Completion does not require the scrap fixture to be full.
 - Position details, raw context crops, JSON/CSV exports, and Cosmos advisory assessment.
@@ -50,8 +50,8 @@ outputs\hz-web-env\Scripts\python.exe -m uvicorn inspection_app.server:app --hos
 
 ### Image inspection
 
-1. Select the model. The existing trained `v2` is the default. `v3_HZ` becomes available when
-   `model/v3_HZ/model.pt` is present. The v2 baseline is explicitly marked as a different camera/crop domain.
+1. Select the model. `v4_HZ` is the default and becomes available when
+   `model/v4_HZ/model.pt` is present. The v2 baseline is explicitly marked as a different camera/crop domain.
 2. Upload a calibrated 1920×1080 image, choose a supplied example, or connect the camera and
    capture a snapshot. Other resolutions are refused; a different viewpoint needs calibration.
 3. Optionally enter an authoritative placement count for each tray. Mark good-order completion
