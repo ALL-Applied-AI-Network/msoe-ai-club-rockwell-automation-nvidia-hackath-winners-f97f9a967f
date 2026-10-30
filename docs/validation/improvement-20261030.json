@@ -1,0 +1,1355 @@
+{
+  "jobs": {
+    "render": "931bc2a1-95b6-4897-b2d0-7fa2aa60113a",
+    "calibration": "b8edd623-b98c-4fe9-82c5-0fac077dc17c",
+    "train": "33ede9fc-9dee-40f3-b1f2-1ae1ad50566f",
+    "compare": "3504e649-4732-47a4-be09-ef305addec78"
+  },
+  "decision": "Keep baseline; candidate not promoted; review policy optional",
+  "comparison": {
+    "validation_crops": 10920,
+    "device": "NVIDIA GB10",
+    "torch_version": "2.14.1+cu130",
+    "scope": "Same existing synthetic validation crops for both checkpoints; not independent final test data",
+    "classes": [
+      "pass",
+      "missing_cap",
+      "crooked_cap",
+      "damaged_vial",
+      "no_vial"
+    ],
+    "results": {
+      "baseline": {
+        "accuracy": 0.9976190476190476,
+        "macro_f1": 0.9905290154542875,
+        "per_class": {
+          "pass": {
+            "support": 4224,
+            "precision": 0.9966965549787635,
+            "recall": 1.0,
+            "f1": 0.9983455447884662
+          },
+          "missing_cap": {
+            "support": 2137,
+            "precision": 0.9948765719608756,
+            "recall": 0.9995320542817033,
+            "f1": 0.9971988795518206
+          },
+          "crooked_cap": {
+            "support": 2152,
+            "precision": 1.0,
+            "recall": 0.9986059479553904,
+            "f1": 0.9993024877935364
+          },
+          "damaged_vial": {
+            "support": 283,
+            "precision": 0.9961832061068703,
+            "recall": 0.9222614840989399,
+            "f1": 0.9577981651376146
+          },
+          "no_vial": {
+            "support": 2124,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "confusion": [
+          [
+            4224,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2136,
+            0,
+            1,
+            0
+          ],
+          [
+            3,
+            0,
+            2149,
+            0,
+            0
+          ],
+          [
+            11,
+            11,
+            0,
+            261,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2124
+          ]
+        ],
+        "decision_accuracy": 0.9976190476190476,
+        "uncertain": 1,
+        "raw_defects_as_pass": 14,
+        "emitted_defects_as_pass": 14,
+        "defect_support": 4572,
+        "false_alarms_on_pass": 0,
+        "pass_support": 4224,
+        "damage_by_kind": {
+          "star_fracture": {
+            "support": 85,
+            "recall": 0.9882352941176471,
+            "predicted_counts": {
+              "damaged_vial": 84,
+              "missing_cap": 1
+            }
+          },
+          "chipped_rim": {
+            "support": 66,
+            "recall": 1.0,
+            "predicted_counts": {
+              "damaged_vial": 66
+            }
+          },
+          "body_crack": {
+            "support": 74,
+            "recall": 0.7162162162162162,
+            "predicted_counts": {
+              "damaged_vial": 53,
+              "pass": 11,
+              "missing_cap": 10
+            }
+          },
+          "broken_neck": {
+            "support": 58,
+            "recall": 1.0,
+            "predicted_counts": {
+              "damaged_vial": 58
+            }
+          }
+        },
+        "model_inference_seconds": 4.215506386710331
+      },
+      "candidate": {
+        "accuracy": 0.9978937728937729,
+        "macro_f1": 0.9915100063659278,
+        "per_class": {
+          "pass": {
+            "support": 4224,
+            "precision": 0.9974013701866289,
+            "recall": 0.9995265151515151,
+            "f1": 0.9984628118718222
+          },
+          "missing_cap": {
+            "support": 2137,
+            "precision": 0.9958041958041958,
+            "recall": 0.9995320542817033,
+            "f1": 0.9976646426903316
+          },
+          "crooked_cap": {
+            "support": 2152,
+            "precision": 1.0,
+            "recall": 0.9990706319702602,
+            "f1": 0.99953509995351
+          },
+          "damaged_vial": {
+            "support": 283,
+            "precision": 0.9888059701492538,
+            "recall": 0.9363957597173145,
+            "f1": 0.9618874773139746
+          },
+          "no_vial": {
+            "support": 2124,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "confusion": [
+          [
+            4222,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            2136,
+            0,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            2150,
+            0,
+            0
+          ],
+          [
+            9,
+            9,
+            0,
+            265,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2124
+          ]
+        ],
+        "decision_accuracy": 0.9977106227106227,
+        "uncertain": 2,
+        "raw_defects_as_pass": 11,
+        "emitted_defects_as_pass": 11,
+        "defect_support": 4572,
+        "false_alarms_on_pass": 2,
+        "pass_support": 4224,
+        "damage_by_kind": {
+          "star_fracture": {
+            "support": 85,
+            "recall": 0.9882352941176471,
+            "predicted_counts": {
+              "damaged_vial": 84,
+              "missing_cap": 1
+            }
+          },
+          "chipped_rim": {
+            "support": 66,
+            "recall": 1.0,
+            "predicted_counts": {
+              "damaged_vial": 66
+            }
+          },
+          "body_crack": {
+            "support": 74,
+            "recall": 0.7702702702702703,
+            "predicted_counts": {
+              "damaged_vial": 57,
+              "pass": 9,
+              "missing_cap": 8
+            }
+          },
+          "broken_neck": {
+            "support": 58,
+            "recall": 1.0,
+            "predicted_counts": {
+              "damaged_vial": 58
+            }
+          }
+        },
+        "model_inference_seconds": 3.7295175173785537
+      }
+    },
+    "elapsed_seconds": 9.410253537120298,
+    "sha256": {
+      "model/model.pt": "453be3f451fe5e6f801ffd6b20e7096aa8cc1724244db13711c9ce4566c456af",
+      "candidate/model.pt": "0687284380c516d232028ee97983450692f4acf733136c3c2cb4e9446ed77ae6",
+      "/job/in/validation/index.csv": "3c8328af9f4d256f437cf65df985fb4fde792eb32d9480ac4b25da1eee51a58d"
+    }
+  },
+  "frame_reports": {
+    "baseline-fresh-report": {
+      "all": {
+        "positions": 70,
+        "correct": 60,
+        "defects": 33,
+        "defects_accepted": 2,
+        "good": 23,
+        "good_held": 0,
+        "uncertain": 0,
+        "missing": 0
+      },
+      "groups": {
+        "G/broken_neck": {
+          "positions": 5,
+          "correct": 0,
+          "defects": 5,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "G/chipped_rim": {
+          "positions": 2,
+          "correct": 0,
+          "defects": 2,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/chipped_rim": {
+          "positions": 3,
+          "correct": 3,
+          "defects": 3,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/star_fracture": {
+          "positions": 3,
+          "correct": 0,
+          "defects": 3,
+          "defects_accepted": 2,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "crooked_cap": {
+          "positions": 16,
+          "correct": 16,
+          "defects": 16,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "damaged_vial": {
+          "positions": 13,
+          "correct": 3,
+          "defects": 13,
+          "defects_accepted": 2,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "missing_cap": {
+          "positions": 4,
+          "correct": 4,
+          "defects": 4,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "no_vial": {
+          "positions": 14,
+          "correct": 14,
+          "defects": 0,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "pass": {
+          "positions": 23,
+          "correct": 23,
+          "defects": 0,
+          "defects_accepted": 0,
+          "good": 23,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "tray_G": {
+          "positions": 60,
+          "correct": 53,
+          "defects": 27,
+          "defects_accepted": 0,
+          "good": 20,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "tray_S": {
+          "positions": 10,
+          "correct": 7,
+          "defects": 6,
+          "defects_accepted": 2,
+          "good": 3,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        }
+      }
+    },
+    "baseline-legacy-report": {
+      "all": {
+        "positions": 840,
+        "correct": 805,
+        "defects": 391,
+        "defects_accepted": 19,
+        "good": 291,
+        "good_held": 3,
+        "uncertain": 3,
+        "missing": 0
+      },
+      "groups": {
+        "S/body_crack": {
+          "positions": 16,
+          "correct": 2,
+          "defects": 16,
+          "defects_accepted": 8,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 1,
+          "missing": 0
+        },
+        "S/broken_neck": {
+          "positions": 13,
+          "correct": 13,
+          "defects": 13,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/chipped_rim": {
+          "positions": 8,
+          "correct": 8,
+          "defects": 8,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/star_fracture": {
+          "positions": 18,
+          "correct": 1,
+          "defects": 18,
+          "defects_accepted": 10,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 1,
+          "missing": 0
+        },
+        "crooked_cap": {
+          "positions": 160,
+          "correct": 159,
+          "defects": 160,
+          "defects_accepted": 1,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "damaged_vial": {
+          "positions": 55,
+          "correct": 24,
+          "defects": 55,
+          "defects_accepted": 18,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 2,
+          "missing": 0
+        },
+        "missing_cap": {
+          "positions": 176,
+          "correct": 176,
+          "defects": 176,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "no_vial": {
+          "positions": 158,
+          "correct": 158,
+          "defects": 0,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "pass": {
+          "positions": 291,
+          "correct": 288,
+          "defects": 0,
+          "defects_accepted": 0,
+          "good": 291,
+          "good_held": 3,
+          "uncertain": 1,
+          "missing": 0
+        },
+        "tray_G": {
+          "positions": 720,
+          "correct": 720,
+          "defects": 312,
+          "defects_accepted": 0,
+          "good": 262,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "tray_S": {
+          "positions": 120,
+          "correct": 85,
+          "defects": 79,
+          "defects_accepted": 19,
+          "good": 29,
+          "good_held": 3,
+          "uncertain": 3,
+          "missing": 0
+        }
+      }
+    },
+    "baseline-new-seed-policy-report": {
+      "all": {
+        "positions": 1400,
+        "correct": 1140,
+        "defects": 708,
+        "defects_accepted": 0,
+        "good": 500,
+        "good_held": 59,
+        "uncertain": 65,
+        "missing": 0
+      },
+      "groups": {
+        "G/broken_neck": {
+          "positions": 109,
+          "correct": 0,
+          "defects": 109,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 2,
+          "missing": 0
+        },
+        "G/chipped_rim": {
+          "positions": 84,
+          "correct": 0,
+          "defects": 84,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 8,
+          "missing": 0
+        },
+        "S/body_crack": {
+          "positions": 20,
+          "correct": 16,
+          "defects": 20,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/broken_neck": {
+          "positions": 18,
+          "correct": 18,
+          "defects": 18,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/chipped_rim": {
+          "positions": 16,
+          "correct": 16,
+          "defects": 16,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/star_fracture": {
+          "positions": 33,
+          "correct": 33,
+          "defects": 33,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "crooked_cap": {
+          "positions": 191,
+          "correct": 190,
+          "defects": 191,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 1,
+          "missing": 0
+        },
+        "damaged_vial": {
+          "positions": 280,
+          "correct": 83,
+          "defects": 280,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 10,
+          "missing": 0
+        },
+        "missing_cap": {
+          "positions": 237,
+          "correct": 234,
+          "defects": 237,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 1,
+          "missing": 0
+        },
+        "no_vial": {
+          "positions": 192,
+          "correct": 192,
+          "defects": 0,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "pass": {
+          "positions": 500,
+          "correct": 441,
+          "defects": 0,
+          "defects_accepted": 0,
+          "good": 500,
+          "good_held": 59,
+          "uncertain": 53,
+          "missing": 0
+        },
+        "tray_G": {
+          "positions": 1200,
+          "correct": 988,
+          "defects": 584,
+          "defects_accepted": 0,
+          "good": 445,
+          "good_held": 19,
+          "uncertain": 29,
+          "missing": 0
+        },
+        "tray_S": {
+          "positions": 200,
+          "correct": 152,
+          "defects": 124,
+          "defects_accepted": 0,
+          "good": 55,
+          "good_held": 40,
+          "uncertain": 36,
+          "missing": 0
+        }
+      }
+    },
+    "baseline-new-seed-report": {
+      "all": {
+        "positions": 1400,
+        "correct": 1190,
+        "defects": 708,
+        "defects_accepted": 4,
+        "good": 500,
+        "good_held": 9,
+        "uncertain": 11,
+        "missing": 0
+      },
+      "groups": {
+        "G/broken_neck": {
+          "positions": 109,
+          "correct": 0,
+          "defects": 109,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 2,
+          "missing": 0
+        },
+        "G/chipped_rim": {
+          "positions": 84,
+          "correct": 0,
+          "defects": 84,
+          "defects_accepted": 3,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 5,
+          "missing": 0
+        },
+        "S/body_crack": {
+          "positions": 20,
+          "correct": 16,
+          "defects": 20,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/broken_neck": {
+          "positions": 18,
+          "correct": 18,
+          "defects": 18,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/chipped_rim": {
+          "positions": 16,
+          "correct": 16,
+          "defects": 16,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/star_fracture": {
+          "positions": 33,
+          "correct": 33,
+          "defects": 33,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "crooked_cap": {
+          "positions": 191,
+          "correct": 190,
+          "defects": 191,
+          "defects_accepted": 1,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "damaged_vial": {
+          "positions": 280,
+          "correct": 83,
+          "defects": 280,
+          "defects_accepted": 3,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 7,
+          "missing": 0
+        },
+        "missing_cap": {
+          "positions": 237,
+          "correct": 234,
+          "defects": 237,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 1,
+          "missing": 0
+        },
+        "no_vial": {
+          "positions": 192,
+          "correct": 192,
+          "defects": 0,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "pass": {
+          "positions": 500,
+          "correct": 491,
+          "defects": 0,
+          "defects_accepted": 0,
+          "good": 500,
+          "good_held": 9,
+          "uncertain": 3,
+          "missing": 0
+        },
+        "tray_G": {
+          "positions": 1200,
+          "correct": 1006,
+          "defects": 584,
+          "defects_accepted": 3,
+          "good": 445,
+          "good_held": 1,
+          "uncertain": 8,
+          "missing": 0
+        },
+        "tray_S": {
+          "positions": 200,
+          "correct": 184,
+          "defects": 124,
+          "defects_accepted": 1,
+          "good": 55,
+          "good_held": 8,
+          "uncertain": 3,
+          "missing": 0
+        }
+      }
+    },
+    "candidate-fresh-report": {
+      "all": {
+        "positions": 70,
+        "correct": 60,
+        "defects": 33,
+        "defects_accepted": 2,
+        "good": 23,
+        "good_held": 0,
+        "uncertain": 0,
+        "missing": 0
+      },
+      "groups": {
+        "G/broken_neck": {
+          "positions": 5,
+          "correct": 0,
+          "defects": 5,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "G/chipped_rim": {
+          "positions": 2,
+          "correct": 0,
+          "defects": 2,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/chipped_rim": {
+          "positions": 3,
+          "correct": 3,
+          "defects": 3,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/star_fracture": {
+          "positions": 3,
+          "correct": 0,
+          "defects": 3,
+          "defects_accepted": 2,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "crooked_cap": {
+          "positions": 16,
+          "correct": 16,
+          "defects": 16,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "damaged_vial": {
+          "positions": 13,
+          "correct": 3,
+          "defects": 13,
+          "defects_accepted": 2,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "missing_cap": {
+          "positions": 4,
+          "correct": 4,
+          "defects": 4,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "no_vial": {
+          "positions": 14,
+          "correct": 14,
+          "defects": 0,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "pass": {
+          "positions": 23,
+          "correct": 23,
+          "defects": 0,
+          "defects_accepted": 0,
+          "good": 23,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "tray_G": {
+          "positions": 60,
+          "correct": 53,
+          "defects": 27,
+          "defects_accepted": 0,
+          "good": 20,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "tray_S": {
+          "positions": 10,
+          "correct": 7,
+          "defects": 6,
+          "defects_accepted": 2,
+          "good": 3,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        }
+      }
+    },
+    "candidate-legacy-report": {
+      "all": {
+        "positions": 840,
+        "correct": 804,
+        "defects": 391,
+        "defects_accepted": 19,
+        "good": 291,
+        "good_held": 4,
+        "uncertain": 1,
+        "missing": 0
+      },
+      "groups": {
+        "S/body_crack": {
+          "positions": 16,
+          "correct": 2,
+          "defects": 16,
+          "defects_accepted": 8,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 1,
+          "missing": 0
+        },
+        "S/broken_neck": {
+          "positions": 13,
+          "correct": 13,
+          "defects": 13,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/chipped_rim": {
+          "positions": 8,
+          "correct": 8,
+          "defects": 8,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/star_fracture": {
+          "positions": 18,
+          "correct": 1,
+          "defects": 18,
+          "defects_accepted": 10,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "crooked_cap": {
+          "positions": 160,
+          "correct": 159,
+          "defects": 160,
+          "defects_accepted": 1,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "damaged_vial": {
+          "positions": 55,
+          "correct": 24,
+          "defects": 55,
+          "defects_accepted": 18,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 1,
+          "missing": 0
+        },
+        "missing_cap": {
+          "positions": 176,
+          "correct": 176,
+          "defects": 176,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "no_vial": {
+          "positions": 158,
+          "correct": 158,
+          "defects": 0,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "pass": {
+          "positions": 291,
+          "correct": 287,
+          "defects": 0,
+          "defects_accepted": 0,
+          "good": 291,
+          "good_held": 4,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "tray_G": {
+          "positions": 720,
+          "correct": 720,
+          "defects": 312,
+          "defects_accepted": 0,
+          "good": 262,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "tray_S": {
+          "positions": 120,
+          "correct": 84,
+          "defects": 79,
+          "defects_accepted": 19,
+          "good": 29,
+          "good_held": 4,
+          "uncertain": 1,
+          "missing": 0
+        }
+      }
+    },
+    "candidate-new-seed-policy-report": {
+      "all": {
+        "positions": 1400,
+        "correct": 1144,
+        "defects": 708,
+        "defects_accepted": 0,
+        "good": 500,
+        "good_held": 54,
+        "uncertain": 56,
+        "missing": 0
+      },
+      "groups": {
+        "G/broken_neck": {
+          "positions": 109,
+          "correct": 0,
+          "defects": 109,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 2,
+          "missing": 0
+        },
+        "G/chipped_rim": {
+          "positions": 84,
+          "correct": 0,
+          "defects": 84,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 8,
+          "missing": 0
+        },
+        "S/body_crack": {
+          "positions": 20,
+          "correct": 16,
+          "defects": 20,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/broken_neck": {
+          "positions": 18,
+          "correct": 18,
+          "defects": 18,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/chipped_rim": {
+          "positions": 16,
+          "correct": 16,
+          "defects": 16,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/star_fracture": {
+          "positions": 33,
+          "correct": 33,
+          "defects": 33,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "crooked_cap": {
+          "positions": 191,
+          "correct": 190,
+          "defects": 191,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 1,
+          "missing": 0
+        },
+        "damaged_vial": {
+          "positions": 280,
+          "correct": 83,
+          "defects": 280,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 10,
+          "missing": 0
+        },
+        "missing_cap": {
+          "positions": 237,
+          "correct": 233,
+          "defects": 237,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 1,
+          "missing": 0
+        },
+        "no_vial": {
+          "positions": 192,
+          "correct": 192,
+          "defects": 0,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "pass": {
+          "positions": 500,
+          "correct": 446,
+          "defects": 0,
+          "defects_accepted": 0,
+          "good": 500,
+          "good_held": 54,
+          "uncertain": 44,
+          "missing": 0
+        },
+        "tray_G": {
+          "positions": 1200,
+          "correct": 991,
+          "defects": 584,
+          "defects_accepted": 0,
+          "good": 445,
+          "good_held": 16,
+          "uncertain": 26,
+          "missing": 0
+        },
+        "tray_S": {
+          "positions": 200,
+          "correct": 153,
+          "defects": 124,
+          "defects_accepted": 0,
+          "good": 55,
+          "good_held": 38,
+          "uncertain": 30,
+          "missing": 0
+        }
+      }
+    },
+    "candidate-new-seed-report": {
+      "all": {
+        "positions": 1400,
+        "correct": 1187,
+        "defects": 708,
+        "defects_accepted": 4,
+        "good": 500,
+        "good_held": 11,
+        "uncertain": 9,
+        "missing": 0
+      },
+      "groups": {
+        "G/broken_neck": {
+          "positions": 109,
+          "correct": 0,
+          "defects": 109,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 2,
+          "missing": 0
+        },
+        "G/chipped_rim": {
+          "positions": 84,
+          "correct": 0,
+          "defects": 84,
+          "defects_accepted": 3,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 5,
+          "missing": 0
+        },
+        "S/body_crack": {
+          "positions": 20,
+          "correct": 16,
+          "defects": 20,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/broken_neck": {
+          "positions": 18,
+          "correct": 18,
+          "defects": 18,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/chipped_rim": {
+          "positions": 16,
+          "correct": 16,
+          "defects": 16,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "S/star_fracture": {
+          "positions": 33,
+          "correct": 33,
+          "defects": 33,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "crooked_cap": {
+          "positions": 191,
+          "correct": 190,
+          "defects": 191,
+          "defects_accepted": 1,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "damaged_vial": {
+          "positions": 280,
+          "correct": 83,
+          "defects": 280,
+          "defects_accepted": 3,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 7,
+          "missing": 0
+        },
+        "missing_cap": {
+          "positions": 237,
+          "correct": 233,
+          "defects": 237,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 1,
+          "missing": 0
+        },
+        "no_vial": {
+          "positions": 192,
+          "correct": 192,
+          "defects": 0,
+          "defects_accepted": 0,
+          "good": 0,
+          "good_held": 0,
+          "uncertain": 0,
+          "missing": 0
+        },
+        "pass": {
+          "positions": 500,
+          "correct": 489,
+          "defects": 0,
+          "defects_accepted": 0,
+          "good": 500,
+          "good_held": 11,
+          "uncertain": 1,
+          "missing": 0
+        },
+        "tray_G": {
+          "positions": 1200,
+          "correct": 1006,
+          "defects": 584,
+          "defects_accepted": 3,
+          "good": 445,
+          "good_held": 1,
+          "uncertain": 8,
+          "missing": 0
+        },
+        "tray_S": {
+          "positions": 200,
+          "correct": 181,
+          "defects": 124,
+          "defects_accepted": 1,
+          "good": 55,
+          "good_held": 10,
+          "uncertain": 1,
+          "missing": 0
+        }
+      }
+    }
+  },
+  "render_check": {
+    "frames": 40,
+    "positions": 1400,
+    "seed": 30102691,
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "counts": {
+      "G/crooked_cap": 181,
+      "G/pass": 445,
+      "G/no_vial": 171,
+      "G/damaged_vial": 193,
+      "G/missing_cap": 210,
+      "S/missing_cap": 27,
+      "S/damaged_vial": 87,
+      "S/pass": 55,
+      "S/no_vial": 21,
+      "S/crooked_cap": 10
+    },
+    "generator_sha256": "2a56c6d1c0490c7203d4da45cf1c4ef7e8cc1783a6da1a0363017c6d12b3ef38"
+  }
+}

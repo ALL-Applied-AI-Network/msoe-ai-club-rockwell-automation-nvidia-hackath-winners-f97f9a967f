@@ -155,6 +155,35 @@ renders are cleaner than reality, not that the model will be that good on the re
 
 ## Next steps
 
+### October 30 improvement experiments
+
+See [the improvement report](docs/IMPROVEMENT_REPORT.md) and [remaining work](todo.md).
+The original v2 checkpoint remains in `model/model.pt`; experimental checkpoints and raw
+DGX results live under `outputs/improvement-20261030/` until verified for promotion.
+
+Prediction now refuses incompatible image sizes and reports accuracy using the emitted
+class, including `uncertain`. The model still needs a verified 640x480 camera layout.
+Do not resize the official 1920x1080 release to bypass this check.
+
+An optional checkpoint-bound acceptance policy holds low-confidence pass predictions for
+review. It does not turn uncertain vials into confirmed defects. Compare both defect escapes
+and good-vial holds, including each tray separately, before enabling it:
+
+```powershell
+python classifier/predict.py run --model model/model.pt --layout model/layout.json --device cuda --policy outputs/improvement-20261030/calibration-job/calibration/policy.json --out outputs/review-run PATH_TO_640x480_FRAMES
+python classifier/evaluate_predictions.py --predictions outputs/review-run --labels PATH_TO_LABELS --out outputs/review-run/metrics.json
+```
+
+For GPU fine-tuning in a YAAD job with `crops/` and `model/` staged in `/job/in`:
+
+```bash
+python classifier/train_classifier.py --device cuda --init model/model.pt --crops crops --out /job/out/candidate --epochs 3 --batch 256 --lr 0.00001 --damage-weight 2 --threads 8
+```
+
+The trainer requires an empty output folder, checks frame separation, includes the final
+partial batch, and fails if requested pretrained weights cannot load. Run local regression
+checks with `python -m unittest discover -s tests -v`.
+
 - **Get real frames** from the cap-seal camera: full 640×480 frames, a mix of lighting and fill levels,
   and examples of each damage type. Check them with `predict.py --check-layout` first, then measure
   real-world accuracy with `--labels`.

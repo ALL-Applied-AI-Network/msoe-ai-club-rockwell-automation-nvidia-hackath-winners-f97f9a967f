@@ -19,7 +19,7 @@
 Writes <out>/<frame>.json (class, confidence and all class probabilities per position), <out>/predictions.csv,
 and <out>/overlays/<frame>.png. Positions whose top probability is below --min-conf are marked uncertain.
 """
-import argparse, csv, json, math, sys
+import argparse, csv, hashlib, json, math, sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -27,6 +27,7 @@ import cv2
 import numpy as np
 
 import vial_crops
+from decision import decide
 
 COLORS = {"pass": (80, 200, 60), "missing_cap": (0, 150, 255), "crooked_cap": (230, 60, 230),
           "damaged_vial": (40, 40, 255), "no_vial": (255, 160, 40), "uncertain": (200, 200, 200)}
@@ -109,19 +110,37 @@ def draw(ov, pos, info, cls, conf, truth):
 
 
 def run(a):
+    if not 0 <= a.min_conf <= 1 or not 0 <= a.pass_min_conf <= 1:
+        sys.exit("confidence thresholds must be in [0, 1]")
+    if a.policy:
+        policy = json.loads(a.policy.read_text())
+        if hashlib.sha256(a.model.read_bytes()).hexdigest() != policy["model_sha256"]:
+            sys.exit("policy belongs to a different model checkpoint")
+        a.pass_min_conf = policy["pass_min_conf"]
+        if not isinstance(a.pass_min_conf, (int, float)) or not 0 <= a.pass_min_conf <= 1:
+            sys.exit("invalid pass confidence in policy")
     layout = json.loads(a.layout.read_text())["positions"]
     trays = {t.strip().upper() for t in a.trays.split(",")}
     layout = {p: v for p, v in layout.items() if p[0] in trays}
+    if not layout:
+        sys.exit("layout contains no positions for the requested trays")
     images = []
     for item in a.images:
         images += sorted(x for x in item.iterdir() if x.suffix.lower() in (".png", ".jpg", ".jpeg")) if item.is_dir() else [item]
     if not images:
         sys.exit("no images")
+    if len({p.stem for p in images}) != len(images):
+        sys.exit("duplicate image names would overwrite predictions")
+    # Validate the entire batch before writing any partial predictions.
+    for path in images:
+        image = cv2.imread(str(path))
+        if image is None or image.shape[:2] != (480, 640):
+            sys.exit(f"{path}: requires readable 640x480 image and calibrated layout; do not resize blindly")
 
     model = None
     if not a.check_layout:
         import torch, torchvision
-        ck = torch.load(a.model, map_location="cpu", weights_only=False)
+        ck = torch.load(a.model, map_location="cpu", weights_only=True)
         classes, size = ck["classes"], ck["size"]
         model = torchvision.models.resnet18()
         model.fc = torch.nn.Linear(model.fc.in_features, len(classes))
@@ -148,9 +167,10 @@ def run(a):
         names, crops = [], []
         for pos, info in pos_info.items():
             c = vial_crops.crop_position(padded, pos, info, size)
-            if c is not None:
-                names.append(pos)
-                crops.append(c)
+            if c is None:
+                sys.exit(f"cannot crop {pos} in {img_path}; check layout calibration")
+            names.append(pos)
+            crops.append(c)
         ov = img.copy()
         truth = true_labels(a.labels / f"{img_path.stem}.json") if a.labels else None
         result = {}
@@ -162,15 +182,16 @@ def run(a):
                 prob = torch.softmax(model(x), 1).cpu().numpy()
             for pos, p in zip(names, prob):
                 k = int(p.argmax())
-                cls = classes[k] if p[k] >= a.min_conf else "uncertain"
+                cls, raw, confidence = decide(classes, p.tolist(), a.min_conf, a.pass_min_conf)
                 t = truth.get(pos) if truth else None
-                result[pos] = {"class": cls, "confidence": round(float(p[k]), 4),
+                result[pos] = {"class": cls, "raw_class": raw, "confidence": round(float(p[k]), 4),
+                               "action": "accept" if cls == "pass" else ("review" if cls == "uncertain" else "flag"),
                                "probs": {c: round(float(v), 4) for c, v in zip(classes, p)}}
                 if t:
                     result[pos]["true"] = t
                     total += 1
-                    hits += int(t == classes[k])
-                    per_cls[t][0] += int(t == classes[k])
+                    hits += int(t == cls)
+                    per_cls[t][0] += int(t == cls)
                     per_cls[t][1] += 1
                 csv_rows.append({"frame": img_path.name, "pos": pos, "class": cls, "confidence": round(float(p[k]), 4),
                                  "true": t or ""})
@@ -209,6 +230,8 @@ rp.add_argument("--layout", type=Path, default=Path("layout.json"))
 rp.add_argument("--out", type=Path, default=Path("preds"))
 rp.add_argument("--trays", default="G,S")
 rp.add_argument("--min-conf", type=float, default=0.5, help="below this top probability a position is 'uncertain'")
+rp.add_argument("--pass-min-conf", type=float, default=0.5, help="hold lower-confidence pass predictions for review")
+rp.add_argument("--policy", type=Path, help="checkpoint-bound acceptance policy from calibrate_acceptance.py")
 rp.add_argument("--shift", type=float, nargs=2, default=[0.0, 0.0], metavar=("DX", "DY"))
 rp.add_argument("--scale", type=float, default=1.0)
 rp.add_argument("--rotate", type=float, default=0.0, help="degrees, about the image centre")

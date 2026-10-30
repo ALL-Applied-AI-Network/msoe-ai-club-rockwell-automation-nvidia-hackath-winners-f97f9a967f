@@ -1,0 +1,10 @@
+fastapi==0.119.0
+starlette>=0.40,<0.49
+uvicorn>=0.30,<1
+python-multipart>=0.0.18
+httpx>=0.27,<0.29
+numpy>=1.26
+opencv-python-headless>=4.10
+pillow>=10.4
+torch>=2.9
+torchvision>=0.24

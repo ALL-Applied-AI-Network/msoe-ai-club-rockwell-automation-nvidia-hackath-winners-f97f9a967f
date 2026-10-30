@@ -37,6 +37,7 @@ ap.add_argument("--weights", default="pass=0.36,missing_cap=0.16,crooked_cap=0.1
 ap.add_argument("--weights-s", default="pass=0.25,missing_cap=0.15,crooked_cap=0.05,damaged_vial=0.45,no_vial=0.10",
                 help="class sampling weights per S-tray position")
 ap.add_argument("--preview", action="store_true", help="also write label overlays and a contact sheet")
+ap.add_argument("--public-view", type=Path, help="calibrated 1920x1080, 60-position geometry configuration")
 ap.add_argument("--keep-usd-fov", action="store_true",
                 help="render with the camera's authored focal length instead of matching focal_px_final "
                      "(Isaac Sim 5.1 renders CapSealCam about 1.36x zoomed in)")
@@ -49,6 +50,9 @@ PROBS = {"G": class_probs(a.weights), "S": class_probs(a.weights_s)}
 TRAYS = [t.strip().upper() for t in a.trays.split(",")]
 
 cam_cfg = json.load(open(os.path.join(HERE, "cameras", "CapSealCam.json")))
+public_view = json.loads(a.public_view.read_text()) if a.public_view else None
+if public_view:
+    cam_cfg.update(public_view)
 RW, RH = cam_cfg["render_px"]
 W, H = cam_cfg["final_image_px"]
 F, K1 = cam_cfg["focal_px_final"], cam_cfg["lens_k1"]
@@ -92,7 +96,7 @@ try:
 
     ROOT = "/TrayInspection"
     POS_G = [f"G{i:02d}" for i in range(1, 31)]
-    POS_S = [f"S{i:02d}" for i in range(1, 6)]
+    POS_S = [f"S{i:02d}" for i in range(1, 31 if public_view else 6)]
     POS = (POS_G if "G" in TRAYS else []) + (POS_S if "S" in TRAYS else [])
     PLATE_TOP = 1.76     # tray top surface in tube-local inches (tube origin = vial bottom)
     CAP_SEAT = 3.6       # cap origin (cap bottom) in tube-local inches
@@ -113,6 +117,13 @@ try:
     def trans(v):
         return Gf.Matrix4d(1.0).SetTranslate(Gf.Vec3d(*(float(x) for x in v)))
 
+    sess = stage.GetSessionLayer()
+    if public_view:
+        Sdf.CreatePrimInLayer(sess, ROOT)
+        spec = stage.GetPrimAtPath(f"{ROOT}/S01_tube").GetPrimStack()[-1]
+        for p in POS_S[5:]:
+            if not Sdf.CopySpec(spec.layer, spec.path, sess, f"{ROOT}/{p}_tube"):
+                raise RuntimeError(f"cannot create {p}")
     tube_op, tube0, cap_op, cap0 = {}, {}, {}, {}
     for p in POS_G + POS_S:
         tube_op[p], tube0[p] = matrix_op(f"{ROOT}/{p}_tube")
@@ -134,6 +145,21 @@ try:
     cam_xf_op, cam_xf0 = matrix_op(f"{ROOT}/CapSealCam")
     cam_prim = stage.GetPrimAtPath(f"{ROOT}/CapSealCam/CapSealCam")
     root_world = UsdGeom.Xformable(stage.GetPrimAtPath(ROOT)).ComputeLocalToWorldTransform(Usd.TimeCode.Default())
+    if public_view:
+        # The bundled robot/carrier is one merged mesh and occludes two fixture columns
+        # from the supplied camera pose. Keep fixture/vial geometry, omit this mismatched context.
+        UsdGeom.Imageable(stage.GetPrimAtPath(f"{ROOT}/AU_001436920200716")).MakeInvisible()
+        for p in POS_S:
+            matrix = Gf.Matrix4d(*np.asarray(public_view['scrap_tube_matrices'][p]).flatten().tolist())
+            cap0[p] = cap0[p] * tube0[p].GetInverse() * matrix
+            tube0[p] = matrix
+            tube_op[p].Set(matrix); cap_op[p].Set(cap0[p])
+        cam_xf0 = Gf.Matrix4d(*np.asarray(public_view['camera_local_matrix']).flatten().tolist())
+        cam_xf_op.Set(cam_xf0)
+        camera = UsdGeom.Camera(cam_prim)
+        camera.GetHorizontalApertureAttr().Set(.432)
+        camera.GetVerticalApertureAttr().Set(.432 * RH / RW)
+        camera.GetFocalLengthAttr().Set(.432 * F / RW)
 
     plastic = UsdShade.Material(stage.GetPrimAtPath(f"{ROOT}/_materials/tw_vial_plastic"))
     def material_shader(mat):
@@ -440,7 +466,7 @@ try:
         cap_sh.GetInput("diffuseColor").Set(vec3f(np.clip(np.array(cap_col0) + rng.uniform(-0.06, 0.06, 3), 0, 1)))
         alu_sh.GetInput("diffuseColor").Set(vec3f(np.array(alu_col0) * rng.uniform(0.85, 1.15)))
         alu_sh.GetInput("roughness").Set(float(np.clip(alu_rough0 + rng.uniform(-0.2, 0.15), 0.2, 0.9)))
-        bg_col.Set(vec3f(rng.uniform([0.08, 0.06, 0.04], [0.55, 0.45, 0.4])))
+        bg_col.Set(vec3f(rng.uniform([0.28, 0.26, 0.23], [0.65, 0.60, 0.53]) if public_view else rng.uniform([0.08, 0.06, 0.04], [0.55, 0.45, 0.4])))
         bg_rough.Set(float(rng.uniform(0.5, 0.95)))
         frac_rough.Set(float(rng.uniform(0.4, 0.8)))
         # Vial gloss: from sharp specular streaks to a soft sheen, so highlights carry no class information.
@@ -466,7 +492,8 @@ try:
     json.dump({"classes": CLASSES, "trays": TRAYS, "seed": a.seed,
                "weights": {t: dict(zip(CLASSES, PROBS[t].round(4).tolist())) for t in TRAYS},
                "image_size": [W, H], "camera": "CapSealCam", "fov_matched_to_calibration": not a.keep_usd_fov,
-               "fov_log": fov_log}, open(out / "dataset.json", "w"), indent=1)
+               "fov_log": fov_log, "public_view": bool(public_view),
+               "geometry_fit_rms_px": public_view.get('geometry_fit_rms_px') if public_view else None}, open(out / "dataset.json", "w"), indent=1)
 
     overlays, s_zooms = [], []
     for fi in range(a.start, a.start + a.frames):
@@ -526,6 +553,16 @@ try:
                     info["diam_px"] = round(2 * max(math.hypot(s[0] - mid[0], s[1] - mid[1]) for s in sides), 1)
                 info["in_frame"] = bool(len(uv) and uv[:, 0].max() < W and uv[:, 1].max() < H and uv.min() >= 0)
 
+        if public_view:
+            for p, info in labels.items():
+                c = project(public_view['aperture_world'][p], cam_inv)
+                if not c:
+                    raise RuntimeError(f"{p}: public aperture is outside camera frustum")
+                offsets = public_view['crop_offsets']['good' if p[0]=='G' else 'scrap']
+                info['review_bbox'] = [round(c[0]+offsets[0],1), round(c[1]+offsets[1],1),
+                                       round(c[0]+offsets[2],1), round(c[1]+offsets[3],1)]
+                info['target_px'] = [round(c[0],1),round(c[1],1)]
+                info['in_frame'] = bool(0<=c[0]<W and 0<=c[1]<H)
         name = f"{fi:06d}"
         if not cv2.imwrite(str(out / "frames" / f"{name}.png"), final):
             raise OSError(f"could not write frame {name}")

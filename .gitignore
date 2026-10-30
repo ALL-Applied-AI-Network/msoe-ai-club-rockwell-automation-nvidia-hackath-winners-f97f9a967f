@@ -5,3 +5,8 @@ results/
 preds/
 __pycache__/
 *.pyc
+# Local runtimes, render outputs, and downloaded training dependencies
+/outputs/
+/.venv/
+/.venv-*/
+/model/v3_HZ/model.pt

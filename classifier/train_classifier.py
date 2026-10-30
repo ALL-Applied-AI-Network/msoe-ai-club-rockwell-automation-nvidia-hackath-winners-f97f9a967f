@@ -36,12 +36,26 @@ ap.add_argument("--workers", type=int, default=0, help="ignored (kept for older 
 ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
 ap.add_argument("--limit", type=int, default=0, help="use at most N crops per split (smoke tests)")
 ap.add_argument("--no-pretrained", action="store_true")
+ap.add_argument("--init", type=Path, help="fine-tune an existing checkpoint into a NEW output folder")
+ap.add_argument("--seed", type=int, default=301026)
+ap.add_argument("--damage-weight", type=float, default=1.0, help="additional damaged-vial loss weight")
+ap.add_argument("--model-version", default="v2", help="checkpoint release name")
+ap.add_argument("--crop-mode", default="legacy_position_v1")
 a = ap.parse_args()
+if a.epochs < 1 or a.batch < 2 or a.damage_weight <= 0:
+    ap.error("epochs >= 1, batch >= 2 and positive damage weight required")
+if a.out.exists() and any(a.out.iterdir()):
+    ap.error("output directory must be empty; existing models are never overwritten")
 a.out.mkdir(parents=True, exist_ok=True)
+torch.manual_seed(a.seed)
+np.random.seed(a.seed)
 dev = torch.device(a.device)
 
 rows = list(csv.DictReader(open(a.crops / "index.csv")))
 split_rows = {s: [r for r in rows if r["split"] == s] for s in ("train", "val")}
+assert all(r.get('source','synthetic') == 'synthetic' for rs in split_rows.values() for r in rs), 'real evaluation rows must never enter training/selection'
+groups = {s: {(r['run'], r['frame']) for r in rs} for s, rs in split_rows.items()}
+assert groups['train'] and groups['val'] and not groups['train'] & groups['val'], 'invalid frame split'
 if a.limit:
     rng = np.random.default_rng(0)
     split_rows = {s: [r[i] for i in rng.permutation(len(r))[:a.limit]] for s, r in split_rows.items()}
@@ -55,6 +69,8 @@ def load(split):
 
     def read(r):
         img = cv2.imread(str(a.crops / r["path"]), cv2.IMREAD_COLOR)
+        if img is None:
+            raise ValueError(f"unreadable crop: {r['path']}")
         if img.shape[:2] != (a.size, a.size):
             img = cv2.resize(img, (a.size, a.size), interpolation=cv2.INTER_AREA)
         return img[..., ::-1]                                  # BGR -> RGB
@@ -118,21 +134,24 @@ def prep(x):
     return (x.float() / 255 - mean_t) / std_t
 
 
-weights = None if a.no_pretrained else torchvision.models.ResNet18_Weights.IMAGENET1K_V1
-try:
-    model = torchvision.models.resnet18(weights=weights)
-except Exception as e:                                         # offline: fall back to random init
-    print(f"could not load pretrained weights ({e}); training from scratch", flush=True)
-    model = torchvision.models.resnet18()
+weights = None if a.no_pretrained or a.init else torchvision.models.ResNet18_Weights.IMAGENET1K_V1
+model = torchvision.models.resnet18(weights=weights)
 model.fc = nn.Linear(model.fc.in_features, len(CLASSES))
+if a.init:
+    ck = torch.load(a.init, map_location='cpu', weights_only=True)
+    assert ck['classes'] == CLASSES and ck['size'] == a.size
+    assert ck['mean'] == MEAN and ck['std'] == STD
+    model.load_state_dict(ck['state_dict'])
 model = model.to(dev).to(memory_format=torch.channels_last)
+print(f"device: {dev}; GPU: {torch.cuda.get_device_name(dev) if dev.type == 'cuda' else 'none'}", flush=True)
 
 # Per-sample weights by inverse frequency of (tray, class). Weighting by class alone let damaged_vial
 # (S tray only, rare overall) outweigh S-tray pass/missing_cap so much that every lying vial became "damaged".
 freq = Counter(r["class"] for r in split_rows["train"])
 group = Counter((r["tray"], r["class"]) for r in split_rows["train"])
 gw = {k: min(10.0, len(split_rows["train"]) / (len(group) * n)) for k, n in group.items()}   # cap tiny groups
-wtr = torch.tensor([gw[(r["tray"], r["class"])] for r in split_rows["train"]], device=dev)
+wtr = torch.tensor([gw[(r["tray"], r["class"])] * (a.damage_weight if r['class'] == 'damaged_vial' else 1)
+                    for r in split_rows["train"]], device=dev)
 print("loss weight per (tray, class):", {f"{t}/{c}": round(w, 2) for (t, c), w in sorted(gw.items())}, flush=True)
 ce = nn.CrossEntropyLoss(reduction="none", label_smoothing=0.05)
 
@@ -140,7 +159,7 @@ ce = nn.CrossEntropyLoss(reduction="none", label_smoothing=0.05)
 def loss_fn(logits, y, w):
     return (ce(logits, y) * w).sum() / w.sum()
 opt = torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=0.05)
-steps_per_epoch = max(1, len(ytr) // a.batch)
+steps_per_epoch = max(1, math.ceil(len(ytr) / a.batch))
 sched = torch.optim.lr_scheduler.OneCycleLR(opt, max_lr=a.lr, total_steps=a.epochs * steps_per_epoch, pct_start=0.1)
 amp = dev.type == "cuda"
 
@@ -200,7 +219,8 @@ for ep in range(1, a.epochs + 1):
     if f1 > best:
         best, best_metrics, best_epoch = f1, m, ep
         torch.save({"state_dict": model.state_dict(), "classes": CLASSES, "size": a.size, "mean": MEAN, "std": STD,
-                    "arch": "resnet18", "epoch": ep}, a.out / "model.pt")
+                    "arch": "resnet18", "epoch": ep, "version": a.model_version, "crop_mode": a.crop_mode,
+                    "training_source": "synthetic-only"}, a.out / "model.pt")
     json.dump({"best_macro_f1": best, "best_epoch": best_epoch, "epochs_done": ep, "classes": CLASSES,
                "metrics": best_metrics, "train_counts": dict(freq), "args": {k: str(v) for k, v in vars(a).items()}},
               open(a.out / "metrics.json", "w"), indent=1)

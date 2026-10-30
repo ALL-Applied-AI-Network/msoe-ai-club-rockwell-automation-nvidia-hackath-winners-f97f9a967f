@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Vial Inspection · HZ</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <script src="/assets/app.js" defer></script>
+</head>
+<body>
+<aside class="sidebar">
+  <a class="brand" href="/" aria-label="Vial Inspection home"><span class="brand-mark"><i></i><i></i><i></i></span><span>VIAL<span class="brand-sub">INSPECTION / HZ</span></span></a>
+  <div class="side-label">WORKSPACE</div>
+  <nav><a id="nav-image" class="nav-item active" href="/"> <span class="nav-symbol">▧</span> Image inspection <span class="nav-arrow">↗</span></a><a id="nav-live" class="nav-item" href="/live"><span class="nav-symbol">◉</span> Live monitor <span class="nav-arrow">↗</span></a></nav>
+  <div class="station-card"><span class="tiny-label">STATION 01</span><strong>Final vial inspection</strong><span>Good + scrap fixtures</span><div class="station-count">60 <small>positions</small></div><p>Fill top to bottom, starting at the rightmost column.</p></div>
+  <div class="side-bottom"><span class="side-light"></span> MSOE × ROCKWELL × NVIDIA<br><small>Local inspection workspace</small></div>
+</aside>
+<div class="app-shell">
+  <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> Final inspection</div><div class="top-status"><span class="status-dot" id="backend-dot"></span><span id="backend-status">Connecting</span><span class="badge">EXPERIMENTAL</span></div></header>
+  <main>
+    <div class="page-heading"><div><div class="eyebrow">VISION OPERATIONS</div><h1 id="page-title">Image inspection</h1><p id="page-description">Inspect each position. Keep the evidence in view.</p></div><div class="model-control"><label for="model">Inspection model</label><select id="model"><option value="v2">v2 · GitHub model.pt</option><option value="v3_HZ">v3_HZ · new model</option></select><span id="model-state" class="small-text">Checking checkpoint…</span></div></div>
+    <div id="model-warning" class="notice" role="status" hidden></div>
+    <div id="notice" class="notice" role="status" hidden></div>
+    <div id="error" class="error" role="alert" hidden></div>
+    <div class="workspace-grid">
+      <section class="viewer-panel">
+        <div class="panel-heading"><div><span class="live-dot" id="source-dot"></span><strong id="source-title">Inspection frame</strong><span class="small-text" id="source-meta">1920 × 1080 calibrated view</span></div><div class="viewer-actions"><button id="toggle-overlay" class="text-button" disabled>Hide labels</button><button id="clear" class="text-button" disabled>Clear</button></div></div>
+        <div id="image-tools" class="source-toolbar"><button id="choose-image" class="button secondary">↥ Upload image</button><button id="snapshot-camera" class="button secondary">◉ Camera snapshot</button><div class="toolbar-divider"></div><button id="example-1" class="text-button">Example 001</button><button id="example-122" class="text-button">Example 122</button><input id="image-input" type="file" accept="image/jpeg,image/png,image/webp" hidden></div>
+        <div id="live-tools" class="source-toolbar" hidden><select id="camera-device" aria-label="Camera"><option value="">Default camera</option></select><button id="start-camera" class="button secondary">Connect camera</button><button id="start-monitor" class="button primary" disabled>Start monitoring</button><button id="stop-camera" class="button secondary" disabled>Stop</button><button id="choose-video" class="text-button">Upload video</button><input id="video-input" type="file" accept="video/*" hidden></div>
+        <div class="image-stage" id="drop-target">
+          <div id="empty-state" class="empty-state"><div class="aperture-art"><span></span><span></span><span></span><span></span><span></span><span></span></div><strong id="empty-title">Bring a frame into focus</strong><p id="empty-description">Drop a station image here, or choose an image above.<br>Use the calibrated 1920 × 1080 camera view.</p><span id="empty-foot" class="empty-foot">JPG / PNG / WEBP · UP TO 15 MB</span></div>
+          <img id="frame-image" alt="Selected station inspection frame" hidden>
+          <video id="camera-video" autoplay muted playsinline hidden></video>
+          <canvas id="live-overlay" aria-hidden="true" hidden></canvas>
+          <div id="stage-label" class="stage-label" hidden><span class="status-dot"></span><span id="stage-label-text">Source frame</span></div>
+          <div id="busy" class="busy" hidden><span class="spinner"></span><span id="busy-text">Inspecting 60 positions…</span></div>
+        </div>
+        <div id="timeline" class="timeline" hidden><label for="timeline-range">Sampled video</label><input id="timeline-range" type="range" min="0" max="0" value="0"><output id="timeline-time">0.0 s</output></div>
+        <div class="viewer-footer"><span id="frame-name">No image selected</span><span id="inference-time">No inference yet</span></div>
+        <div class="legend"><span><i class="legend-pass"></i> Pass</span><span><i class="legend-defect"></i> Visible defect</span><span><i class="legend-empty"></i> Empty / pending</span><span><i class="legend-review"></i> Review</span></div>
+      </section>
+      <aside class="control-panel">
+        <section class="control-section"><div class="section-title"><span>01</span><h2>Placement context</h2></div><p class="control-note" id="count-description">Optional counts from the placement signal or operator.</p><div class="count-fields"><label>Good tray<input id="good-count" type="number" min="0" max="30" step="1" placeholder="Unknown"></label><label>Scrap tray<input id="scrap-count" type="number" min="0" max="30" step="1" placeholder="Unknown"></label></div><label class="check-row"><input id="order-complete" type="checkbox"><span>Good order-complete signal received</span></label><p class="hint">Trailing empty positions remain pending until the placement count or good-order completion signal establishes a missing vial.</p><button id="inspect" class="button primary full" disabled><span>Run inspection</span><span>↗</span></button></section>
+        <section class="control-section result-summary"><div class="section-title"><span>02</span><h2>Inspection summary</h2></div><div class="summary-counts"><div><strong id="defect-count">—</strong><span>visible defects</span></div><div><strong id="review-count">—</strong><span>need review</span></div></div><div id="tray-summary" class="tray-summary"><p class="small-text">Results appear after inspection.</p></div><div class="alignment-line" id="alignment-state">Camera alignment is checked before inference.</div></section>
+        <section class="cosmos-section"><div class="cosmos-heading"><div class="cosmos-icon">✳</div><div><h2>Cosmos Reason</h2><span id="cosmos-status" class="small-text">Checking DGX service…</span></div></div><p>Ask for a second visual assessment of the current frame or selected position.</p><label class="sr-only" for="cosmos-question">Question for Cosmos</label><textarea id="cosmos-question" rows="2" maxlength="2000">Inspect the visible vial conditions. Describe defects and uncertainties.</textarea><button id="reason" class="button dark full" disabled><span>Ask Cosmos</span><span>↗</span></button><div id="cosmos-answer" class="cosmos-answer" aria-live="polite" hidden></div><span class="hint">Advisory only. Cosmos does not change classifier results.</span></section>
+      </aside>
+    </div>
+    <section class="positions-panel"><div class="positions-heading"><div><div class="eyebrow">FIXTURE MAP</div><h2>Every position, accounted for.</h2></div><div class="export-actions"><button id="export-json" class="button secondary" disabled>↓ JSON</button><button id="export-csv" class="button secondary" disabled>↓ CSV</button></div></div><div class="fixture-layout"><section><div class="fixture-title"><strong>G <span>Good tray</span></strong><span id="good-map-state">30 positions</span></div><div id="good-grid" class="fixture-grid"></div></section><section><div class="fixture-title"><strong>S <span>Scrap tray</span></strong><span id="scrap-map-state">30 positions</span></div><div id="scrap-grid" class="fixture-grid"></div></section><aside id="slot-detail" class="slot-detail"><span class="tiny-label">POSITION DETAILS</span><h3>Select a position</h3><p>Choose a tile to inspect its class, confidence, and placement state.</p></aside></div></section>
+    <section id="events-section" class="events-panel" hidden><div class="section-title"><span>LIVE</span><h2>Observed changes</h2></div><p class="small-text">Changes require two consecutive matching observations. The camera does not establish an authoritative robot placement count.</p><div id="events" aria-live="polite"><p class="small-text">No stable changes observed yet.</p></div></section>
+    <footer class="page-footer"><span>VIAL INSPECTION / HZ</span><span>Visible appearance only · Camera alignment required · Human review for uncertain results</span></footer>
+  </main>
+</div>
+<canvas id="capture-canvas" hidden></canvas>
+</body>
+</html>

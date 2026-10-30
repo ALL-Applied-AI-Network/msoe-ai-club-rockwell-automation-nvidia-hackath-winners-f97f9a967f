@@ -1,0 +1,25 @@
+{
+  "review_sha256": "f96b6c88302692579ab3cd23cea2cf81b69ea31049d69691316587b8660edad6",
+  "import_template": "outputs/real-review-20261030/labels.json",
+  "training_source": "synthetic-only",
+  "images": [
+    {
+      "filename": "tray_000001.jpg",
+      "source_sha256": "df0edcffe19d5152c18d50ede9aacdbaa5357e3dc14b9717072951a6522e6b19",
+      "confirmed": 60
+    },
+    {
+      "filename": "tray_000122.jpg",
+      "source_sha256": "869717d47bf97e227f5bb2a6c192751a2652928cf0ee25a19b8db340e17b36ef",
+      "confirmed": 60
+    }
+  ],
+  "jobs": {
+    "preview": "79385a5e-22bd-4572-b45d-bf8c08bad40e",
+    "baseline": "f8230d3e-d9ad-4cb5-9be3-eb46d8d27dd7",
+    "training_render": "7c40c0fb-bf5f-4cee-8a94-ba29751b462c",
+    "validation_test_render": "6a58b65e-ee25-4bf3-85e9-66231ed8e928"
+  },
+  "camera_config_sha256": "0cbe9eb73900b86e22bc03b5f8e3c0f2b5032f204f5635d7df1cac5da13d3e2a",
+  "generator_sha256": "e376c9741f5332022842100a83c78f34520582f3ff5967d37cf852ad760b0ab2"
+}
